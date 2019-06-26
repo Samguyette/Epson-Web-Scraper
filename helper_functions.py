@@ -47,7 +47,7 @@ def build_data_set(product_set):
 def pull_buyvpc(url, product_set):
 	#check if broken
 	try:
-		#opening connection
+	    #opening connection
 		uClient = uReq(url)
 		page_html = uClient.read()
 		uClient.close()
@@ -85,13 +85,13 @@ def pull_epson(url, product_set):
 			print("Epson containers produced zero products.")
 
 		for container in containers:
-				name = (container.find("a",{"class":"name"}).text) + " Printer"
-				price = container.find("div",{"class":"amount"}).text
+			name = (container.find("a",{"class":"name"}).text) + " Printer"
+			price = container.find("div",{"class":"amount"}).text
 
-				if "epson.ca" in url:
-					add_element("Epson", "Epson.ca", name, "CAD "+price, "No_Data", product_set)
-				else:
-					add_element("Epson", "Epson (US)", name, price, "No_Data", product_set)
+			if "epson.ca" in url:
+				add_element("Epson", "Epson.ca", name, "CAD "+price, "No_Data", product_set)
+			else:
+				add_element("Epson", "Epson (US)", name, price, "No_Data", product_set)
 
 	except:
 		print("www.epson.com pipe is now broken.")
