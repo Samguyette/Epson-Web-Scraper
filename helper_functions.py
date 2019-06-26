@@ -47,7 +47,7 @@ def build_data_set(product_set):
 def pull_buyvpc(url, product_set):
 	#check if broken
 	try:
-	    #opening connection
+        #opening connection
 		uClient = uReq(url)
 		page_html = uClient.read()
 		uClient.close()
