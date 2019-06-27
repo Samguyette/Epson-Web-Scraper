@@ -6,6 +6,7 @@
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 import re
+import string
 
 #import object class
 from product_class import Product
@@ -17,37 +18,95 @@ from lists import bh_urllist
 from lists import walmart_urllist
 from lists import epson_urllist
 from lists import buyvpc_urllist
+from lists import dell_urllist
+from lists import vistek_urllist
 from lists import company_list
 from lists import remove_list
+
+
+#helper function for build_data_set
+def loop_site(urllist, func, product_set):
+	for url in urllist:
+		func(url, product_set)
 
 
 #loops urls lists through specific scraper
 def build_data_set(product_set):
 	#loop raw searches
-	for url in staples_urllist:
-		pull_staples(url, product_set)
-
-	for url in newegg_urllist:
-		pull_newegg(url, product_set)
-
-	#for url in bh_urllist:
-	#	pull_bh(url, product_set)
-
-	for url in walmart_urllist:
-		pull_walmart(url, product_set)
-
-	#for url in epson_urllist:
-	#	pull_epson(url, product_set)
-
-	#for url in buyvpc_urllist:
-	#	pull_buyvpc(url, product_set)
+	#loop_site(staples_urllist, pull_staples, product_set)
+	#loop_site(newegg_urllist, pull_newegg, product_set)
+	#loop_site(bh_urllist, pull_bh, product_set)
+	#loop_site(walmart_urllist, pull_walmart, product_set)
+	#loop_site(epson_urllist, pull_epson, product_set)
+	#loop_site(buyvpc_urllist, pull_buyvpc, product_set)
+	#loop_site(dell_urllist, pull_dell, product_set)
+	loop_site(vistek_urllist, pull_vistek, product_set)
 
 
 # *** Website specific scrapers *** #
+def pull_vistek(url, product_set):
+	#check if broken
+	#try:
+	#opening connection
+	uClient = uReq(url)
+	page_html = uClient.read()
+	uClient.close()
+	#html parsing
+	page_soup = soup(page_html,"html.parser")
+	#finds all products on current page
+	name = page_soup.find("h1",{"class":"title"}).text
+	price = page_soup.find("div",{"class":"card-body"}).text
+	price = butcher(price)
+	price = price.split('Qty', 1)[0]
+	price = price.split('Your Price:', 1)[1]
+	try:
+		shipping = page_soup.find("strong",{"class":"text-primary"}).text
+	except:
+		shipping = ""
+
+	try:
+		id = page_soup.find("ul",{"class":"list-unstyled"}).text
+		id = id.split('Mfr: ', 1)[1]
+		id = butcher(id)
+		id = id.split('Free', 1)[0]
+		id = id.upper()
+		print(id)
+	except:
+		id = ""
+
+	add_element("Vistek", "", name, id, price, shipping, product_set)
+
+	#except:
+		#print("www.vistek.com pipe is now broken.")
+
+
+
+def pull_dell(url, product_set):
+	#check if broken
+	try:
+		#opening connection
+		uClient = uReq(url)
+		page_html = uClient.read()
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+		#finds all products on current page
+		name = page_soup.find("h1",{"itemprop":"name"}).text
+		price = page_soup.findAll("span",{"class":"pull-right"})
+		id = page_soup.find("li",{"class":"text-capitalize text-gray-sepia-light small-font"}).text
+		id = ' '.join([w for w in id.split() if len(w)==9])
+
+		add_element("Dell", "", name, id, price[0].text, price[1].text, product_set)
+
+	except:
+		print("www.dell.com pipe is now broken.")
+
+
+
 def pull_buyvpc(url, product_set):
 	#check if broken
 	try:
-        #opening connection
+		#opening connection
 		uClient = uReq(url)
 		page_html = uClient.read()
 		uClient.close()
@@ -56,13 +115,15 @@ def pull_buyvpc(url, product_set):
 		#finds data on page
 		name = page_soup.find("h2",{"itemprop":"name"}).text
 		price = page_soup.find("div",{"class":"price"}).text
+		id = page_soup.find("span",{"id":"mfg_id"}).text
+
 		price = butcher(price)
 		price = ''.join([i for i in price if i.isdigit() or "."])
 		price = price.split(".", 1)[0]
 		price = price.split("$", 1)[1]
 		price = "$"+price
 
-		add_element("BuyVPC", "", name, price, "No_Data", product_set)
+		add_element("BuyVPC", "", name, id, price, "", product_set)
 
 	except:
 		print("www.newegg.com pipe is now broken.")
@@ -89,9 +150,9 @@ def pull_epson(url, product_set):
 			price = container.find("div",{"class":"amount"}).text
 
 			if "epson.ca" in url:
-				add_element("Epson", "Epson.ca", name, "CAD "+price, "No_Data", product_set)
+				add_element("Epson", "Epson.ca", name, "", "CAD "+price, "", product_set)
 			else:
-				add_element("Epson", "Epson (US)", name, price, "No_Data", product_set)
+				add_element("Epson", "Epson (US)", name, "", price, "", product_set)
 
 	except:
 		print("www.epson.com pipe is now broken.")
@@ -131,7 +192,7 @@ def pull_walmart(url, product_set):
 			name = ""
 			price = ""
 
-		add_element("Walmart", "", name, price, shipping, product_set)
+		add_element("Walmart", "", name, "", price, shipping, product_set)
 
 	except:
 		print("www.walmart.com pipe is now broken.")
@@ -151,8 +212,9 @@ def pull_bh(url, product_set):
 		text_containers = page_soup.findAll("div",{"data-selenium":"itemDetail"})
 		price_containers = page_soup.findAll("div",{"class":"price-zone"})
 		shipping_containers = page_soup.findAll("div",{"class":"salesComments scShipNote sect clearfix c2 bold"})
+		id_containers = page_soup.findAll("span",{"class":"sku"})
 
-		for tcontainer, pcontainer, scontainer in zip(text_containers, price_containers, shipping_containers):
+		for tcontainer, pcontainer, scontainer, icontainer in zip(text_containers, price_containers, shipping_containers, id_containers):
 			name = tcontainer.find("span",{"itemprop":"name"}).text
 			company = tcontainer.find("span",{"itemprop":"brand"}).text
 			try:
@@ -164,8 +226,12 @@ def pull_bh(url, product_set):
 				shipping = ' '.join([w for w in shipping.split() if len(w)<9])
 			except:
 				shipping = "Missing shipping"
+			try:
+				id = icontainer.text
+			except:
+				id = ""
 
-			add_element("B&H", company, name, price, shipping, product_set)
+			add_element("B&H", company, name, id, price, shipping, product_set)
 
 	except:
 		print("www.bhphotovideo.com pipe is now broken.")
@@ -198,7 +264,7 @@ def pull_newegg(url, product_set):
 				shipping = ""
 
 
-			add_element("NewEgg", "", name, price, shipping, product_set)
+			add_element("NewEgg", "", name, "", price, shipping, product_set)
 
 	except:
 		print("www.newegg.com pipe is now broken.")
@@ -224,7 +290,7 @@ def pull_staples(url, product_set):
 			name = container.div.div.a["title"]
 			price = container.find("span",{"class":"standard-type__price"}).text
 
-			add_element("Staples", "", name, price, "No_Data", product_set) #no shipping data
+			add_element("Staples", "", name, "", price, "", product_set) #no shipping data
 
 	except:
 		print("www.staples.com pipe is now broken.")
@@ -233,10 +299,11 @@ def pull_staples(url, product_set):
 
 
 #If correct product, object is created and added to product set
-def add_element(store, company, name, price, shipping, product_set):
+def add_element(store, company, name, id, price, shipping, product_set):
 	name = butcher(name)
 	price = butcher(price)
 	shipping = butcher(shipping)
+	id = butcher(id)
 
 	#find which comapny the product belongs to
 	for i in company_list:
@@ -251,14 +318,16 @@ def add_element(store, company, name, price, shipping, product_set):
 
 	#create product object
 	if not banned:
-		new_product = Product(store, company, name, price, shipping)
+		new_product = Product(store, company, name, id, price, shipping)
 		product_set.add(new_product)
 
 
 #breaks up strings
-def butcher(str):
-	str = re.sub(r'\W+ ', '', str)
-	str = str.replace(',','')
-	str = str.replace('\n', '')
-	str = str+" "
-	return str
+def butcher(word):
+	word = str(word)
+	word = word.title()
+	word = re.sub(r'\W+ ', '', word)
+	word = word.replace(',','')
+	word = word.replace('\n', '')
+	word = word+" "
+	return word

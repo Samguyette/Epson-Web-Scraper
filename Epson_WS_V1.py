@@ -30,7 +30,7 @@ def append_category(category, substrings, red_words):
 		if write:
 			for substring in substrings:
 				if substring in product.name and not product.added:
-					f.write(product.website + "," + product.company + "," + category + "," + product.name + "," + product.price + "," + product.shipping + "\n")
+					f.write(product.website + "," + product.company + "," + category + "," + product.name + "," + product.id + ", " + product.price + "," + product.shipping + "\n")
 					product.added = True;
 
 
@@ -44,12 +44,15 @@ if __name__ == '__main__':
     product_set = set()
     build_data_set(product_set);
 
+    #Writes name
+    f.write("Created by Sam Guyette\n")
+
     #Writes date and time of when ran
     now = datetime.datetime.now()
     f.write("Date and time of script execution: "+now.strftime("%Y-%m-%d %H:%M:%S")+"\n\n")
 
     #write header
-    headers = "Website, Company, Category, Name, Price, Shipping\n"
+    headers = "Website, Company, Category, Name, SKU, Price, Shipping\n"
     f.write(headers)
 
     #creates sub categories
