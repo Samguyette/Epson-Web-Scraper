@@ -1,83 +1,328 @@
-Date and time of script execution: 2019-06-26 15:46:57
+Created by Sam Guyette
+Date and time of script execution: 2019-06-27 16:18:05
 
-Website, Company, Category, Name, Price, Shipping
-NewEgg,HP,Printer,INKUTEN 4 Refillable Cartridges for HP 711 Ink Cartridge Hp DesignJet printersT120and T525 with 4x100ml Dye inkAuto Reset Chips (ARC) ,$61 ,Free Shipping 
-NewEgg,HP,Printer,INKUTEN Refillable Cartridges for HP 711 711XL Ink Cartridge Hp DesignJet printersT120and T525 ,$39 ,Free Shipping 
-Walmart,HP,Printer,HP DesignJet T520 36Large-Format Inkjet Printer Office Bundle ,$2312.99 ,No_Data 
-Walmart,HP,Printer,HP DesignJet T120 24-in Printer ,$649.00 ,Free delivery 
-NewEgg,HP,Printer,INKUTEN 4 Pre-filled Refillable Cartridges for HP 711 Ink Cartridge Hp DesignJet printersT120and T525 with Auto Reset Chips (ARC) ,$46 ,Free Shipping 
-Walmart,HP,Printer,HP Designjet T120 24Color Inkjet Wi-Fi ePrinter Bundle with 1 Year Extended WarrantySurge Protector ,Price range$739to766 ,No_Data 
-Walmart,HP,Printer,HP CQ893C#B1K DesignJet T520 Printer wHP Thermal Inkjet Print Technology ,$2495.00 ,Free delivery 
-Staples,Epson,Printer,Epson SureColor T5470 Wireless 36Wide Large Format Inkjet Color PrinterWhite ,$2495.99 ,No_Data 
-Walmart,HP,Printer,HP DesignJet T120 24Large-Format Inkjet Printer Office Bundle ,$912.99 ,No_Data 
-Walmart,HP,Printer,HP CQ893C#B1K DesignJet T520 Printer wHP Thermal Inkjet Print Technology ,$2495.00 ,Free delivery 
-NewEgg,HP,Printer,HP DesignJet T120 24Large-Format Inkjet Printer Office Bundle ,$743 ,Free Shipping 
-NewEgg,HP,Printer,HP DesignJet T120 24Large-Format Inkjet Printer Essential Bundle ,$726 ,Free Shipping 
-NewEgg,HP,Printer,INKUTEN Compatible CISS Refill Ink Bottles (400ml100ml Per ColorforHP 711 Ink Cartridge Hp DesignJet printersT120and T525 ,$26 ,Free Shipping 
-NewEgg,HP,Printer,HP DesignJet T120 24Large-Format Inkjet Printer 2Pack Bundle ,$1394 ,Free Shipping 
-NewEgg,HP,Printer,HP DesignJet T1202018 Editionlarge-format printercolorink-jet DesignJet T120 24 Inch Printer ,$1347 ,Free Shipping 
-Walmart,Canon,Printer,Canon imagePROGRAF iPF670Elarge-format printercolorink-jet ,$1574.99 ,Free delivery 
-Staples,Epson,Printer,Epson SureColor T5270 Single Roll Edition Printer ,$3695.99 ,No_Data 
-Staples,Epson,Printer,Epson SureColor T5270 36Large Format Inkjet Color PrinterWhite ,$3494.49 ,No_Data 
-Staples,Epson,Printer,Epson SureColor T3470 Wireless 24Large Format Inkjet Color PrinterWhite ,$1995.99 ,No_Data 
-NewEgg,Canon,Printer,Canon imagePROGRAF iPF670E Inkjet Printer imagePROGRAF iPF670E Inkjet Printer ,$886 ,Free Shipping 
-Staples,Epson,Printer,EpsonAdobePostScript3C12C891131 Gary Hardware Module for SureColor SC-T3200 Printer ,$1145.99 ,No_Data 
-NewEgg,HP,Printer,HP Designjet T520 2400 x 1200 dpi Color Print Quality Wi-Fi Thermal Inkjet DesignJet Color Inkjet Printer ,$1250 ,Free Shipping 
-NewEgg,HP,Printer,HP Designjet T520 2400 x 1200 dpi Color Print Quality Wi-Fi Thermal Inkjet DesignJet Color Inkjet Printer ,$1250 ,Free Shipping 
-NewEgg,HP,Printer,HP DesignJet T520 36Large-Format Inkjet Printer Office Bundle ,$1997 ,Free Shipping 
-NewEgg,HP,Printer,HP DesignJet T520 36Large-Format Inkjet Printer Essential Bundle ,$1990 ,Free Shipping 
-NewEgg,HP,Printer,HP DesignJet T520 36Large-Format Inkjet Printer 2Pack Bundle ,$3949 ,Free Shipping 
-NewEgg,HP,Printer,HP Designjet T525 24-in Printer ,$1767 ,Free Shipping 
-Staples,Epson,Printer,Epson SureColor T5170 Wireless 36Large Format Inkjet Color PrinterWhite ,$2159.99 ,No_Data 
-Staples,HP,Ink,HP 711 Black Ink Cartridge (CZ133A80mlHigh Yield ,$58.23 ,No_Data 
-Staples,Canon,Ink,CanonPFI-103GY (2213B001AAGray Ink Cartridge ,$84.49 ,No_Data 
-Staples,Canon,Ink,Canon2211B001 Ink130 mLMatte Black ,$84.49 ,No_Data 
-Staples,Canon,Ink,Canon2214B001 Ink130 mLPhoto Gray ,$83.69 ,No_Data 
-Staples,Canon,Ink,Canon2212B001 Ink130 mLBlack ,$83.69 ,No_Data 
-Staples,Canon,Ink,Canon PFI-101PC Photo Cyan Ink Cartridge (0887B001) ,$89.99 ,No_Data 
-Staples,HP,Ink,HP 711 Yellow Ink Cartridge29ml (CZ132A) ,$29.92 ,No_Data 
-Staples,HP,Ink,HP 711 Cyan Ink Cartridge29ml (CZ130A) ,$29.92 ,No_Data 
-Staples,HP,Ink,HP 711 Yellow Ink Cartridges3/Pack29ml (CZ136A) ,$62.29 ,No_Data 
-Staples,HP,Ink,HP 711 Magenta Ink Cartridge29ml (CZ131A) ,$31.09 ,No_Data 
-Staples,HP,Ink,HP 711 Cyan Ink Cartridges3/Pack29ml (CZ134A) ,$60.31 ,No_Data 
-Staples,HP,Ink,HP 711 Magenta Ink Cartridges3/Pack29ml (CZ135A) ,$62.29 ,No_Data 
-Staples,HP,Ink,HP 711 Black Ink Cartridge38ml (CZ129A) ,$35.88 ,No_Data 
-Staples,Epson,Ink,Epson 324 UltraChrome HG2 Orange Ink Cartridge (T324920) ,$18.79 ,No_Data 
-Staples,Epson,Ink,Epson 324 UltraChrome HG2 Red Ink Cartridge (T324720) ,$18.79 ,No_Data 
-Staples,Epson,Ink,Epson 324 UltraChrome HG2 Matte Black Ink Cartridge (T324820) ,$18.79 ,No_Data 
-Staples,Epson,Ink,Epson 324 Yellow Ink CartridgeStandard (T324420) ,$18.79 ,No_Data 
-Staples,Epson,Ink,Epson 324 Photo Black Ink CartridgeStandard (T324120) ,$18.79 ,No_Data 
-Staples,Epson,Ink,Epson 324 Cyan Ink CartridgeStandard Yield (T324220) ,$18.79 ,No_Data 
-Walmart,HP,Ink,HP 711 38-ml Black DesignJet Ink Cartridge ,Price range$35to31 ,No_Data 
-Staples,Epson,Ink,Epson 324 Magenta Ink CartridgeStandard (T324320) ,$18.79 ,No_Data 
-Staples,Epson,Ink,Epson T3240 Gloss Optimizer Ink CartridgeStandard (T324020) ,$18.79 ,No_Data 
-Staples,Epson,Ink,Epson T760720 (t760Ultrachrome HD Ink25.9 MlLight Black ,$36.09 ,No_Data 
-Staples,Epson,Ink,Epson T760920 (t760Ultrachrome HD Ink25.9 MlLight Light Black ,$36.09 ,No_Data 
-Staples,Epson,Ink,Epson T760420 (t760Ultrachrome HD Ink25.9 MlYellow ,$36.09 ,No_Data 
-Staples,Epson,Ink,Epson T760320 (t760Ultrachrome HD Ink25.9 MlVivid Magenta ,$36.09 ,No_Data 
-NewEgg,HP,Ink,HP 711 Ink CartridgeYellow ,$29 ,Free Shipping 
-NewEgg,HP,Ink,HP 711 High Yield Ink CartridgeBlack ,$58 ,Free Shipping 
-NewEgg,HP,Ink,HP 711 Ink CartridgeCyan ,$29 ,Free Shipping 
-NewEgg,HP,Ink,HP 711 Ink CartridgeMagenta ,$29 ,Free Shipping 
-NewEgg,HP,Ink,HP 711 Ink CartridgeTriple PackMagenta ,$60 ,Free Shipping 
-NewEgg,HP,Ink,HP 711 Ink CartridgeBlack ,$35 ,Free Shipping 
-NewEgg,HP,Ink,HP 711 Ink CartridgeTriple PackCyan ,$60 ,Free Shipping 
-NewEgg,HP,Ink,HP 711 Ink CartridgeTriple PackYellow ,$60 ,Free Shipping 
-NewEgg,HP,Ink,LDRemanufactured Replacements for Hewlett Packard 711 5PK Ink Cartridges2 CZ133A Black1 CZ130A Cyan1 CZ131A Magenta1 CZ132A Yellow for HP DesignJet T120T521 ,$54 ,Free Shipping 
-NewEgg,Canon,Accessory,Canon 2142C001 Pigment Matte Black Ink Tank 90ml Black ,$57 ,Free Shipping 
-NewEgg,Canon,Accessory,Canon 2144C001 PFI-007CDye Cyan Ink Tank 90ml ,$57 ,Free Shipping 
-NewEgg,Canon,Accessory,Canon 90ml Dye Ink Tank Bundle for imagePROGRAF iPF670E PrinterConsists Of PFI007BK BlackPFI007C CyanPFI007M MagentaPFI007MBK Matte BlackPFI-007Y Yellow ,$860 ,Free Shipping 
-Staples,HP,Accessory,HPB3Q36A 24Printer Spindle for DesignJet T120/T520 Series Printer ,$80.19 ,No_Data 
-NewEgg,Canon,Accessory,Canon 90ml Dye Ink Tank Bundle for imagePROGRAF iPF670E PrinterConsists Of PFI007BK BlackPFI007C CyanPFI007M MagentaPFI007MBK Matte BlackPFI-007Y Yellow ,$866 ,Free Shipping 
-Staples,HP,Accessory,HP Designjet T520 36Spindle (B3Q37A) ,$88.99 ,No_Data 
-NewEgg,Canon,Accessory,Canon 90ml Dye Ink Tank Bundle for imagePROGRAF iPF670E PrinterConsists Of PFI007BK BlackPFI007C CyanPFI007M MagentaPFI007MBK Matte BlackPFI-007Y Yellow ,$849 ,Free Shipping 
-NewEgg,Canon,Accessory,Canon PFI-007 90ml Dye Ink Tank for imagePROGRAF iPF670E PrinterYellow ,$88 ,Free Shipping 
-NewEgg,Canon,Accessory,Canon PFI-007 90ml Dye Ink Tank for imagePROGRAF iPF670E PrinterMagenta ,$88 ,Free Shipping 
-NewEgg,Canon,Accessory,Canon PFI-007 90ml Dye Ink Tank for imagePROGRAF iPF670E PrinterCyan ,$87 ,Free Shipping 
-NewEgg,Canon,Accessory,Canon PFI-007 90ml Dye Ink Tank for imagePROGRAF iPF670E PrinterBlack ,$88 ,Free Shipping 
-NewEgg,Canon,Accessory,Canon 2145C001 PFI-007MDye Magenta Ink Tank 90ml Magenta ,$57 ,Free Shipping 
-NewEgg,HP,Accessory,HP B3Q37A Designjet T520 36-in Spindle ,$74 ,$6.99 Shipping 
-NewEgg,HP,Accessory,HP 711 (C1Q10ADesignjet Printhead Replacement Kit ,$220 ,Free Shipping 
-NewEgg,HP,Accessory,HP B3Q36A DesignJet T120/T520 24Spindle ,$89 ,Free Shipping 
-NewEgg,HP,Accessory,HPPrinter spindle24HP Designjet T120/T520 24-in Spindle ,$73 ,Free Shipping 
-NewEgg,HP,Accessory,UsedLike NewHP HP#B3Q36ADesignjet T120/T520 24-in Spindle ,$90 ,Free Shipping 
+Channel, Website, Company, Category, Name, SKU, Price, Shipping
+E-Commerce,Dell,Epson,Printer,Epson T5170 Inkjet PrinterWi-Fi  ,SCT5170SR, $2252.99,Free Shipping
+E-Commerce,Walmart,HP,Printer,HP Designjet T120 24Large-Format Inkjet Printer Office Bundle ,, $912.99,No_Data 
+E-Commerce,Walmart,HP,Printer,HP Designjet T120 24Color Inkjet Wi-Fi Eprinter Bundle With 1 Year Extended WarrantySurge Protector ,, Price Range$739To766,No_Data 
+E-Commerce,B&H,Epson,Printer,36Surecolor T5470 Large Format Printer ,EPSCT5470SR, $2395.00,Shipping Charges Apply 
+E-Commerce,Walmart,HP,Printer,HP Cq893C#B1K Designjet T520 Printer WHP Thermal Inkjet Print Technology ,, $2495.00,Free Shipping
+E-Commerce,Vistek,Canon,Printer,Canon Imageprograf Ipf670 With Stand Large Format Printer ,9854B002 , $1739.99, 
+E-Commerce,B&H,Canon,Printer,Imageprograf Ipf670E 24Large-Format Inkjet Printer ,CAIPF670E, $829.99,Free Shipping
+E-Commerce,B&H,Epson,Printer,Surecolor T3270 24Large-Format Inkjet Printer ,EPSCT3270SR, $2545.00,Free Shipping
+E-Commerce,Epson,Epson.ca,Printer,Surecolor T5170 Wireless Printer Printer ,, Cad 										$2595.00, 
+E-Commerce,Epson,Epson.ca,Printer,Surecolor T5470 Printer Printer ,, Cad 										$3295.00, 
+E-Commerce,Epson,Epson.ca,Printer,Surecolor T3270 Single Roll Edition Printer ,, Cad 										$2995.00, 
+E-Commerce,Epson,Epson.ca,Printer,Surecolor T3270 Screen Print Edition Printer ,, Cad 										$4195.00, 
+E-Commerce,Epson,Epson.ca,Printer,Surecolor T5270 Single Roll Edition Printer ,, Cad 										$4795.00, 
+E-Commerce,Epson,Epson.ca,Printer,Surecolor T7270 Single Roll Edition Printer ,, Cad 										$5995.00, 
+E-Commerce,Epson,Epson.ca,Printer,Surecolor T5270D Dual Roll Edition Printer ,, Cad 										$7195.00, 
+E-Commerce,B&H,Epson,Printer,Replacement Printer Cutter Blade For Surecolor T3170T5170 Wireless Printer ,EPSP3880VLMI, $129.99,Free Shipping
+E-Commerce,Epson,Epson.ca,Printer,Surecolor T7270D Dual Roll Edition Printer ,, Cad 										$8395.00, 
+ISG,Overland Blueprint,HP,Printer,HP Designjet T2530 Multifunction Printer Series ,, $9895, 
+E-Commerce,BuyVPC,HP,Printer,HP Designjet T520 Inkjet Large Format Printer36Print WidthColor ,CQ893C#B1K, $2495, 
+ISG,Overland Blueprint,HP,Printer,HP Designjet T1530 Printer ,, $8395, 
+ISG,Overland Blueprint,Canon,Printer,Canon Imageprograf Tx-4000Printer ,, $6495, 
+ISG,Overland Blueprint,Canon,Printer,Canon Imageprograf Tx-3000Printer ,, $5995, 
+ISG,Overland Blueprint,HP,Printer,HP Designjet T1700 Printer Series ,, $6695, 
+ISG,Overland Blueprint,HP,Printer,HP Designjet T930 Printer Series ,, $5395, 
+ISG,Overland Blueprint,Canon,Printer,Canon Imageprograf Tm-300Tm-305Printer ,, $4495, 
+ISG,Overland Blueprint,Epson,Printer,Epson Surecolor T7270T7270DPrinter ,, $4995 Plus (1000 Cash Back), 
+ISG,Overland Blueprint,Canon,Printer,Canon Imageprograf Ipf780Ipf785Printer ,, $4495, 
+ISG,Overland Blueprint,Epson,Printer,Epson Surecolor T5270T5270DPrinter ,, $3995 Plus (500 Cash Back), 
+ISG,Overland Blueprint,HP,Printer,HP Designjet T730 Printer ,, $3595, 
+ISG,Overland Blueprint,Canon,Printer,Canon Imageprograf Ipf770Printer ,, $3495, 
+ISG,Overland Blueprint,HP,Printer,HP Designjet T830 Mulitfunction Printer Series ,, $3245, 
+ISG,Overland Blueprint,Epson,Printer,Epson Surecolor T5470 Wireless Printer ,, $2995, 
+E-Commerce,B&H,Epson,Printer,Surecolor T3170 24Wireless Inkjet Printer ,EPSCT3170, $895.00,Free Shipping
+ISG,Overland Blueprint,Epson,Printer,Epson Surecolor T3270Printer ,, $2995 Plus (250 Cash Back), 
+ISG,Overland Blueprint,Canon,Printer,Canon Imageprograf Ipf680Ipf685Printer ,, $2495, 
+ISG,Overland Blueprint,Epson,Printer,Epson Surecolor T5170 Wireless Printer ,, $2395, 
+ISG,Overland Blueprint,Epson,Printer,Epson Surecolor T3470 Wireless Printer ,, $2295, 
+E-Commerce,B&H,Epson,Printer,24Stand For Surecolor T3170 Wireless Printer ,C12C933211, $249.00,Free Shipping
+ISG,Overland Blueprint,Canon,Printer,Canon Imageprograf Tm-200Printer ,, $2495, 
+ISG,Overland Blueprint,HP,Printer,HP Designjet T520 Printer Series ,, $2105, 
+E-Commerce,B&H,Epson,Printer,Replacement Printer Cutter Blade For Surecolor T3170T5170 Wireless Printer ,EPC13S210057, $129.99,Free Shipping
+ISG,Overland Blueprint,Epson,Printer,Epson Surecolor T3170 Wireless Printer ,, $1295, 
+ISG,Overland Blueprint,Canon,Printer,Canon Imageprograf Ipf670Printer ,, $1295, 
+ISG,Overland Blueprint,HP,Printer,HP Designjet T120 Printer ,, $1201, 
+E-Commerce,B&H,Epson,Printer,24Surecolor T3470 Large Format Printer ,EPSCT3470SR, $1895.00,Shipping Charges Apply 
+E-Commerce,Vistek,HP,Printer,HP Designjet T520 36-In Printer ,CQ893C#B1K , $4099.00, 
+NSP,PCNation,Epson,Printer,Epson Surecolor T-Series T7000 Inkjet Large Format Printer44Print WidthColor ,SCT7000SE, $3995.00, 
+E-Commerce,Walmart,HP,Printer,HP Designjet T120 24-In Printer ,, $649.00,Free Shipping
+E-Commerce,NewEgg,HP,Printer,HP Designjet T520 2400 X 1200 Dpi Color Print Quality Wi-Fi Thermal Inkjet Designjet Color Inkjet Printer ,, $1250,Free Shipping
+E-Commerce,NewEgg,HP,Printer,HP Designjet T120 24Large-Format Inkjet Printer Office Bundle ,, $743,Free Shipping
+E-Commerce,NewEgg,HP,Printer,HP Designjet T120 24Large-Format Inkjet Printer Essential Bundle ,, $726,Free Shipping
+E-Commerce,NewEgg,HP,Printer,HP Designjet T120 24Large-Format Inkjet Printer 2Pack Bundle ,, $1394,Free Shipping
+E-Commerce,B&H,Epson,Printer,Surecolor Multifunction Module For T5270T5270D Printers ,T850600, $4195.00,Shipping Charges Apply 
+E-Commerce,NewEgg,HP,Printer,HP Designjet T1202018 EditionLarge-Format PrinterColorInk-Jet Designjet T120 24 Inch Printer ,, $1347,Free Shipping
+E-Commerce,Walmart,Canon,Printer,Canon Imageprograf Ipf670ELarge-Format PrinterColorInk-Jet ,, $1574.99,Free Shipping
+E-Commerce,B&H,Epson,Printer,Surecolor T5270 36Large-Format Inkjet Printer ,EPSCT5270SR, $3195.00,Free Shipping
+E-Commerce,NewEgg,Canon,Printer,Canon Imageprograf Ipf670E Inkjet Printer Imageprograf Ipf670E Inkjet Printer ,, $886,Free Shipping
+E-Commerce,Dell,Epson,Printer,Epson T3170 Inkjet PrinterWi-Fi  ,SCT3170SR, $1148.99,Free Shipping
+E-Commerce,Vistek,Epson,Printer,Epson Mfp Scanner For T7270(DSurecolor Printer (Sct44Scan ,SCT44SCAN , $5039.00, 
+E-Commerce,B&H,Epson,Printer,Surecolor T7270D 44Dual Roll Large-Format Inkjet Printer ,EPT850UCVLM, $5295.00,Free Shipping
+E-Commerce,Dell,Epson,Printer,Epson T3270 Inkjet Printer ,SCT3270SR, $2688.99,Free Shipping
+E-Commerce,Vistek,Epson,Printer,Epson Surecolor T3470 Printer With Wifi ,SCT3470SR , $2465.00, 
+E-Commerce,B&H,Epson,Printer,Surecolor T5270D 36Dual Roll Large-Format Inkjet Printer ,SCT5270SR, $4595.00,Shipping Charges Apply 
+E-Commerce,Vistek,Canon,Printer,Canon Imageprograf Ipf770 Large Format Printer ,9856B002 , $3799.00, 
+E-Commerce,Vistek,Epson,Printer,Epson Surecolor T7270 Printer WSingle-Roll Configuration ,SCT7270SR , $4219.00, 
+E-Commerce,NewEgg,HP,Printer,HP Designjet T520 2400 X 1200 Dpi Color Print Quality Wi-Fi Thermal Inkjet Designjet Color Inkjet Printer ,, $1250,Free Shipping
+E-Commerce,Vistek,Canon,Printer,Canon Imageprograf Ipf670E 24Large Format Printer ,2162C002 , $1339.99, 
+E-Commerce,NewEgg,HP,Printer,HP Designjet T520 36Large-Format Inkjet Printer Office Bundle ,, $1997,Free Shipping
+ISG,Tartar Supply,Epson,Printer,Epson Surecolor T3470 24In Workgroup Inkjet PrinterSpecial Offer  ,SCT3470SR, $1589.00,Free Shipping
+E-Commerce,NewEgg,HP,Printer,HP Designjet T520 36Large-Format Inkjet Printer Essential Bundle ,, $1990,Free Shipping
+E-Commerce,B&H,HP,Printer,Designjet T520 24Large-Format Inkjet Printer ,HEDJT52024, $1250.00,Free Shipping
+E-Commerce,Vistek,Epson,Printer,Epson Surecolor T3270 Printer WSingle-Roll Configuration ,SCT3270SR , $3034.00, 
+E-Commerce,NewEgg,HP,Printer,HP Designjet T520 36Large-Format Inkjet Printer 2Pack Bundle ,, $3949,Free Shipping
+E-Commerce,B&H,HP,Printer,Designjet T520 36Large-Format Inkjet Printer ,CQ890C#B1K, $2495.00,Shipping Charges Apply 
+E-Commerce,Epson,Epson.ca,Printer,Surecolor T3470 Printer Printer ,, Cad 										$2595.00, 
+E-Commerce,Dell,Epson,Printer,Epson T5270 Single Roll Inkjet Printer ,SCT5270SR, $3600.99,Free Shipping
+E-Commerce,B&H,HP,Printer,Designjet T120 24Large-Format Inkjet Printer ,HEDJ24T120, $549.99,Free Shipping
+E-Commerce,B&H,HP,Printer,Designjet T120 24Professional Printer ,HEDJ24T120K, $799.99,Free Shipping
+E-Commerce,B&H,HP,Printer,24Stand For Designjet T120 Printer ,HEDJT120PROP, $249.00,Free Shipping
+E-Commerce,B&H,HP,Printer,Designjet T520 36Color Inkjet Eprinter ,HEHP71129YIC, $664.95, 
+E-Commerce,B&H,HP,Printer,Designjet T520 24Color Inkjet Eprinter ,HEMICT120, $60.41, 
+E-Commerce,BuyVPC,HP,Printer,HP Designjet T520 Inkjet Large Format Printer24Print WidthColor ,CQ890C#B1K, $1750, 
+E-Commerce,NewEgg,HP,Printer,HP Designjet T525 24-In Printer ,, $1767,Free Shipping
+E-Commerce,B&H,Epson,Printer,Surecolor Multifunction Module For T7270T7270D Printers ,T619300, $4195.00,Shipping Charges Apply 
+E-Commerce,BuyVPC,Epson,Printer,Epson Surecolor Sct5170Sr Inkjet Large Format Printer36Print WidthColor ,SCT5170SR, $1805, 
+E-Commerce,Epson,Epson (US),Printer,Surecolor T3270 Single Roll Edition Printer ,, $2995.00, 
+E-Commerce,Vistek,Epson,Printer,Epson Surecolor T5270D Printer WDual-Roll Configuration ,SCT5270DR , $5419.00, 
+E-Commerce,B&H,Epson,Printer,Surecolor T7270D 44Dual Roll Large-Format Inkjet Printer ,EPPLPSB50, $5295.00,Free Shipping
+E-Commerce,B&H,Epson,Printer,Surecolor T7270 44Large-Format Inkjet Printer ,EPSCT7270SR, $3595.00,Free Shipping
+E-Commerce,Vistek,Canon,Printer,Canon Imageprograf Ipf670 Large Format Printer ,9854B005 , $1389.00, 
+E-Commerce,Staples,Epson,Printer,Epson Surecolor T5270 Single Roll Edition Printer ,, $3695.99, 
+E-Commerce,Staples,Epson,Printer,Epson Surecolor T5270 36Large Format Inkjet Color PrinterWhite ,, $3494.49, 
+E-Commerce,Staples,Epson,Printer,Epson Surecolor T3470 Wireless 24Large Format Inkjet Color PrinterWhite ,, $1995.99, 
+E-Commerce,Staples,Epson,Printer,EpsonAdobePostscript3C12C891131 Gary Hardware Module For Surecolor Sc-T3200 Printer ,, $1145.99, 
+E-Commerce,Epson,Epson (US),Printer,Surecolor T7270 Single Roll Edition Printer ,, $4995.00, 
+E-Commerce,BuyVPC,HP,Printer,HP Designjet T120 Inkjet Large Format Printer24Print WidthColor ,CQ891C#B1K, $999, 
+E-Commerce,Vistek,HP,Printer,HP Designjet T520 36-In Printer ,CQ893C#B1K , $4099.00, 
+E-Commerce,Epson,Epson (US),Printer,Surecolor T7270D Dual Roll Edition Printer ,, $6995.00, 
+E-Commerce,Epson,Epson (US),Printer,Surecolor T5270 Single Roll Edition Printer ,, $3995.00, 
+E-Commerce,Epson,Epson (US),Printer,Surecolor T3270 Screen Print Edition Printer ,, $3495.00, 
+E-Commerce,Epson,Epson (US),Printer,Surecolor T7270D Dual Roll EditionRefurbished Printer ,, $3560.00, 
+E-Commerce,Epson,Epson (US),Printer,Surecolor T5270 Single Roll EditionRefurbished Printer ,, $1980.00, 
+E-Commerce,Epson,Epson (US),Printer,Surecolor T3270 Single Roll EditionRefurbished Printer ,, $1620.00, 
+E-Commerce,Epson,Epson (US),Printer,Surecolor T7270 Single Roll EditionRefurbished Printer ,, $2435.00, 
+E-Commerce,Epson,Epson (US),Printer,Surecolor T5270D Dual Roll EditionRefurbished Printer ,, $2860.00, 
+E-Commerce,Staples,Epson,Printer,Epson Surecolor T5170 Wireless 36Large Format Inkjet Color PrinterWhite ,, $2159.99, 
+E-Commerce,Vistek,Epson,Printer,Epson Surecolor T5270 Printer WSingle-Roll Configuration ,SCT5270SR , $3789.00, 
+ISG,Tartar Supply,Epson,Printer,Epson Surecolor T3270 24In Inkjet Printer Up To 660 Sft/HrSpecial Offer  ,SCT3270SR, $2545.00,Free Shipping
+E-Commerce,Dell,Epson,Printer,Epson T5270D Inkjet Printer ,SCT5270DR, $5427.99,Free Shipping
+E-Commerce,Walmart,HP,Printer,HP Cq893C#B1K Designjet T520 Printer WHP Thermal Inkjet Print Technology ,, $2495.00,Free Shipping
+ISG,Tartar Supply,Epson,Printer,Epson Surecolor T5470 36In Workgroup Inkjet PrinterSpecial Offer  ,SCT5470SR, $2019.00,Free Shipping
+ISG,Tartar Supply,Epson,Printer,Epson Surecolor T5270 36In Inkjet Printer Up To 740 Sft/HrSpecial Offer  ,SCT5270SR, $3195.00,Free Shipping
+E-Commerce,Walmart,HP,Printer,HP Designjet T520 36Large-Format Inkjet Printer Office Bundle ,, $2312.99,No_Data 
+E-Commerce,Epson,Epson.ca,Printer,Surecolor T3170 Wireless Printer Printer ,, Cad 										$1295.00, 
+ISG,Tartar Supply,Epson,Printer,Epson Surecolor T3270 Screen Print Edition 24In PrinterSpecial Offer  ,SCT3270SP, $3045.00,Free Shipping
+ISG,Tartar Supply,Epson,Printer,Epson Surecolor T7270 44In Inkjet Printer Up To 780 Sft/HrSpecial Offer  ,SCT7270SR, $3595.00,Free Shipping
+NSP,PCNation,Epson,Printer,Epson Surecolor T3470 Inkjet Large Format Printer24Print WidthColor ,SCT3470SR, $1757.85, 
+ISG,Tartar Supply,Epson,Printer,Epson Surecolor T7270D Dual Roll 44In Inkjet PrinterSpecial Offer  ,SCT7270DR, $5295.00,Free Shipping
+E-Commerce,BuyVPC,Epson,Printer,Epson Surecolor Sct3170Sr Inkjet Large Format Printer24Print WidthColor ,SCT3170SR, $868, 
+ISG,Tartar Supply,Epson,Printer,Epson Surecolor T5270D Dual Roll 36In Inkjet PrinterSpecial Offer  ,SCT5270DR, $4845.00,Free Shipping
+ISG,Tartar Supply,Epson,Printer,Epson Surecolor T5170 36 InWireless T-Series PrinterSpecial Offer  ,SCT5170SR, $1895.00,Free Shipping
+E-Commerce,Epson,Epson (US),Printer,Surecolor T5270D Dual Roll Edition Printer ,, $5995.00, 
+ISG,Tartar Supply,Epson,Printer,Epson Surecolor T3170 24 InWireless Desktop PrinterSpecial Offer  ,SCT3170SR, $895.00,Free Shipping
+E-Commerce,Staples,Epson,Printer,Epson Surecolor T5470 Wireless 36Wide Large Format Inkjet Color PrinterWhite ,, $2495.99, 
+NSP,PCNation,Epson,Printer,Epson Surecolor T5470 Inkjet Large Format Printer36Print WidthColor ,SCT5470SR, $2233.95, 
+NSP,PCNation,Epson,Printer,Epson Surecolor Sct5170Sr Inkjet Large Format Printer36Print WidthColor ,SCT5170SR, $1750.29, 
+NSP,PCNation,Epson,Printer,Epson Surecolor Sct3170Sr Inkjet Large Format Printer24Print WidthColor ,SCT3170SR, $845.27, 
+E-Commerce,B&H,Epson,Printer,Surecolor T5170 36Wireless Inkjet Printer ,EPSCT5170, $1895.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41W Ultrachrome Xd2 Yellow Ink Cartridge (110Ml) ,EPT41P320MG, $66.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41W Ultrachrome Xd2 Black Ink Cartridge (110Ml) ,T41P320, $66.00,Free Shipping
+E-Commerce,Vistek,Epson,Ink,Epson Sct3470Sr/Sct5470 Ink Set 110Ml ,, $344.99,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41P Ultrachrome Xd2 Cyan Ink Cartridge (350Ml) ,EPC13S400064, $161.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41P Ultrachrome Xd2 Magenta Ink Cartridge (350Ml) ,C13S400064, $161.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41P Ultrachrome Xd2 Yellow Ink Cartridge (350Ml) ,EPPT3454B1, $161.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41P Ultrachrome Xd2 Black Ink Cartridge (350Ml) ,EPPT3454B1, $161.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41W Ultrachrome Xd2 Cyan Ink Cartridge (110Ml) ,EPT41P220CY, $66.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41W Ultrachrome Xd2 Magenta Ink Cartridge (110Ml) ,T41P220, $66.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome K3 Vivid Light Magenta Ink Cartridge (80 Ml) ,EPC13S210057, $56.43,Free Shipping
+E-Commerce,Walmart,HP,Ink,HP 711 38-Ml Black Designjet Ink Cartridge ,, Price Range$33To31,No_Data 
+E-Commerce,Vistek,Epson,Ink,Epson T41W220Cyan Ultrachrome Xd2 Ink Cartridge 110 Ml ,T41W220 , $86.99, 
+E-Commerce,B&H,Canon,Ink,Imageprograf Ipf670E 24Large-Format Inkjet Printer With St-26 Stand Kit ,2162C002AA, $1098.95,Free Shipping
+E-Commerce,Vistek,Epson,Ink,Epson T41P520 Black Ultrachrome Xd2 Ink Cartridge 350 Ml ,T41P520, $209.99,Free Shipping
+E-Commerce,B&H,Epson,Ink,T850600 Ultrachrome Hd Vivid Light Magenta Ink Cartridge (80 Ml) ,EPT619300, $58.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T850300 Ultrachrome Hd Vivid Magenta Ink Cartridge (80 Ml) ,EPT850UCVLM, $58.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40V Black Ink Cartridge (50Ml) ,EPT40W120, $39.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40V Magenta Ink Cartridge (26Ml) ,T40W420, $25.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40V Yellow Ink Cartridge (26Ml) ,EPT40W420, $25.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40V Cyan Ink Cartridge (26Ml) ,EPT40W320, $25.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,T850600 Ultrachrome Hd Vivid Light Magenta Ink Cartridge (80 Ml) ,C13S210055, $58.00,Free Shipping
+E-Commerce,Vistek,Epson,Ink,Epson Sct3470Sr/Sct5470 Ink Set 350Ml ,, $836.99,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40W Black High-Capacity Ink Cartridge (80Ml) ,C12C933131, $54.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40W Cyan High-Capacity Ink Cartridge (50Ml) ,EPC13S210055, $39.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40W Yellow High-Capacity Ink Cartridge (50Ml) ,EPC12C933131, $39.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40W Magenta High-Capacity Ink Cartridge (50Ml) ,T580B00, $39.95,Free Shipping
+E-Commerce,NewEgg,HP,Ink,LdRemanufactured Replacements For Hewlett Packard 711 5Pk Ink Cartridges2 Cz133A Black1 Cz130A Cyan1 Cz131A Magenta1 Cz132A Yellow For HP Designjet T120T521 ,, $54,Free Shipping
+E-Commerce,Staples,HP,Ink,HP 711 Yellow Ink Cartridge29Ml (Cz132A) ,, $29.92, 
+E-Commerce,Staples,HP,Ink,HP 711 Magenta Ink Cartridge29Ml (Cz131A) ,, $31.09, 
+E-Commerce,Staples,HP,Ink,HP 711 Yellow Ink Cartridges3/Pack29Ml (Cz136A) ,, $62.29, 
+E-Commerce,Staples,HP,Ink,HP 711 Black Ink Cartridge38Ml (Cz129A) ,, $35.88, 
+E-Commerce,Staples,HP,Ink,HP 711 Cyan Ink Cartridges3/Pack29Ml (Cz134A) ,, $60.31, 
+E-Commerce,Staples,HP,Ink,HP 711 Magenta Ink Cartridges3/Pack29Ml (Cz135A) ,, $62.29, 
+E-Commerce,Vistek,Epson,Ink,Epson T41W320 Magenta Ultrachrome Xd2 Ink Cartridge 110 Ml ,T41W320 , $86.99, 
+ISG,Tartar Supply,HP,Ink,HP No 711 29-Ml Cyan Ink Cartridge For Designjet  ,CZ130A, $24.99,Free Shipping
+ISG,Tartar Supply,HP,Ink,HP No 711 29-Ml Yellow Ink Cartridge For Designjet  ,CZ132A, $25.69,Free Shipping
+ISG,Tartar Supply,HP,Ink,HP No 711 3-Pack 29-Ml Magenta Ink Cartridge For Designjet ,CZ135A, $53.39,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40W Magenta High-Capacity Ink Cartridge (50Ml) ,C13S210057, $39.95,Free Shipping
+ISG,Tartar Supply,HP,Ink,HP No 711 38-Ml Black Ink Cartridge For Designjet ,CZ129A, $32.99,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40W Yellow High-Capacity Ink Cartridge (50Ml) ,EPC12C933151, $39.95,Free Shipping
+ISG,Tartar Supply,HP,Ink,HP No 711 29-Ml Magenta Ink Cartridge For Designjet  ,CZ131A, $25.69,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40W Black High-Capacity Ink Cartridge (80Ml) ,C12C933151, $54.95,Free Shipping
+ISG,Tartar Supply,HP,Ink,HP No 711 3-Pack 29-Ml Cyan Ink Cartridge For Designjet ,CZ134A, $53.39,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40W Cyan High-Capacity Ink Cartridge (50Ml) ,EPC13S210055, $39.95,Free Shipping
+ISG,Tartar Supply,HP,Ink,HP No 711 3-Pack 29-Ml Yellow Ink Cartridge For Designjet ,CZ136A, $53.39,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40V Cyan Ink Cartridge (26Ml) ,EPT40W320, $25.95,Free Shipping
+ISG,Tartar Supply,HP,Ink,HP No 711 80-Ml Black Ink Cartridge For Designjet  ,CZ133A, $53.39,Free Shipping
+E-Commerce,B&H,Epson,Ink,T603500 Light Cyan Ultrachrome K3 Ink Cartridge (220 Ml) ,T40W320, $88.50,Free Shipping
+E-Commerce,NewEgg,HP,Ink,HP 711 Ink CartridgeTriple PackMagenta ,, $60,Free Shipping
+E-Commerce,NewEgg,HP,Ink,HP 711 Ink CartridgeBlack ,, $35,Free Shipping
+E-Commerce,NewEgg,HP,Ink,HP 711 Ink CartridgeTriple PackCyan ,, $60,Free Shipping
+E-Commerce,NewEgg,HP,Ink,HP 711 Ink CartridgeTriple PackYellow ,, $60,Free Shipping
+E-Commerce,B&H,Epson,Ink,Pjic4-M Magenta Ink Cartridge For The Pp-100 Discproducer Auto Printer  ,EPSCT7270DR, $41.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,T850300 Ultrachrome Hd Vivid Magenta Ink Cartridge (80 Ml) ,T619300, $58.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T850600 Ultrachrome Hd Vivid Light Magenta Ink Cartridge (80 Ml) ,EPSCT5270DR, $58.00,Free Shipping
+E-Commerce,NewEgg,HP,Ink,HP 711 Ink CartridgeYellow ,, $29,Free Shipping
+E-Commerce,NewEgg,HP,Ink,HP 711 High Yield Ink CartridgeBlack ,, $58,Free Shipping
+E-Commerce,NewEgg,HP,Ink,HP 711 Ink CartridgeCyan ,, $29,Free Shipping
+E-Commerce,NewEgg,HP,Ink,HP 711 Ink CartridgeMagenta ,, $29,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40V Yellow Ink Cartridge (26Ml) ,EPT40W420, $25.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40V Magenta Ink Cartridge (26Ml) ,EPT40W120, $25.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,Ultrachrome Xd2 T40V Black Ink Cartridge (50Ml) ,T40W120, $39.95,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 700Ml Ink Set ,BNDL-759, $1169.00,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 110Ml Cyan ,T692200, $66.00,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 110Ml Matte Black ,T692500, $66.00,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 110Ml Yellow ,T692400, $66.00,Free Shipping
+E-Commerce,B&H,HP,Ink,711 Black Ink Cartridge (80Ml) ,CQ893C#B1K, $58.33,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 350Ml Ink Set ,BNDL-758, $749.00,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 350Ml Matte Black ,T693500, $161.00,Free Shipping
+E-Commerce,B&H,HP,Ink,711 Yellow Ink Cartridge (29Ml) ,B3Q37A, $29.92,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 350Ml Yellow ,T693400, $161.00,Free Shipping
+E-Commerce,B&H,HP,Ink,711 Magenta Ink Cartridge (29Ml) ,HEHP71180B, $29.92,Free Shipping
+E-Commerce,B&H,HP,Ink,Designjet T120 24Large-Format Printer And Extra 711 Ink Cartridge Set Kit ,CQ891BB1K, $664.95,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 700Ml Matte Black ,T694500, $245.00,Free Shipping
+E-Commerce,B&H,HP,Ink,711 Cyan Ink Cartridge (29Ml) ,CZ133A, $29.92,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 700Ml Yellow ,T694400, $245.00,Free Shipping
+E-Commerce,B&H,HP,Ink,711 Black Ink Cartridge (38Ml) ,HESPIN24, $35.98,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 110Ml Magenta ,T692300, $66.00,Free Shipping
+E-Commerce,B&H,HP,Ink,Bright White Inkjet Paper (24X 150Roll) ,CQ891C#B1K, $16.99,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 110Ml Photo Black ,T692100, $66.00,Free Shipping
+E-Commerce,B&H,HP,Ink,Designjet T120 24Printer With One Black And Three Color Inks Kit ,HEST120, $35.98, 
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 350Ml Cyan ,T693200, $161.00,Free Shipping
+E-Commerce,Staples,Canon,Ink,Canon2214B001 Ink130 MlPhoto Gray ,, $83.69, 
+E-Commerce,B&H,HP,Ink,711 Black Ink Cartridge (38Ml) ,B3Q35A, $58.33,Free Shipping
+E-Commerce,B&H,HP,Ink,Designjet T120 24Large-Format Printer And Extra 711 Ink Cartridge Set Kit ,CZ132A, $60.41,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 350Ml Magenta ,T693300, $161.00,Free Shipping
+E-Commerce,Staples,Canon,Ink,CanonPfi-103Gy (2213B001AaGray Ink Cartridge ,, $84.49, 
+E-Commerce,B&H,HP,Ink,711 Black Ink Cartridge (80Ml) ,HEBWB24150, $220.24,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 350Ml Photo Black ,T693100, $161.00,Free Shipping
+E-Commerce,Staples,Canon,Ink,Canon2212B001 Ink130 MlBlack ,, $83.69, 
+E-Commerce,B&H,HP,Ink,711 Cyan Ink Cartridge (29Ml3-Pack) ,CZ131A, $60.41,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 700Ml Cyan ,T694200, $245.00,Free Shipping
+E-Commerce,Staples,Canon,Ink,Canon Pfi-101Pc Photo Cyan Ink Cartridge (0887B001) ,, $89.99, 
+E-Commerce,B&H,HP,Ink,711 Magenta Ink Cartridge (29Ml3-Pack) ,HEHP71129CC, $339.00,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 700Ml Magenta ,T694300, $245.00,Free Shipping
+E-Commerce,B&H,HP,Ink,711 Yellow Ink Cartridge (29Ml) ,HEHP71138B, $29.92,Free Shipping
+ISG,Tartar Supply,Epson,Ink,Epson Surecolor T-Series Ultrachrome Xd 700Ml Photo Black ,T694100, $245.00,Free Shipping
+E-Commerce,B&H,HP,Ink,711 Magenta Ink Cartridge (29Ml) ,CZ129A, $29.92,Free Shipping
+E-Commerce,NewEgg,HP,Ink,Inkuten 4 Refillable Cartridges For HP 711 Ink Cartridge HP Designjet PrintersT120And T525 With 4X100Ml Dye InkAuto Reset Chips (Arc) ,, $61,Free Shipping
+E-Commerce,NewEgg,HP,Ink,Inkuten Refillable Cartridges For HP 711 711Xl Ink Cartridge HP Designjet PrintersT120And T525 ,, $39,Free Shipping
+E-Commerce,NewEgg,HP,Ink,Inkuten 4 Pre-Filled Refillable Cartridges For HP 711 Ink Cartridge HP Designjet PrintersT120And T525 With Auto Reset Chips (Arc) ,, $46,Free Shipping
+E-Commerce,B&H,Epson,Ink,Pjic4-M Magenta Ink Cartridge For The Pp-100 Discproducer Auto Printer  ,SCT44SCAN, $41.95,Free Shipping
+E-Commerce,B&H,Epson,Ink,T850300 Ultrachrome Hd Vivid Magenta Ink Cartridge (80 Ml) ,S041407, $58.00,Free Shipping
+E-Commerce,Vistek,Epson,Ink,Epson T41P220 Cyan Ultrachrome Xd2 Ink Cartridge 350 Ml ,T41P220, $209.99,Free Shipping
+E-Commerce,Staples,HP,Ink,HP 711 Black Ink Cartridge (Cz133A80MlHigh Yield ,, $58.23, 
+E-Commerce,B&H,Epson,Ink,T41P Ultrachrome Xd2 Cyan Ink Cartridge (350Ml) ,EPC13S400064, $161.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41P Ultrachrome Xd2 Magenta Ink Cartridge (350Ml) ,C13S400064, $161.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41P Ultrachrome Xd2 Yellow Ink Cartridge (350Ml) ,EPPT3454B1, $161.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41P Ultrachrome Xd2 Black Ink Cartridge (350Ml) ,EPPT3454B1, $161.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41W Ultrachrome Xd2 Cyan Ink Cartridge (110Ml) ,EPT41P220CY, $66.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41W Ultrachrome Xd2 Magenta Ink Cartridge (110Ml) ,T41P220, $66.00,Free Shipping
+E-Commerce,B&H,Epson,Ink,T41W Ultrachrome Xd2 Yellow Ink Cartridge (110Ml) ,EPT41P320MG, $66.00,Free Shipping
+E-Commerce,Staples,Epson,Ink,Epson 324 Ultrachrome Hg2 Orange Ink Cartridge (T324920) ,, $18.79, 
+E-Commerce,Staples,Epson,Ink,Epson 324 Ultrachrome Hg2 Matte Black Ink Cartridge (T324820) ,, $18.79, 
+E-Commerce,Staples,Epson,Ink,Epson 324 Ultrachrome Hg2 Red Ink Cartridge (T324720) ,, $18.79, 
+E-Commerce,B&H,Epson,Ink,T41W Ultrachrome Xd2 Black Ink Cartridge (110Ml) ,T41P320, $66.00,Free Shipping
+E-Commerce,Staples,Epson,Ink,Epson 324 Cyan Ink CartridgeStandard Yield (T324220) ,, $18.79, 
+E-Commerce,Staples,Epson,Ink,Epson 324 Photo Black Ink CartridgeStandard (T324120) ,, $18.79, 
+E-Commerce,Staples,Epson,Ink,Epson 324 Yellow Ink CartridgeStandard (T324420) ,, $18.79, 
+E-Commerce,Staples,Epson,Ink,Epson 324 Magenta Ink CartridgeStandard (T324320) ,, $18.79, 
+E-Commerce,Staples,Epson,Ink,Epson T3240 Gloss Optimizer Ink CartridgeStandard (T324020) ,, $18.79, 
+E-Commerce,Staples,Epson,Ink,Epson T760720 (T760Ultrachrome Hd Ink25.9 MlLight Black ,, $36.09, 
+E-Commerce,Staples,Epson,Ink,Epson T760920 (T760Ultrachrome Hd Ink25.9 MlLight Light Black ,, $36.09, 
+E-Commerce,Staples,Epson,Ink,Epson T760420 (T760Ultrachrome Hd Ink25.9 MlYellow ,, $36.09, 
+E-Commerce,Staples,Epson,Ink,Epson T760320 (T760Ultrachrome Hd Ink25.9 MlVivid Magenta ,, $36.09, 
+E-Commerce,Staples,Epson,Ink,Epson T760220 (T760Ultrachrome Hd Ink25.9 MlCyan ,, $36.09, 
+E-Commerce,Staples,Canon,Ink,Canon2211B001 Ink130 MlMatte Black ,, $84.49, 
+E-Commerce,Staples,HP,Ink,HP 711 Cyan Ink Cartridge29Ml (Cz130A) ,, $29.92, 
+E-Commerce,B&H,HP,Ink,711 Cyan Ink Cartridge (29Ml) ,HEHP71180B, $60.41,Free Shipping
+E-Commerce,B&H,HP,Ink,711 Cyan Ink Cartridge (29Ml3-Pack) ,CZ133A, $60.41,Free Shipping
+E-Commerce,B&H,HP,Ink,711 Magenta Ink Cartridge (29Ml3-Pack) ,HEHP711DP, $60.41,Free Shipping
+NSP,PCNation,Epson,Ink,Epson Ultrachrome Hd Original Ink Cartridge ,T760420, $40.42, 
+NSP,PCNation,Epson,Ink,Epson Ultrachrome Hd T760 Original Ink Cartridge ,T760320, $40.42, 
+NSP,PCNation,Epson,Ink,Epson Ultrachrome Hd T760 Original Ink Cartridge ,T760620, $40.42, 
+NSP,PCNation,Epson,Ink,Epson Ultrachrome Hd T760 Original Ink Cartridge ,T760120, $40.42, 
+NSP,PCNation,Epson,Ink,Epson Ultrachrome Hd T760 Original Ink Cartridge ,T760820, $40.42, 
+NSP,PCNation,Epson,Ink,Epson Ultrachrome Hd T760 Original Ink Cartridge ,T760920, $40.42, 
+NSP,PCNation,Epson,Ink,Epson Ultrachrome Hd T760 Original Ink Cartridge ,T760520, $40.42, 
+NSP,PCNation,Epson,Ink,Epson Ultrachrome Hd T760 Original Ink Cartridge ,T760720, $40.42, 
+NSP,PCNation,Epson,Ink,Epson Ultrachrome Hd T760 Original Ink Cartridge ,T760220, $40.42, 
+E-Commerce,B&H,Epson,Accessory,36Roll Feed Spindle For Surecolor T5470 Printer ,SCT5470SR, $159.00,Free Shipping
+E-Commerce,B&H,Epson,Accessory,Borderless Replacement Pad Kit For Surecolor T3470T5470 Printers ,EPC12C933301, $49.00,Free Shipping
+E-Commerce,B&H,Epson,Accessory,1-Year Extended Service Plan For Surecolor T3470 And T5470 Printers ,C12C933301, $175.00,Free Shipping
+E-Commerce,B&H,Epson,Accessory,Surecolor T-Series Replacement Ink Maintenance Tank ,SCT3270SR, $65.00,Free Shipping
+E-Commerce,B&H,Canon,Accessory,1-Year Ecarepak Extended Service Plan For Imageprograf Ipf670E Printer ,CAIPF670ESK, $142.50,Free Shipping
+E-Commerce,B&H,Canon,Accessory,2-Year Ecarepak Extended Service Plan For Imageprograf Ipf670E Printer ,CAIPF670E1YR, $237.50,Free Shipping
+E-Commerce,B&H,Canon,Accessory,Pfi-007M Magenta Ink Tank (90Ml) ,1708B490AA, $57.00,Free Shipping
+E-Commerce,B&H,Canon,Accessory,Pfi-007C Cyan Ink Tank (90Ml) ,CAIPF670E2YR, $57.00,Free Shipping
+E-Commerce,B&H,Canon,Accessory,Pfi-007Y Yellow Ink Tank (90Ml) ,1708B491AA, $57.00,Free Shipping
+E-Commerce,B&H,Epson,Accessory,T619000 Maintenance Box ,T850600, $17.50,Free Shipping
+E-Commerce,B&H,Canon,Accessory,Pfi-007Mbk Matte Black Ink Tank (90Ml) ,CAPFI007M, $57.00,Free Shipping
+E-Commerce,B&H,Canon,Accessory,Pfi-007Bk Black Ink Tank (90Ml) ,2145C001AA, $57.00,Free Shipping
+E-Commerce,B&H,Canon,Accessory,1-Year Ecarepak Extended Service Plan For Ipf670 Printer ,CAPFI007C, $190.00,Free Shipping
+E-Commerce,B&H,Canon,Accessory,2-Year Ecarepak Extended Service Plan For Ipf670 Printer ,2144C001AA, $370.50,Free Shipping
+E-Commerce,B&H,Canon,Accessory,1-Year Ecarepak Extended Service Plan For Ipf670 PrinterL24E Scanner ,CAPFI007Y, $788.50,Free Shipping
+E-Commerce,B&H,Canon,Accessory,2-Year Ecarepak Extended Service Plan For Ipf670 PrinterL24E Scanner ,2146C001AA, $1520.00,Free Shipping
+E-Commerce,B&H,Canon,Accessory,1-Year Ecarepak Extended Service Plan For Ipf670 PrinterL24 Scanner ,CAPFI007MBK, $788.50,Free Shipping
+E-Commerce,B&H,Canon,Accessory,2-Year Ecarepak Extended Service Plan For Ipf670 PrinterL24 Scanner ,2142C001AA, $1520.00,Free Shipping
+E-Commerce,B&H,Canon,Accessory,Installation Service For Ipf670 Large-Format Printer With L24E Scanner ,CAPFI007BK, $565.25,Free Shipping
+E-Commerce,B&H,Canon,Accessory,1-Year Ecarepak Extended Service Plan For Ipf 670 PrinterL24Ei Scanner ,2143C001AA, $830.00,Free Shipping
+E-Commerce,B&H,Canon,Accessory,2-Year Ecarepak Extended Service Plan For Ipf670 PrinterL24Ei Scanner ,CAECP1IPF670, $1600.00,Free Shipping
+E-Commerce,B&H,Epson,Accessory,36Roll Feed Spindle For Surecolor T5170 Wireless Printer ,C13S210057, $159.00,Free Shipping
+E-Commerce,Staples,HP,Accessory,HPB3Q36A 24Printer Spindle For Designjet T120/T520 Series Printer ,, $80.19, 
+E-Commerce,Staples,HP,Accessory,HP Designjet T520 36Spindle (B3Q37A) ,, $88.99, 
+E-Commerce,B&H,Epson,Accessory,24Roll Feed Spindle For Surecolor T3170 Wireless Printer ,SCT3170SR, $99.00,Free Shipping
+E-Commerce,B&H,Epson,Accessory,Replacement Ink Maintenance Tank For Surecolor T3170T5170 Wireless Printer ,EPC12C933211, $39.00,Free Shipping
+E-Commerce,B&H,Epson,Accessory,24Roll Feed Spindle For Surecolor T3470 Printer ,SCT3470SR, $99.00,Free Shipping
+E-Commerce,B&H,Epson,Accessory,Borderless Replacement Pad Kit For Surecolor T3470T5470 Printers ,EPC12C933281, $49.00,Free Shipping
+E-Commerce,B&H,Epson,Accessory,1-Year Extended Service Plan For Surecolor T3470 And T5470 Printers ,C12C933281, $175.00,Free Shipping
+E-Commerce,NewEgg,HP,Accessory,HP B3Q36A Designjet T120/T520 24Spindle ,, $89,Free Shipping
+E-Commerce,NewEgg,HP,Accessory,HPPrinter Spindle24HP Designjet T120/T520 24-In Spindle ,, $73,Free Shipping
+E-Commerce,NewEgg,HP,Accessory,UsedLike NewHP HP#B3Q36ADesignjet T120/T520 24-In Spindle ,, $90,Free Shipping
+E-Commerce,NewEgg,Canon,Accessory,Canon 2142C001 Pigment Matte Black Ink Tank 90Ml Black ,, $57,Free Shipping
+E-Commerce,NewEgg,Canon,Accessory,Canon 2144C001 Pfi-007CDye Cyan Ink Tank 90Ml ,, $57,Free Shipping
+E-Commerce,B&H,Epson,Accessory,Surecolor T-Series Replacement Ink Maintenance Tank ,SCT5270DR, $65.00,Free Shipping
+E-Commerce,NewEgg,Canon,Accessory,Canon 90Ml Dye Ink Tank Bundle For Imageprograf Ipf670E PrinterConsists Of Pfi007Bk BlackPfi007C CyanPfi007M MagentaPfi007Mbk Matte BlackPfi-007Y Yellow ,, $860,Free Shipping
+E-Commerce,NewEgg,Canon,Accessory,Canon 90Ml Dye Ink Tank Bundle For Imageprograf Ipf670E PrinterConsists Of Pfi007Bk BlackPfi007C CyanPfi007M MagentaPfi007Mbk Matte BlackPfi-007Y Yellow ,, $866,Free Shipping
+E-Commerce,NewEgg,Canon,Accessory,Canon 90Ml Dye Ink Tank Bundle For Imageprograf Ipf670E PrinterConsists Of Pfi007Bk BlackPfi007C CyanPfi007M MagentaPfi007Mbk Matte BlackPfi-007Y Yellow ,, $849,Free Shipping
+E-Commerce,NewEgg,Canon,Accessory,Canon Pfi-007 90Ml Dye Ink Tank For Imageprograf Ipf670E PrinterYellow ,, $88,Free Shipping
+E-Commerce,NewEgg,Canon,Accessory,Canon Pfi-007 90Ml Dye Ink Tank For Imageprograf Ipf670E PrinterCyan ,, $87,Free Shipping
+E-Commerce,NewEgg,Canon,Accessory,Canon Pfi-007 90Ml Dye Ink Tank For Imageprograf Ipf670E PrinterBlack ,, $88,Free Shipping
+E-Commerce,NewEgg,Canon,Accessory,Canon Pfi-007 90Ml Dye Ink Tank For Imageprograf Ipf670E PrinterMagenta ,, $88,Free Shipping
+E-Commerce,NewEgg,Canon,Accessory,Canon 2145C001 Pfi-007MDye Magenta Ink Tank 90Ml Magenta ,, $57,Free Shipping
+E-Commerce,NewEgg,HP,Accessory,HP B3Q37A Designjet T520 36-In Spindle ,, $74,$6.99 Shipping 
+E-Commerce,NewEgg,HP,Accessory,HP 711 (C1Q10ADesignjet Printhead Replacement Kit ,, $220,Free Shipping
+ISG,Tartar Supply,Epson,Accessory,Epson Surecolor T-Series Replacement Cutter Blade ,S902006, $119.99,Free Shipping
+E-Commerce,B&H,HP,Accessory,Designjet T520 36Spindle ,HEDJT520PRO, $74.00,Free Shipping
+E-Commerce,B&H,HP,Accessory,Designjet 24Spindle For T120T520And T830 Printers ,HEDJT52036SP, $74.00,Free Shipping
+ISG,Tartar Supply,Epson,Accessory,Epson Surecolor T-Series Replacement Maintenance Tank ,T619300, $62.39,Free Shipping
+E-Commerce,B&H,HP,Accessory,711 Designjet Printhead Replacement Kit ,B3Q36A, $220.24,Free Shipping
+E-Commerce,B&H,HP,Accessory,711 Designjet Printhead Replacement Kit ,C1860A, $74.00,Free Shipping
+E-Commerce,B&H,HP,Accessory,Designjet 24Spindle For T120T520And T830 Printers ,HEDJ24T120Q, $29.92,Free Shipping
+E-Commerce,NewEgg,HP,Accessory,Inkuten Compatible Ciss Refill Ink Bottles (400Ml100Ml Per ColorForHP 711 Ink Cartridge HP Designjet PrintersT120And T525 ,, $26,Free Shipping
+E-Commerce,B&H,Epson,Accessory,Elplp69 Replacement Projector Lamp ,EPSCT44SCAN, Missing Price,Free Shipping
+E-Commerce,B&H,Epson,Accessory,Surecolor T-Series Replacement Ink Maintenance Tank ,SCT7270SR, $65.00,Free Shipping
+E-Commerce,B&H,Epson,Accessory,Replacement Ink Maintenance Tank For Surecolor T3170T5170 Wireless Printer ,SCT5170SR, $39.00,Free Shipping

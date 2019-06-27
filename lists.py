@@ -82,6 +82,17 @@ vistek_urllist = [
 
 
 ]
+tastar_urllist = [
+            'https://www.tastarsupply.com/inkjet-wide-format-c-67_109_112.html',
+            'https://www.tastarsupply.com/quick_link.php?keywords=INK_SCT357',
+            'https://www.tastarsupply.com/quick_link.php?keywords=INK_HP711'
+]
+overland_urllist = [
+            'https://www.overlandblueprint.com/plotters/'
+]
+pcnation_urllist = [
+            'https://www.pcnation.com/web/search.aspx?keywords=Epson+Surecolor'
+]
 company_list = [
 	["Epson", "Epson"],
 	["Canon", "Canon"],
@@ -96,4 +107,47 @@ remove_list = {
 	"P6000",
 	"P8000",
 	"P-600",
+    "P10000",
+    "P20000",
+    "P7000",
+    "P9000"
+}
+
+printer_include_list = {
+    "Printer",
+    "printer"
+}
+printer_exclude_list = {
+    "Spindle",
+    "Cyan",
+    "Magenta",
+    "Tank",
+    "Kit",
+    "Pad",
+    "Plan",
+    "Service",
+    "Refill"
+}
+ink_include_list = {
+    "Ink",
+    "Ultrachrome"
+}
+ink_exclude_list = {
+    "Bottles",
+    "Tank"
+}
+accessories_include_list = {
+    "Spindle",
+    "Tank",
+    "Bottles",
+    "Maintenance",
+    "Refill",
+    "Kit",
+    "Pad",
+    "Plan",
+    "Replacement",
+    "Service"
+}
+accessories_exlude_list = {
+
 }
