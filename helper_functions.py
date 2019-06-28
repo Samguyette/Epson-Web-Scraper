@@ -3,28 +3,30 @@
 # Desc:  Helper functions for main
 
 #import scraping tools
+import requests
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 import re
 import string
+import sys
 
 #import object class
 from product_class import Product
 
 #import data lists
-from lists import staples_urllist
-from lists import newegg_urllist
-from lists import bh_urllist
-from lists import walmart_urllist
-from lists import epson_urllist
-from lists import buyvpc_urllist
-from lists import dell_urllist
-from lists import vistek_urllist
-from lists import tastar_urllist
-from lists import company_list
-from lists import remove_list
-from lists import overland_urllist;
-from lists import pcnation_urllist
+from lists import *
+
+
+#function to create loading bar
+def progress(count, total, status=''):
+    bar_len = 60
+    filled_len = int(round(bar_len * count / float(total)))
+
+    percents = round(100.0 * count / float(total), 1)
+    bar = '=' * filled_len + '-' * (bar_len - filled_len)
+
+    sys.stdout.write('[%s] %s%s %s\r' % (bar, percents, '%', status))
+    sys.stdout.flush()
 
 
 #helper function for build_data_set
@@ -36,19 +38,265 @@ def loop_site(urllist, func, product_set):
 #loops urls lists through specific scraper
 def build_data_set(product_set):
 	#loop raw searches
+	progress(0,20, status='  Intern work beginning...\n')
 	loop_site(staples_urllist, pull_staples, product_set)
+	progress(1,20, status='  of data gathered...\n')
 	loop_site(newegg_urllist, pull_newegg, product_set)
+	progress(2,20, status=' of data gathered...\n')
 	loop_site(bh_urllist, pull_bh, product_set)
+	progress(3,20, status=' of data gathered...\n')
 	loop_site(walmart_urllist, pull_walmart, product_set)
+	progress(4,20, status=' of data gathered...\n')
 	loop_site(epson_urllist, pull_epson, product_set)
+	progress(5,20, status=' of data gathered...\n')
 	loop_site(buyvpc_urllist, pull_buyvpc, product_set)
+	progress(6,20, status=' of data gathered...\n')
 	loop_site(dell_urllist, pull_dell, product_set)
+	progress(7,20, status=' of data gathered...\n')
 	loop_site(vistek_urllist, pull_vistek, product_set)
+	progress(8,20, status=' of data gathered...\n')
 	loop_site(tastar_urllist, pull_tastar, product_set)
+	progress(9,20, status=' of data gathered...\n')
 	loop_site(overland_urllist, pull_overland, product_set)
+	progress(10,20, status=' of data gathered...\n')
 	loop_site(pcnation_urllist, pull_pcnation, product_set)
+	progress(11,20, status=' of data gathered...\n')
+	loop_site(hp_urllist, pull_hp, product_set)
+	progress(12,20, status=' of data gathered...\n')
+	loop_site(tiger_urllist, pull_tiger, product_set)
+	progress(13,20, status=' of data gathered...\n')
+	loop_site(adorama_urllist, pull_adorama, product_set)
+	progress(14,20, status=' of data gathered...\n')
+	loop_site(govets_urllist, pull_govets, product_set)
+	progress(15,20, status=' of data gathered...\n')
+	loop_site(plotter_urllist, pull_plotter, product_set)
+	progress(19,20, status='of data gathered.\n')
+	loop_site(pcconnection_urllist, pull_pcconnection, product_set)
+	progress(20,20, status='of data gathered.\n')
+
 
 # *** Website specific scrapers *** #
+def pull_pcconnection(url, product_set):
+	#check if broken
+	#try:
+	#opening connections
+	uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+	page_html = uClient.text
+	uClient.close()
+	#html parsing
+	page_soup = soup(page_html,"html.parser")
+	#finds all products on current page
+	containers = page_soup.findAll("tr",{"class":"product-container"})
+
+	if len(containers) == 0:
+		print("PC Connection containers produced zero products.")
+
+	for container in containers:
+		name = container.find("a",{"class":"product-name"}).text
+		id = container.find("ul",{"class":"product-bullets"}).text
+		id = butcher(id)
+		id = id.split('Part', 1)[1]
+		id = id.split('Platform', 1)[0]
+		id = id.split('Dpi', 1)[0]
+		id = id.split('Max', 1)[0]
+		id = id.upper()
+		try:
+			price = container.find("span",{"class":"priceDisplay"}).text
+		except:
+			price = ""
+
+		add_element("NSP", "PC Connection", "", name, id, price, "", product_set)
+
+	#except:
+	#	print("www.connection.com pipe is now broken.")
+
+
+
+def pull_plotter(url, product_set):
+	#check if broken
+	try:
+		#opening connections
+		uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+		page_html = uClient.text
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+		#finds all products on current page
+		containers = page_soup.findAll({"li":"class"})
+
+		if len(containers) == 0:
+			print("Plotter Pro containers produced zero products.")
+
+		for container in containers:
+			try:
+				name = container.find("h2",{"class":"woocommerce-loop-product__title"}).text
+				price = container.find("span",{"class":"price"}).text
+				try:
+					price = "$"  + price.split('$', 2)[2]
+				except:
+					price = price
+			except:
+				name = ""
+				price = ""
+
+			if "SureColor" in name and "Epson" not in name:
+				name = "Epson "+name
+
+			if "PROGRAF" in name and "Printer" not in name:
+				name = name+" Printer"
+
+			add_element("ISG", "Plotter Pro", "", name, "", price, "", product_set)
+
+	except:
+		print("www.plotterpro.com pipe is now broken.")
+
+
+
+def pull_govets(url, product_set):
+	#check if broken
+	try:
+		#opening connections
+		uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+		page_html = uClient.text
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+		#finds all products on current page
+		containers = page_soup.findAll("div",{"class":"ty-column3"})
+
+		if len(containers) == 0:
+			print("GoVets containers produced zero products.")
+
+		for container in containers:
+			name = container.find("a",{"class":"product-title"}).text
+			try:
+				price = container.find("input",{"type":"hidden"})
+				price = butcher(price.text)
+				price = price.split('$', 2)[2]
+				price = "$"+price.split('Q', 1)[0]
+			except:
+				price = container.find("span",{"class":"ty-price"}).text
+
+			if "SureColor" in name:
+				id = name.split('Color ', 1)[1]
+				id = id.split('Ink', 1)[0]
+			else:
+				id = ""
+
+			if "Series" in id:
+				id = name.split('Series ', 1)[1]
+			if "Ink" in id:
+				id = id.split('Ink', 1)[0]
+
+			add_element("E-Commerce", "GoVets", "", name, id, price, "", product_set)
+
+	except:
+		print("www.govets.com pipe is now broken.")
+
+
+
+def pull_adorama(url, product_set):
+	#check if broken
+	try:
+		#opening connections
+		uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+		page_html = uClient.text
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+		#finds all products on current page
+		containers = page_soup.findAll("div",{"class":"item"})
+		prices = page_soup.findAll("strong",{"class":"your-price"})
+
+		if len(containers) == 0:
+			print("Adorama containers produced zero products.")
+
+		for container, pri in zip(containers, prices):
+			try:
+				name = container.find("div",{"class":"item-details"}).h2.a.text
+				id_list = container.findAll("i",{"class":"product-sku"})
+				id = id_list[1].text.split('MFR: ', 1)[1]
+				price = pri.text
+				id = butcher(id)
+				id = id.upper()
+				try:
+					shipping = container.find("strong",{"class":"free-shipping"}).text
+				except:
+					shipping = ""
+			except:
+				name = ""
+				id = ""
+				price = ""
+
+			add_element("E-Commerce", "Adorama", "", name, id, price, "", product_set)
+
+	except:
+		print("www.pcnation.com pipe is now broken.")
+
+
+def pull_tiger(url, product_set):
+	#check if broken
+	try:
+		#opening connections
+		uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+		page_html = uClient.text
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+		#finds all products on current page
+		containers = page_soup.findAll("div",{"class":"product"})
+		if len(containers) == 0:
+			print("Tiger Direct containers produced zero products.")
+
+		for container in containers:
+			name = container.find("h3",{"class":"itemName"}).text
+			id = container.find("p",{"class":"itemModel"}).text
+			id = butcher(id)
+			id = id.split('Model', 1)[1]
+			if "#" in id:
+				id = id[2:]
+
+			id = id.upper()
+
+			price = container.find("div",{"class":"salePrice"}).text
+			try:
+				price = price.split('$', 2)[2]
+			except:
+				price = price
+			if "Details" in price:
+				price = ""
+
+			add_element("NSP", "Tiger Direct", "", name, id, price, "", product_set)
+
+	except:
+		print("www.pcnation.com pipe is now broken.")
+
+
+
+def pull_hp(url, product_set):
+	#check if broken
+	try:
+		#opening connection
+		uClient = uReq(url)
+		page_html = uClient.read()
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+		#finds all products on current page
+		name_list = page_soup.findAll("h3",{"class":"font-lh3"})
+		name = name_list[1].text
+		name = name.split('Printer', 1)[0] + "Printer"
+
+		id = name_list[1].text.split('Printer', 1)[1]
+		id = id.replace('(','')
+		id = id.replace(')','')
+		price = page_soup.find("span",{"itemprop":"price"}).text
+
+		add_element("E-Commerce", "HP", "", name, id, price, "", product_set)
+
+	except:
+		print("www.hp.com pipe is now broken.")
+
 def pull_pcnation(url, product_set):
 	#check if broken
 	try:
@@ -64,7 +312,6 @@ def pull_pcnation(url, product_set):
 			print("PCNation containers produced zero products.")
 
 		for container in containers:
-			#try:
 			name = container.find("a",{"class":"itemtitle"}).text
 			id = container.find("span",{"class":"partNums"}).text
 			id = id.split('MFG#  ', 1)[1]
@@ -84,7 +331,6 @@ def pull_pcnation(url, product_set):
 
 	except:
 		print("www.pcnation.com pipe is now broken.")
-
 
 
 
@@ -182,38 +428,38 @@ def pull_tastar(url, product_set):
 
 def pull_vistek(url, product_set):
 	#check if broken
-	#try:
-	#opening connection
-	uClient = uReq(url)
-	page_html = uClient.read()
-	uClient.close()
-	#html parsing
-	page_soup = soup(page_html,"html.parser")
-	#finds all products on current page
-	name = page_soup.find("h1",{"class":"title"}).text
-	price = page_soup.find("div",{"class":"card-body"}).text
-	price = butcher(price)
-	price = price.split('Qty', 1)[0]
-	price = price.split('Your Price', 1)[1]
-
 	try:
-		shipping = page_soup.find("strong",{"class":"text-primary"}).text
+		#opening connection
+		uClient = uReq(url)
+		page_html = uClient.read()
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+		#finds all products on current page
+		name = page_soup.find("h1",{"class":"title"}).text
+		price = page_soup.find("div",{"class":"card-body"}).text
+		price = butcher(price)
+		price = price.split('Qty', 1)[0]
+		price = price.split('Your Price', 1)[1]
+
+		try:
+			shipping = page_soup.find("strong",{"class":"text-primary"}).text
+		except:
+			shipping = ""
+
+		try:
+			id = page_soup.find("ul",{"class":"list-unstyled"}).text
+			id = id.split('Mfr: ', 1)[1]
+			id = butcher(id)
+			id = id.split('Free', 1)[0]
+			id = id.upper()
+		except:
+			id = ""
+
+		add_element("E-Commerce", "Vistek", "", name, id, price, shipping, product_set)
+
 	except:
-		shipping = ""
-
-	try:
-		id = page_soup.find("ul",{"class":"list-unstyled"}).text
-		id = id.split('Mfr: ', 1)[1]
-		id = butcher(id)
-		id = id.split('Free', 1)[0]
-		id = id.upper()
-	except:
-		id = ""
-
-	add_element("E-Commerce", "Vistek", "", name, id, price, shipping, product_set)
-
-	#except:
-	#	print("www.vistek.com pipe is now broken.")
+		print("www.vistek.com pipe is now broken.")
 
 
 
@@ -443,6 +689,9 @@ def add_element(channel, store, company, name, id, price, shipping, product_set)
 
 	if "Hp" in name:
 		name = name.replace("Hp", "HP")
+
+	if "Ipf670" in name:
+		name = name.replace("Ipf670", "IPF670")
 
 	#standardize shipping cost
 	if "Free" in shipping:

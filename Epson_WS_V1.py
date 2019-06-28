@@ -14,12 +14,7 @@ from product_class import Product
 from helper_functions import build_data_set
 
 #import lists
-from lists import printer_include_list
-from lists import printer_exclude_list
-from lists import ink_include_list
-from lists import ink_exclude_list
-from lists import accessories_include_list
-from lists import accessories_exlude_list
+from lists import *
 
 
 def append_category(category, substrings, red_words):
@@ -40,6 +35,7 @@ def append_category(category, substrings, red_words):
 					f.write(product.channel + "," + product.website + "," + product.company + "," + category + ",")
 					f.write(product.name + "," + product.id + ", " + product.price + "," + product.shipping + "\n")
 					product.added = True;
+
 
 
 # ****MAIN**** #
@@ -64,9 +60,12 @@ if __name__ == '__main__':
 	f.write(headers)
 
 	#creates sub categories
+	print("Writing data to file.\n")
 	append_category("Printer", printer_include_list, printer_exclude_list);
 	append_category("Ink", ink_include_list, ink_exclude_list);
 	append_category("Accessory", accessories_include_list, accessories_exlude_list)
+	print("Intern work is now complete.\n")
+
 
 	f.close()
 

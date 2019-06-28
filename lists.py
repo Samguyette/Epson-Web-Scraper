@@ -93,9 +93,42 @@ overland_urllist = [
 pcnation_urllist = [
             'https://www.pcnation.com/web/search.aspx?keywords=Epson+Surecolor'
 ]
+hp_urllist = [
+            'https://www8.hp.com/us/en/large-format-printers/designjet-printers/t120.html'
+]
+tiger_urllist = [
+            'http://www.tigerdirect.com/applications/category/category_slc.asp?Sort=3&Nav=|c:2710|m:316|&Recs=30',
+            'http://www.tigerdirect.com/applications/SearchTools/search.asp?keywords=DP+designjet+T120',
+            'http://www.tigerdirect.com/applications/SearchTools/search.asp?keywords=HP+designjet+T520',
+            'http://www.tigerdirect.com/applications/SearchTools/search.asp?keywords=designjet+T130+Large-Format+Printer',
+            'http://www.tigerdirect.com/applications/SearchTools/search.asp?keywords=designjet+T530'
+]
+adorama_urllist = [
+            'https://www.adorama.com/l/?searchinfo=epson+surecolor',
+            'https://www.adorama.com/l/?searchinfo=canon+imageprograf+ipf670e',
+            'https://www.adorama.com/l/?perPage=60&SearchInfo=hp+designjet+t+wireless'
+
+]
+govets_urllist = [
+            'https://www.govets.com/?subcats=Y&pcode_from_q=Y&pshort=Y&pfull=Y&pname=Y&pkeywords=Y&search_performed=Y&cid=0&q=epson+surecolor&dispatch=products.search&security_hash=2385d306adccaf9dc11a0d9a8f673148',
+            'https://www.govets.com/?subcats=Y&pcode_from_q=Y&pshort=Y&pfull=Y&pname=Y&pkeywords=Y&search_performed=Y&cid=0&q=HP+designjet+T120&dispatch=products.search&security_hash=2385d306adccaf9dc11a0d9a8f673148',
+            'https://www.govets.com/?subcats=Y&pcode_from_q=Y&pshort=Y&pfull=Y&pname=Y&pkeywords=Y&search_performed=Y&cid=0&q=HP+designjet+T520&dispatch=products.search&security_hash=2385d306adccaf9dc11a0d9a8f673148'
+]
+plotter_urllist = [
+            'https://plotterpro.com/shop-online/equipment/printers/wide-format/epson-printers/epson-t-series-technical-printers/',
+            'https://plotterpro.com/shop-online/equipment/printers/wide-format/canon-imageprograf-printers/technical/?swoof=1&woof_text=Canon%20IPF670&really_curr_tax=29-product_cat'
+]
+pcconnection_urllist = [
+            'https://www.connection.com/IPA/Shop/Product/Search?SearchType=1&term=Epson%20Surecolor#1~Best+Matches~48~List',
+            'https://www.connection.com/IPA/Shop/Product/Search?SearchType=1&term=Epson%20Surecolor#2~Best+Matches~48~List',
+            'https://www.connection.com/IPA/Shop/Product/Search?SearchType=1&term=Epson%20Surecolor#3~Best+Matches~48~List',
+            'https://www.connection.com/IPA/Shop/Product/Search?SearchType=1&term=HP%20designjet%20T120',
+            'https://www.connection.com/IPA/Shop/Product/Search?SearchType=1&term=HP%20designjet%20T520'
+]
 company_list = [
 	["Epson", "Epson"],
 	["Canon", "Canon"],
+    ["CANON", "Canon"],
 	["HP","HP"],
     ["Hp", "HP"]
 ]
@@ -110,7 +143,11 @@ remove_list = {
     "P10000",
     "P20000",
     "P7000",
-    "P9000"
+    "P9000",
+    "T1200",
+    "T100",
+    "T830",
+    "T730"
 }
 
 printer_include_list = {
