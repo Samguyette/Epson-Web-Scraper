@@ -125,12 +125,59 @@ pcconnection_urllist = [
             'https://www.connection.com/IPA/Shop/Product/Search?SearchType=1&term=HP%20designjet%20T120',
             'https://www.connection.com/IPA/Shop/Product/Search?SearchType=1&term=HP%20designjet%20T520'
 ]
+amazon_urllist = [
+            'https://www.amazon.com/Epson-SureColor-T3170-Wireless-Desktop/dp/B07HP1W9TZ/ref=sr_1_1_sspa?keywords=Epson+SureColor+T3170+24%E2%80%9D+Wireless+Desktop+Printer&qid=1561764070&s=gateway&sr=8-1-spons&psc=1',
+            'https://www.amazon.com/Epson-SureColor-T5170-Wireless-Printer/dp/B07HNYPKFN/ref=sr_1_2?keywords=Epson+SureColor+T3170&qid=1562000544&s=gateway&sr=8-2',
+            'https://www.amazon.com/Epson-SureColor-UltraChrome-XD-Cyan-Cartridge/dp/B07NPWMCJD/ref=sr_1_1?keywords=Epson+SureColor+T3470&qid=1562000651&s=gateway&sr=8-1',
+            'https://www.amazon.com/Epson-Ultrachrome-700-Surecolor-Printers/dp/B00IT54WWA/ref=sr_1_1?keywords=Epson+SureColor+T3270&qid=1562000692&s=gateway&sr=8-1',
+            'https://www.amazon.com/Surecolor-UltraChrome-Printer-Resolution-Ethernet/dp/B010WJSECE/ref=sr_1_1?keywords=Epson+SureColor+T7270&qid=1562000714&s=gateway&sr=8-1',
+            'https://www.amazon.com/Canon-imagePROGRAF-Format-Inkjet-Printer/dp/B06Y1S7BZ6/ref=sr_1_1?keywords=Canon+IPF670e&qid=1562000743&s=gateway&sr=8-1',
+            'https://www.amazon.com/Canon-imagePROGRAF-Consists-PFI007BK-PFI007MBK/dp/B072KR2998/ref=sr_1_2?keywords=Canon+IPF670e&qid=1562000760&s=gateway&sr=8-2',
+            'https://www.amazon.com/Canon-imagePROGRAF-iPF670E-Large-Format-Printer/dp/B0732S5TWD/ref=sr_1_3?keywords=Canon+IPF670e&qid=1562000760&s=gateway&sr=8-3',
+            'https://www.amazon.com/HP-CQ891C-DesignJet-T120-24-Large-Format/dp/B07886XV24/ref=sr_1_2?keywords=HP+Designjet+t120&qid=1562000793&s=gateway&sr=8-2',
+            'https://www.amazon.com/HP-T520-Design-Wireless-printer/dp/B0098NXYM6/ref=sr_1_4?keywords=HP+Designjet+t120&qid=1562000817&s=gateway&sr=8-4',
+            'https://www.amazon.com/HP-DesignJet-Large-Format-Printer-CQ891BB1K/dp/B07NGMPWPN/ref=sr_1_5?keywords=HP+Designjet+t120&qid=1562000817&s=gateway&sr=8-5',
+            'https://www.amazon.com/HP-Designjet-CZ134A-printheads-hassle-free/dp/B00GXFDBSE/ref=sr_1_9?keywords=HP+Designjet+t120&qid=1562000817&s=gateway&sr=8-9'
+]
+macmall_urllist = [
+            'http://www.macmall.com/s?rch=&q=Epson+surecolor',
+            'http://www.macmall.com/s?rch=&q=Canon+IPF670e',
+            'http://www.macmall.com/s?rch=&q=HP+designjet+T120',
+            'http://www.macmall.com/s?rch=&q=HP+designjet+T520',
+            'http://www.macmall.com/s?rch=&q=HP+designjet+T130',
+            'http://www.macmall.com/s?rch=&q=HP+designjet+T530'
+]
+shi_urllist = [
+            'https://www.shi.com/shop/search?k=Epson%20surecolor&sk=1',
+            'https://www.shi.com/shop/search?k=canon%20IPF670e&sk=1'
+            'https://www.shi.com/shop/search?k=hp%20designjet%20T120&sk=1',
+            'https://www.shi.com/shop/search?k=hp%20designjet%20T520&sk=1',
+            'https://www.shi.com/shop/search?k=hp%20designjet%20T125&sk=1',
+            'https://www.shi.com/shop/search?k=hp%20designjet%20T130&sk=1',
+            'https://www.shi.com/shop/search?k=hp%20designjet%20T530&sk=1',
+            'https://www.shi.com/shop/search?k=hp%20designjet%20T525&sk=1'
+]
+grandtoy_urllist = [
+            'https://www.grandandtoy.com/EN/search/pages/browse?Ntt=epson+surecolor&Ntk=All&soffer=false',
+            'https://www.grandandtoy.com/EN/search/pages/browse?Ntt=canon+IPF670e&Ntk=All&soffer=false',
+            'https://www.grandandtoy.com/EN/search/pages/browse?Ntt=canon+IPF670&Ntk=All&soffer=false',
+            'https://www.grandandtoy.com/EN/search/pages/browse?Ntt=HP+designjet+T520&Ntk=All&soffer=false',
+            'https://www.grandandtoy.com/EN/search/pages/browse?Ntt=HP+designjet+T120&Ntk=All&soffer=false',
+            'https://www.grandandtoy.com/EN/search/pages/browse?Ntt=HP+designjet+T130&Ntk=All&soffer=false',
+            'https://www.grandandtoy.com/EN/search/pages/browse?Ntt=HP+designjet+T530&Ntk=All&soffer=false'
+]
+zones_urllist = [
+            'https://www.zones.com/site/locate/search.html?txt_search=epson+surecolor&non_partner_search=no_partner_id'
+]
+
 company_list = [
 	["Epson", "Epson"],
+    ["Surecolor", "Epson"],
 	["Canon", "Canon"],
     ["CANON", "Canon"],
 	["HP","HP"],
-    ["Hp", "HP"]
+    ["Hp", "HP"],
+    ["Designjet", "HP"]
 ]
 remove_list = {
 	"P400",
@@ -147,9 +194,11 @@ remove_list = {
     "T1200",
     "T100",
     "T830",
-    "T730"
+    "T730",
+    "F2000",
+    "Paper",
+    "£"
 }
-
 printer_include_list = {
     "Printer",
     "printer"
@@ -159,11 +208,20 @@ printer_exclude_list = {
     "Cyan",
     "Magenta",
     "Tank",
+    "Yellow",
+    "tank",
     "Kit",
     "Pad",
     "Plan",
     "Service",
-    "Refill"
+    "Refill",
+    "Receipt",
+    "Ml",
+    "Blade",
+    "Stand",
+    "Maintenance",
+    "EMultifunction",
+    "Feed"
 }
 ink_include_list = {
     "Ink",
@@ -171,7 +229,8 @@ ink_include_list = {
 }
 ink_exclude_list = {
     "Bottles",
-    "Tank"
+    "Tank",
+    "Receipt"
 }
 accessories_include_list = {
     "Spindle",
@@ -183,8 +242,42 @@ accessories_include_list = {
     "Pad",
     "Plan",
     "Replacement",
-    "Service"
+    "Service",
+    "Blade",
+    "Stand"
 }
 accessories_exlude_list = {
-
+    "Receipt"
 }
+
+#must have substrings, must exclude substrings, key sku
+sku_key = [
+    (["Ink","HP","711"], ink_exclude_list, "HP711INK"),
+    (["Ink","HP","711", "Pack"], ink_exclude_list, "HP711PACK"),
+    (["Ink","HP","Bundle"], ink_exclude_list, "HP711PACK"),
+    (["Ink","Canon","Pfi", "007"], ink_exclude_list, "007CINK"),
+
+    (["rinter","urecolor","T3270"], printer_exclude_list, "SCT3270SR"),
+    (["rinter","urecolor","T5270"], printer_exclude_list, "SCT5270SR"),
+    (["rinter","urecolor","T7270"], printer_exclude_list, "SCT7270SR"),
+    (["rinter","urecolor","T3170"], printer_exclude_list, "SCT3170SR"),
+    (["rinter","urecolor","T5170"], printer_exclude_list, "SCT5170SR"),
+    (["rinter","urecolor","T5170","Dual"], printer_exclude_list, "SCT5170DR"),
+    (["rinter","urecolor","T3470"], printer_exclude_list, "SCT3470SR"),
+    (["rinter","urecolor","T5470"], printer_exclude_list, "SCT5470SR"),
+    (["rinter","esignjet","T120"], printer_exclude_list, "DJT120"),
+    (["rinter","esignjet","T120","Bundle"], printer_exclude_list, "DJT120BUNDLE"),
+    (["rinter","esignjet","T520"], printer_exclude_list, "DJT520"),
+    (["rinter","esignjet","T520","24"], printer_exclude_list, "DJT52024"),
+    (["rinter","esignjet","T520","36"], printer_exclude_list, "DJT52036"),
+    (["rinter","esignjet","T520","Bundle"], printer_exclude_list, "DJT520BUNDLE"),
+    (["rinter","esignjet","T125"], printer_exclude_list, "DJT125"),
+    (["rinter","esignjet","T130"], printer_exclude_list, "DJT130"),
+    (["rinter","esignjet","T525"], printer_exclude_list, "DJT525"),
+    (["rinter","esignjet","T525","24"], printer_exclude_list, "DJT52524"),
+    (["rinter","esignjet","T525","36"], printer_exclude_list, "DJT52536"),
+    (["rinter","esignjet","T530"], printer_exclude_list, "DJT530"),
+    (["rinter","anon","IPF670"], printer_exclude_list, "IPF670"),
+    (["rinter","anon","IPF670e"], printer_exclude_list, "IPF670E"),
+    (["rinter","anon","IPF670 E"], printer_exclude_list, "IPF670E")
+]

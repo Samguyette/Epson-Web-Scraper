@@ -47,7 +47,7 @@ if __name__ == '__main__':
 	#hash set for all product objects
 	product_set = set()
 	build_data_set(product_set);
-
+	print(str(len(product_set))+" potential products gathered.\n")
 	#Writes name
 	f.write("Created by Sam Guyette\n")
 

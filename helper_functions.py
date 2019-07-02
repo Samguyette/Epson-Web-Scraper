@@ -38,50 +38,55 @@ def loop_site(urllist, func, product_set):
 #loops urls lists through specific scraper
 def build_data_set(product_set):
 	#loop raw searches
-	progress(0,21, status='  Intern work beginning...\n')
-	loop_site(staples_urllist, pull_staples, product_set)
-	progress(1,21, status='  of data gathered...\n')
-	loop_site(newegg_urllist, pull_newegg, product_set)
-	progress(2,21, status='  of data gathered...\n')
-	loop_site(bh_urllist, pull_bh, product_set)
-	progress(3,21, status=' of data gathered...\n')
-	loop_site(walmart_urllist, pull_walmart, product_set)
-	progress(4,21, status=' of data gathered...\n')
-	loop_site(epson_urllist, pull_epson, product_set)
-	progress(5,21, status=' of data gathered...\n')
-	loop_site(buyvpc_urllist, pull_buyvpc, product_set)
-	progress(6,21, status=' of data gathered...\n')
-	loop_site(dell_urllist, pull_dell, product_set)
-	progress(7,21, status=' of data gathered...\n')
-	loop_site(vistek_urllist, pull_vistek, product_set)
-	progress(8,21, status=' of data gathered...\n')
-	loop_site(tastar_urllist, pull_tastar, product_set)
-	progress(9,21, status=' of data gathered...\n')
-	loop_site(overland_urllist, pull_overland, product_set)
-	progress(10,21, status=' of data gathered...\n')
-	loop_site(pcnation_urllist, pull_pcnation, product_set)
-	progress(11,21, status=' of data gathered...\n')
-	loop_site(hp_urllist, pull_hp, product_set)
-	progress(12,21, status=' of data gathered...\n')
-	loop_site(tiger_urllist, pull_tiger, product_set)
-	progress(13,21, status=' of data gathered...\n')
-	loop_site(adorama_urllist, pull_adorama, product_set)
-	progress(14,21, status=' of data gathered...\n')
-	loop_site(govets_urllist, pull_govets, product_set)
-	progress(15,21, status=' of data gathered...\n')
-	loop_site(plotter_urllist, pull_plotter, product_set)
-	progress(16,21, status=' of data gathered...\n')
-	loop_site(pcconnection_urllist, pull_pcconnection, product_set)
-	progress(17,21, status=' of data gathered...\n')
-	loop_site(amazon_urllist, pull_amazon, product_set)
-	progress(18,21, status=' of data gathered...\n')
-	loop_site(macmall_urllist, pull_macmall, product_set)
-	progress(19,21, status=' of data gathered...\n')
-	loop_site(shi_urllist, pull_shi, product_set)
-	progress(20,21, status=' of data gathered...\n')
-	loop_site(grandtoy_urllist, pull_grandtoy, product_set)
-	progress(21,21, status='of data gathered...\n')
-	loop_site(zones_urllist, pull_zones, product_set)
+	# progress(0,21, status='  Intern work beginning...\n')
+	# loop_site(staples_urllist, pull_staples, product_set)
+	# progress(1,21, status='  of data gathered...\n')
+	# loop_site(newegg_urllist, pull_newegg, product_set)
+	# progress(2,21, status='  of data gathered...\n')
+	# loop_site(bh_urllist, pull_bh, product_set)
+	# progress(3,21, status=' of data gathered...\n')
+	# loop_site(walmart_urllist, pull_walmart, product_set)
+	# progress(4,21, status=' of data gathered...\n')
+	# loop_site(epson_urllist, pull_epson, product_set)
+	# progress(5,21, status=' of data gathered...\n')
+	# loop_site(buyvpc_urllist, pull_buyvpc, product_set)
+	# progress(6,21, status=' of data gathered...\n')
+	# loop_site(dell_urllist, pull_dell, product_set)
+	# progress(7,21, status=' of data gathered...\n')
+	# loop_site(vistek_urllist, pull_vistek, product_set)
+	# progress(8,21, status=' of data gathered...\n')
+	# loop_site(tastar_urllist, pull_tastar, product_set)
+	# progress(9,21, status=' of data gathered...\n')
+	# loop_site(overland_urllist, pull_overland, product_set)
+	# progress(10,21, status=' of data gathered...\n')
+	# loop_site(pcnation_urllist, pull_pcnation, product_set)
+	# progress(11,21, status=' of data gathered...\n')
+	# loop_site(hp_urllist, pull_hp, product_set)
+	# progress(12,21, status=' of data gathered...\n')
+	# loop_site(tiger_urllist, pull_tiger, product_set)
+	# progress(13,21, status=' of data gathered...\n')
+	# loop_site(adorama_urllist, pull_adorama, product_set)
+	# progress(14,21, status=' of data gathered...\n')
+	# loop_site(govets_urllist, pull_govets, product_set)
+	# progress(15,21, status=' of data gathered...\n')
+	# loop_site(plotter_urllist, pull_plotter, product_set)
+	# progress(16,21, status=' of data gathered...\n')
+	# loop_site(pcconnection_urllist, pull_pcconnection, product_set)
+	# progress(17,21, status=' of data gathered...\n')
+	# loop_site(amazon_urllist, pull_amazon, product_set)
+	# progress(18,21, status=' of data gathered...\n')
+	# loop_site(macmall_urllist, pull_macmall, product_set)
+	# progress(19,21, status=' of data gathered...\n')
+	# loop_site(shi_urllist, pull_shi, product_set)
+	# progress(20,21, status=' of data gathered...\n')
+	# loop_site(grandtoy_urllist, pull_grandtoy, product_set)
+	# progress(21,21, status='of data gathered...\n')
+	# loop_site(zones_urllist, pull_zones, product_set)
+
+	#create uniform skus
+	print("Modifying SKU numbers...\n")
+	standardize_skus(product_set)
+
 
 # *** Website specific scrapers *** #
 def pull_zones(url, product_set):
@@ -113,7 +118,6 @@ def pull_zones(url, product_set):
 
 
 
-
 def pull_grandtoy(url, product_set):
 	#check if broken
 	try:
@@ -135,6 +139,11 @@ def pull_grandtoy(url, product_set):
 			id = butcher(id).upper()
 			price = container.find("p",{"class":"amt"}).text
 			price = butcher(price)
+			if "/" in price:
+				price = price.split('$', 2)[1]
+				price = "$"+price
+
+
 			add_element("NSP", "Grand&Toy", "", name, id, price, "", product_set)
 
 	except:
@@ -303,7 +312,7 @@ def pull_pcconnection(url, product_set):
 			try:
 				price = container.find("span",{"class":"priceDisplay"}).text
 			except:
-				price = ""
+				price = "call for price"
 
 			add_element("NSP", "PC Connection", "", name, id, price, "", product_set)
 
@@ -741,9 +750,9 @@ def pull_epson(url, product_set):
 			price = container.find("div",{"class":"amount"}).text
 
 			if "epson.ca" in url:
-				add_element("E-Commerce", "Epson", "Epson.ca", name, "", "CAD "+price, "", product_set)
+				add_element("E-Commerce", "Epson.ca", "Epson", name, "", price, "", product_set)
 			else:
-				add_element("E-Commerce", "Epson", "Epson (US)", name, "", price, "", product_set)
+				add_element("E-Commerce", "Epson (US)", "Epson", name, "", price, "", product_set)
 
 	except:
 		print("www.epson.com pipe is now broken.")
@@ -889,6 +898,35 @@ def pull_staples(url, product_set):
 
 
 
+#creates same sku number for same products
+def standardize_skus(product_list):
+	matching_sku = ""
+	#loops all products
+	for product in product_list:
+		continue_loop = True
+		#stops loop if product is accessory
+		for word in accessories_include_list:
+			if word in product.name:
+				continue_loop = False
+
+		if continue_loop:
+			#loops all sku keys for each product
+			for key in sku_key:
+				match = True
+				#loops all words in sku key to try and find a match
+				for word in key[0]:
+					if word not in product.name:
+						match = False
+				#loops all words that can't be in the name
+				for word in key[1]:
+					if word in product.name:
+						match = False
+				#if true change sku
+				if match:
+					product.id = key[2]
+
+
+
 #If correct product, object is created and added to product set
 def add_element(channel, store, company, name, id, price, shipping, product_set):
 	name = butcher(name)
@@ -896,11 +934,27 @@ def add_element(channel, store, company, name, id, price, shipping, product_set)
 	price = price.strip()
 	shipping = butcher(shipping)
 
+	#add space between all upper and lower case
+	name = re.sub(r"(\w)([A-Z])", r"\1 \2", name)
+
 	if "Hp" in name:
 		name = name.replace("Hp", "HP")
 
 	if "Ipf670" in name:
 		name = name.replace("Ipf670", "IPF670")
+
+	if "(" in name:
+		try:
+			tempName = name
+			tempName = name.split("(", 1)[1]
+			first = tempName[0]
+			if not first.isdigit():
+				name = name.split("(", 1)[0]
+		except:
+			name = name.replace("(","")
+
+	if "$" not in price:
+		price = "$"+price
 
 	#standardize shipping cost
 	if "Free" in shipping:
@@ -909,9 +963,10 @@ def add_element(channel, store, company, name, id, price, shipping, product_set)
 		shipping = "Free Shipping"
 
 	#find which comapny the product belongs to
-	for i in company_list:
-		if i[0] in name:
-			company = i[1]
+	if company is "" or " ":
+		for i in company_list:
+			if i[0] in name:
+				company = i[1]
 
 	#check if name contains banned word list
 	banned = False
