@@ -39,6 +39,7 @@ walmart_urllist = [
 ]
 epson_urllist = [
 			'https://epson.com/search/?q=SureColor%3Arelevance%3AproductType%3APRINTER%3APrinters+Facets%2CType%3AProfessional+Imaging%3APro+Imaging+Facets%2CProfessional+Printer+Series%3ASureColor+T%7E102Series&text=SureColor#products-tab',
+            'https://epson.com/search/?text=SureColor+3170#products-tab',
 			'https://epson.ca/For-Work/Printers/c/w1?q=%3Aprice-asc%3AdiscontinuedFlag%3Afalse%3APro+Imaging+Facets%2CProfessional+Printer+Series%3ASureColor+T%7E102Series&text=#scrollTgt_onRefresh'
 ]
 
@@ -78,9 +79,8 @@ vistek_urllist = [
             'https://www.vistek.ca/store/424661/canon-imageprograf-ipf670e-24-large-format-printer',
             'https://www.vistek.ca/store/429205/canon-pfi007-c-cyan-compatible-ipf670e',
             'https://www.vistek.ca/store/433650/hp-designjet-t520-36in-printer',
-            'https://www.vistek.ca/store/433650/hp-designjet-t520-36in-printer'
-
-
+            'https://www.vistek.ca/store/433650/hp-designjet-t520-36in-printer',
+            'https://www.vistek.ca/store/427904/epson-surecolor-t3170-printer'
 ]
 tastar_urllist = [
             'https://www.tastarsupply.com/inkjet-wide-format-c-67_109_112.html',
@@ -98,6 +98,9 @@ hp_urllist = [
 ]
 tiger_urllist = [
             'http://www.tigerdirect.com/applications/category/category_slc.asp?Sort=3&Nav=|c:2710|m:316|&Recs=30',
+            'http://www.tigerdirect.com/applications/SearchTools/search.asp?keywords=T3170',
+            'http://www.tigerdirect.com/applications/SearchTools/search.asp?keywords=T5170',
+            'http://www.tigerdirect.com/applications/SearchTools/search.asp?keywords=T5470',
             'http://www.tigerdirect.com/applications/SearchTools/search.asp?keywords=DP+designjet+T120',
             'http://www.tigerdirect.com/applications/SearchTools/search.asp?keywords=HP+designjet+T520',
             'http://www.tigerdirect.com/applications/SearchTools/search.asp?keywords=designjet+T130+Large-Format+Printer',
@@ -141,6 +144,8 @@ amazon_urllist = [
 ]
 macmall_urllist = [
             'http://www.macmall.com/s?rch=&q=Epson+surecolor',
+            'http://www.macmall.com/s?rch=&q=T5470',
+            'http://www.macmall.com/s?rch=&q=T5170',
             'http://www.macmall.com/s?rch=&q=Canon+IPF670e',
             'http://www.macmall.com/s?rch=&q=HP+designjet+T120',
             'http://www.macmall.com/s?rch=&q=HP+designjet+T520',
@@ -169,7 +174,80 @@ grandtoy_urllist = [
 zones_urllist = [
             'https://www.zones.com/site/locate/search.html?txt_search=epson+surecolor&non_partner_search=no_partner_id'
 ]
-
+cdw_urllist = [
+            'https://www.cdw.com/search/?key=Surecolor%20T3270&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=Surecolor%20T5270%20&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=Surecolor%20T7270&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=Surecolor%20T3470&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=Surecolor%20T5470&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=Surecolor%20T5170&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=canon%20ipf670&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=hp%20designjet%20T120&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=hp%20designjet%20T520&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=hp%20designjet%20T525&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=hp%20designjet%20T530&searchscope=all&sr=1'
+]
+itsupplies_urllist = [
+            'https://www.itsupplies.com/Epson-SureColor-T3270-Printer-24-Wide-Format-p/sct3270sr.htm',
+            'https://www.itsupplies.com/Epson-SureColor-T3270-Printer-Screen-Print-p/sct3270sp.htm',
+            'https://www.itsupplies.com/Epson-SureColor-T5270-36-Inch-Inkjet-Printer-p/sct5270sr.htm',
+            'https://www.itsupplies.com/Epson-T5270D-SureColor-Printer-p/sct5270dr.htm',
+            'https://www.itsupplies.com/Epson-SureColor-T7270-Printer-44-Inch-Wide-Fomat-p/sct7270sr.htm',
+            'https://www.itsupplies.com/Epson-T7270D-SureColor-Printer-p/sct7270dr.htm',
+            'https://www.itsupplies.com/Epson-SureColor-T3470-24-Printer-p/sct3470sr.htm',
+            'https://www.itsupplies.com/Epson-SureColor-T5470-36-Printer-p/sct5470sr.htm',
+            'https://www.itsupplies.com/Epson-SureColor-T3170-24-Inch-Wireless-Printer-p/sct3170sr.htm',
+            'https://www.itsupplies.com/Epson-SureColor-T5170-Printer-p/sct5170sr.htm',
+            'https://www.itsupplies.com/HP-T120-Printer-p/cq891a.htm',
+            'https://www.itsupplies.com/product-p/cq890a.htm',
+            'https://www.itsupplies.com/product-p/cq893a.htm',
+            'https://www.itsupplies.com/HP-DesignJet-T125-24-Inch-Printer-p/5zy57a.htm',
+            'https://www.itsupplies.com/HP-DesignJet-T130-24-Inch-Printer-p/5zy58a.htm',
+            'https://www.itsupplies.com/HP-DesignJet-T525-Printer-p/5zy59a.htm',
+            'https://www.itsupplies.com/HP-DesignJet-T525-36-Inch-Printer-p/5zy61a.htm',
+            'https://www.itsupplies.com/iPF670E-by-Canon-24in-CAD-Printer-2162C002AA-p/2162c002aa.htm',
+            'https://www.itsupplies.com/iPF670-by-Canon-24in-CAD-Printer-9854B005AA-p/9854b005aa.htm'
+]
+imagespectrum_urllist = [
+            'https://www.imagingspectrum.com/epson-surecolor-t3270-24-single-roll_printer.html',
+            'https://www.imagingspectrum.com/epson-surecolor-t5270-36-dual-roll_printer.html',
+            'https://www.imagingspectrum.com/epson-surecolor-t5270-36-single-roll_printer.html',
+            'https://www.imagingspectrum.com/epson-surecolor-t5270-36-dual-roll_printer.html',
+            'https://www.imagingspectrum.com/epson-surecolor-t5270-36-single-roll_printer.html',
+            'https://www.imagingspectrum.com/epson-surecolor-t7270-44-dual-roll_printer.html',
+            'https://www.imagingspectrum.com/epson-surecolor-t7270-44-single-roll_printer.html',
+            'https://www.imagingspectrum.com/epson-surecolor-t3470-24-large-format-printer-with-wifi.html',
+            'https://www.imagingspectrum.com/epson-surecolor-t5470-36-large-format-printer-with-wifi.html',
+            'https://www.imagingspectrum.com/epson-surecolor-t3170-24-wireless-printer.html',
+            'https://www.imagingspectrum.com/epson-surecolor-t5170-36-wireless-printer.html'
+]
+laube_urllist = [
+            'https://www.laubeip.com/epson-surecolor-t3270-24inkjet-printer/',
+            'https://www.laubeip.com/epson-surecolor-t5270-36-inkjet-printer/',
+            'https://www.laubeip.com/epson-surecolor-t7270-44-inkjet-printer/',
+            'https://www.laubeip.com/epson-surecolor-t3470-24-inch-wide-wireless-workgroup-inkjet-printer/',
+            'https://www.laubeip.com/epson-surecolor-t5470-36-inch-wide-workgroup-inkjet-printer/',
+            'https://www.laubeip.com/epson-surecolor-t3170-wireless-printer-24/',
+            'https://www.laubeip.com/epson-surecolor-t5170-36-inch-wireless-printer/'
+]
+lexjet_urllist = [
+            'https://www.lexjet.com/search?q=T3270',
+            'https://www.lexjet.com/search?q=T5270',
+            'https://www.lexjet.com/search?q=T7270',
+            'https://www.lexjet.com/search?q=T3470',
+            'https://www.lexjet.com/search?q=T5470',
+            'https://www.lexjet.com/search?q=T3170',
+            'https://www.lexjet.com/search?q=T5170',
+            'https://www.lexjet.com/search?q=Designjet+T120',
+            'https://www.lexjet.com/search?q=Designjet+T520',
+            'https://www.lexjet.com/search?q=Designjet+T125',
+            'https://www.lexjet.com/search?q=Designjet+T525',
+            'https://www.lexjet.com/search?q=Designjet+T530'
+]
+buffalo_urllist = [
+    'https://www.buffalous.us/product/epson-surecolor-t3170-wireless-printer/',
+    'https://www.buffalous.us/product/epson-surecolor-t5170-wireless-printer/'
+]
 company_list = [
 	["Epson", "Epson"],
     ["Surecolor", "Epson"],
@@ -252,20 +330,27 @@ accessories_exlude_list = {
 
 #must have substrings, must exclude substrings, key sku
 sku_key = [
-    (["Ink","HP","711"], ink_exclude_list, "HP711INK"),
-    (["Ink","HP","711", "Pack"], ink_exclude_list, "HP711PACK"),
-    (["Ink","HP","Bundle"], ink_exclude_list, "HP711PACK"),
-    (["Ink","Canon","Pfi", "007"], ink_exclude_list, "007CINK"),
+    # (["Ink","HP","711"], ink_exclude_list, "HP711INK"),
+    # (["Ink","HP","711", "Pack"], ink_exclude_list, "HP711PACK"),
+    # (["Ink","HP","Bundle"], ink_exclude_list, "HP711PACK"),
+    # (["Ink","Canon","Pfi", "007"], ink_exclude_list, "007CINK"),
 
+    (["rinter","Refurbished"], printer_exclude_list, "REGURBISHED"),
     (["rinter","urecolor","T3270"], printer_exclude_list, "SCT3270SR"),
+    (["rinter","urecolor","T3270","Screen"], printer_exclude_list, "SCT3270SP"),
     (["rinter","urecolor","T5270"], printer_exclude_list, "SCT5270SR"),
+    (["rinter","urecolor","T5270","Dual"], printer_exclude_list, "SCT5270DR"),
+    (["rinter","urecolor","T7270"], printer_exclude_list, "SCT7270SR"),
     (["rinter","urecolor","T7270"], printer_exclude_list, "SCT7270SR"),
     (["rinter","urecolor","T3170"], printer_exclude_list, "SCT3170SR"),
+    (["rinter","urecolor","T3170","Dual"], printer_exclude_list, "SCT3170DR"),
     (["rinter","urecolor","T5170"], printer_exclude_list, "SCT5170SR"),
     (["rinter","urecolor","T5170","Dual"], printer_exclude_list, "SCT5170DR"),
     (["rinter","urecolor","T3470"], printer_exclude_list, "SCT3470SR"),
     (["rinter","urecolor","T5470"], printer_exclude_list, "SCT5470SR"),
     (["rinter","esignjet","T120"], printer_exclude_list, "DJT120"),
+    (["rinter","esignjet","T120", "Kit"], printer_exclude_list, "DJT120SET"),
+    (["rinter","esignjet","T120", "Prof"], printer_exclude_list, "DJT120PRO"),
     (["rinter","esignjet","T120","Bundle"], printer_exclude_list, "DJT120BUNDLE"),
     (["rinter","esignjet","T520"], printer_exclude_list, "DJT520"),
     (["rinter","esignjet","T520","24"], printer_exclude_list, "DJT52024"),

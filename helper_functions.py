@@ -83,12 +83,170 @@ def build_data_set(product_set):
 	# progress(21,21, status='of data gathered...\n')
 	# loop_site(zones_urllist, pull_zones, product_set)
 
+	# loop_site(cdw_urllist, pull_cdw, product_set)
+	# loop_site(itsupplies_urllist, pull_itsupplies, product_set)
+	# loop_site(imagespectrum_urllist, pull_spectrum, product_set)
+	# loop_site(laube_urllist, pull_laube, product_set)
+	# loop_site(lexjet_urllist, pull_lexjet, product_set)
+
+	#broken buffalo link
+	loop_site(buffalo_urllist, pull_buffalo, product_set)
+
 	#create uniform skus
 	print("Modifying SKU numbers...\n")
 	standardize_skus(product_set)
 
 
 # *** Website specific scrapers *** #
+def pull_buffalo(url, product_set):
+	#check if broken
+	try:
+		#opening connections
+		uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+		page_html = uClient.text
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+
+		name = page_soup.find("h1",{"class":"product_title entry-title elementor-heading-title elementor-size-large"}).text
+		id = page_soup.find("span",{"class":"sku"}).text
+		price = page_soup.find("p",{"class":"price product-page-price price-on-sale"}).text
+		price = price.split('$', 1)[1]
+		if "$" in price:
+			price = price.split('$', 1)[1]
+
+		add_element("ProFocus", "US", "Buffalo", "", name, id, price, "", product_set)
+	except:
+		print("www.buffalous.us pipe is now broken.")
+
+
+
+def pull_lexjet(url, product_set):
+	#check if broken
+	try:
+		#opening connections
+		uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+		page_html = uClient.text
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+		#finds all products on current page
+		containers = page_soup.findAll("div",{"class":"col-xs-12"})
+		if len(containers) == 0:
+			print("LexJet containers produced zero products.")
+
+		lexjet_list = []
+		for container in containers:
+			try:
+				name = container.find("a",{"class":"product-name"}).text
+			except:
+				name = ""
+			try:
+				id = container.find("span",{"itemprop":"sku"}).text
+			except:
+				id = ""
+			try:
+				price = container.find("span",{"itemprop":"price"}).text
+			except:
+				price = ""
+
+			if id not in lexjet_list:
+				add_element("ProFocus", "US", "LexJet", "", name, id, price, "", product_set)
+				lexjet_list.append(id)
+	except:
+		print("www.lexjet.com pipe is now broken.")
+
+
+
+def pull_laube(url, product_set):
+	#check if broken
+	try:
+		#opening connections
+		uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+		page_html = uClient.text
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+
+		name = page_soup.find("h1",{"itemprop":"name"}).text
+		id = page_soup.find("dd",{"class":"productView-info-value"}).text
+		price = page_soup.find("div",{"class":"price-section price-section--withoutTax"}).text
+		price = butcher(price)
+		price = price.split('Now', 1)[1]
+
+		add_element("ProFocus", "US", "Imaging Spectrum", "", name, id, price, "", product_set)
+	except:
+		print("www.imagingspectrum.com pipe is now broken.")
+
+
+
+def pull_spectrum(url, product_set):
+	#check if broken
+	try:
+		#opening connections
+		uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+		page_html = uClient.text
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+
+		name = page_soup.find("div",{"class":"product-title"}).text
+		id = page_soup.find("span",{"class":"property-value"}).text
+		price = page_soup.find("span",{"id":"product_price"}).text
+
+		add_element("ProFocus", "US", "Imaging Spectrum", "", name, id, price, "", product_set)
+	except:
+		print("www.imagingspectrum.com pipe is now broken.")
+
+
+
+
+def pull_itsupplies(url, product_set):
+	#check if broken
+	try:
+		#opening connections
+		uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+		page_html = uClient.text
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+
+		name = page_soup.find("h1",{"class":"vp-product-title"}).text
+		price = page_soup.find("span",{"itemprop":"price"}).text
+		id = page_soup.find("span",{"class":"product_code"}).text
+
+		add_element("ProFocus", "US", "ITSupplies", "", name, id, price, "", product_set)
+	except:
+		print("www.itsupplies.com pipe is now broken.")
+
+
+
+def pull_cdw(url, product_set):
+	#check if broken
+	try:
+		#opening connections
+		uClient = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+		page_html = uClient.text
+		uClient.close()
+		#html parsing
+		page_soup = soup(page_html,"html.parser")
+		#finds all products on current page
+		containers = page_soup.findAll("div",{"class":"search-result coupon-check"})
+		if len(containers) == 0:
+			print("CDW containers produced zero products.")
+
+		for container in containers:
+			name = container.find("a",{"class":"search-result-product-url"}).text
+			id = container.find("span",{"class":"mfg-code"}).text
+			id = id.split(': ', 1)[1]
+			price = container.find("div",{"class":"price-type-price"}).text
+
+			add_element("NSP", "US", "CDW", "", name, id, price, "", product_set)
+	except:
+		print("www.cdw.com pipe is now broken.")
+
+
+
 def pull_zones(url, product_set):
 	#check if broken
 	try:
@@ -112,7 +270,7 @@ def pull_zones(url, product_set):
 			id = butcher(id).upper()
 			price = container.find("div",{"class":"product-price product-unit-price"}).text
 			price = butcher(price)
-			add_element("NSP", "Zones", "", name, id, price, "", product_set)
+			add_element("NSP", "US", "Zones", "", name, id, price, "", product_set)
 	except:
 		print("www.zones.com pipe is now broken.")
 
@@ -144,7 +302,7 @@ def pull_grandtoy(url, product_set):
 				price = "$"+price
 
 
-			add_element("NSP", "Grand&Toy", "", name, id, price, "", product_set)
+			add_element("NSP", "CA", "Grand&Toy", "", name, id, price, "", product_set)
 
 	except:
 		print("www.grandandtoy.com pipe is now broken.")
@@ -202,7 +360,7 @@ def pull_shi(url, product_set):
 				name = name+" Ink"
 
 			if id is not " ":
-				add_element("NSP", "shi", "", name, id, price, "", product_set)
+				add_element("NSP", "US", "shi", "", name, id, price, "", product_set)
 
 	except:
 		print("www.shi.com pipe is now broken.")
@@ -237,7 +395,7 @@ def pull_macmall(url, product_set):
 				except:
 					price = container.find("span",{"class":"lprice prod-lprice"}).text
 
-			add_element("NSP", "MacMall", "", name, id, price, "", product_set)
+			add_element("NSP", "US", "MacMall", "", name, id, price, "", product_set)
 
 	except:
 		print("www.macmall.com pipe is now broken.")
@@ -278,7 +436,7 @@ def pull_amazon(url, product_set):
 		except:
 			price = "Sold out"
 
-		add_element("E-Commerce", "Amazon", "", name, "", price, "", product_set)
+		add_element("E-Commerce", "US", "Amazon", "", name, "", price, "", product_set)
 
 	except:
 		print("www.amazon.com pipe is now broken.")
@@ -314,7 +472,7 @@ def pull_pcconnection(url, product_set):
 			except:
 				price = "call for price"
 
-			add_element("NSP", "PC Connection", "", name, id, price, "", product_set)
+			add_element("NSP", "US", "PC Connection", "", name, id, price, "", product_set)
 
 	except:
 		print("www.connection.com pipe is now broken.")
@@ -354,7 +512,7 @@ def pull_plotter(url, product_set):
 			if "PROGRAF" in name and "Printer" not in name:
 				name = name+" Printer"
 
-			add_element("ISG", "Plotter Pro", "", name, "", price, "", product_set)
+			add_element("ISG", "US", "Plotter Pro", "", name, "", price, "", product_set)
 
 	except:
 		print("www.plotterpro.com pipe is now broken.")
@@ -397,7 +555,7 @@ def pull_govets(url, product_set):
 			if "Ink" in id:
 				id = id.split('Ink', 1)[0]
 
-			add_element("E-Commerce", "GoVets", "", name, id, price, "", product_set)
+			add_element("E-Commerce", "US", "GoVets", "", name, id, price, "", product_set)
 
 	except:
 		print("www.govets.com pipe is now broken.")
@@ -437,7 +595,7 @@ def pull_adorama(url, product_set):
 				id = ""
 				price = ""
 
-			add_element("E-Commerce", "Adorama", "", name, id, price, "", product_set)
+			add_element("E-Commerce", "US", "Adorama", "", name, id, price, "", product_set)
 
 	except:
 		print("www.adorama.com pipe is now broken.")
@@ -475,7 +633,7 @@ def pull_tiger(url, product_set):
 			if "Details" in price:
 				price = ""
 
-			add_element("NSP", "Tiger Direct", "", name, id, price, "", product_set)
+			add_element("NSP", "US", "Tiger Direct", "", name, id, price, "", product_set)
 
 	except:
 		print("www.tigerdirect.com pipe is now broken.")
@@ -503,7 +661,7 @@ def pull_hp(url, product_set):
 		id = butcher(id).upper()
 		price = page_soup.find("span",{"itemprop":"price"}).text
 
-		add_element("E-Commerce", "HP", "", name, "CQ891C", price, "", product_set)
+		add_element("E-Commerce", "US", "HP", "", name, "CQ891C", price, "", product_set)
 
 
 	except:
@@ -539,7 +697,7 @@ def pull_pcnation(url, product_set):
 			if "Free" in price:
 				price = price.split('F', 1)[0]
 
-			add_element("NSP", "PCNation", "", name, id, price, "", product_set)
+			add_element("NSP", "US", "PCNation", "", name, id, price, "", product_set)
 
 	except:
 		print("www.pcnation.com pipe is now broken.")
@@ -595,7 +753,7 @@ def pull_overland(url, product_set):
 				pricelist.append(price)
 
 		for name, price in zip(namelist, pricelist):
-			add_element("ISG", "Overland Blueprint", "", name, "", price, "", product_set)
+			add_element("ISG", "US", "Overland Blueprint", "", name, "", price, "", product_set)
 
 	except:
 		print("www.overlandblueprint.com pipe is now broken.")
@@ -630,7 +788,7 @@ def pull_tastar(url, product_set):
 			price = butcher(price)
 			price = price.split('Price', 1)[1]
 			price = price.split('Please', 1)[0]
-			add_element("ISG", "Tartar Supply", brand, name, sku, price, "Free Shipping", product_set)
+			add_element("ISG", "US", "Tartar Supply", brand, name, sku, price, "Free Shipping", product_set)
 
 
 	except:
@@ -668,7 +826,7 @@ def pull_vistek(url, product_set):
 		except:
 			id = ""
 
-		add_element("E-Commerce", "Vistek", "", name, id, price, shipping, product_set)
+		add_element("E-Commerce", "CA", "Vistek", "", name, id, price, shipping, product_set)
 
 	except:
 		print("www.vistek.com pipe is now broken.")
@@ -691,12 +849,12 @@ def pull_dell(url, product_set):
 		id = ' '.join([w for w in id.split() if len(w)==9])
 		if "Free" in price_list[1].text:
 			shipping = price_list[1].text
-			price = price_list[0].text
+			price = price_list[2].text
 		else:
-			shipping = price_list[0].text
+			shipping = price_list[2].text
 			price = price_list[1].text
 
-		add_element("E-Commerce", "Dell", "", name, id, price, shipping, product_set)
+		add_element("E-Commerce", "US", "Dell", "", name, id, price, shipping, product_set)
 
 	except:
 		print("www.dell.com pipe is now broken.")
@@ -723,7 +881,7 @@ def pull_buyvpc(url, product_set):
 		price = price.split("$", 1)[1]
 		price = "$"+price
 
-		add_element("E-Commerce", "BuyVPC", "", name, id, price, "", product_set)
+		add_element("E-Commerce", "US", "BuyVPC", "", name, id, price, "", product_set)
 
 	except:
 		print("www.newegg.com pipe is now broken.")
@@ -747,12 +905,19 @@ def pull_epson(url, product_set):
 
 		for container in containers:
 			name = (container.find("a",{"class":"name"}).text) + " Printer"
-			price = container.find("div",{"class":"amount"}).text
+			price = container.findAll("div",{"class":"amount"})
+			if len(price) > 0:
+				try:
+					price = price[1].text
+				except:
+					price = price[0].text
+			else:
+				price = ""
 
 			if "epson.ca" in url:
-				add_element("E-Commerce", "Epson.ca", "Epson", name, "", price, "", product_set)
+				add_element("E-Commerce", "CA", "Epson.ca", "Epson", name, "", price, "", product_set)
 			else:
-				add_element("E-Commerce", "Epson (US)", "Epson", name, "", price, "", product_set)
+				add_element("E-Commerce", "US", "Epson (US)", "Epson", name, "", price, "", product_set)
 
 	except:
 		print("www.epson.com pipe is now broken.")
@@ -792,7 +957,7 @@ def pull_walmart(url, product_set):
 			name = ""
 			price = ""
 
-		add_element("E-Commerce", "Walmart", "", name, "", price, shipping, product_set)
+		add_element("E-Commerce", "US", "Walmart", "", name, "", price, shipping, product_set)
 
 	except:
 		print("www.walmart.com pipe is now broken.")
@@ -831,7 +996,7 @@ def pull_bh(url, product_set):
 			except:
 				id = ""
 
-			add_element("E-Commerce", "B&H", company, name, id, price, shipping, product_set)
+			add_element("E-Commerce", "US", "B&H", company, name, id, price, shipping, product_set)
 
 	except:
 		print("www.bhphotovideo.com pipe is now broken.")
@@ -864,7 +1029,7 @@ def pull_newegg(url, product_set):
 				shipping = ""
 
 
-			add_element("E-Commerce", "NewEgg", "", name, "", price, shipping, product_set)
+			add_element("E-Commerce", "US", "NewEgg", "", name, "", price, shipping, product_set)
 
 	except:
 		print("www.newegg.com pipe is now broken.")
@@ -890,11 +1055,10 @@ def pull_staples(url, product_set):
 			name = container.div.div.a["title"]
 			price = container.find("span",{"class":"standard-type__price"}).text
 
-			add_element("E-Commerce", "Staples", "", name, "", price, "", product_set) #no shipping data
+			add_element("E-Commerce", "US", "Staples", "", name, "", price, "", product_set) #no shipping data
 
 	except:
 		print("www.staples.com pipe is now broken.")
-
 
 
 
@@ -928,7 +1092,7 @@ def standardize_skus(product_list):
 
 
 #If correct product, object is created and added to product set
-def add_element(channel, store, company, name, id, price, shipping, product_set):
+def add_element(channel, country, store, company, name, id, price, shipping, product_set):
 	name = butcher(name)
 	price = butcher(price)
 	price = price.strip()
@@ -976,7 +1140,7 @@ def add_element(channel, store, company, name, id, price, shipping, product_set)
 
 	#create product object
 	if not banned:
-		new_product = Product(channel, store, company, name, id, price, shipping)
+		new_product = Product(channel, country, store, company, name, id, price, shipping)
 		product_set.add(new_product)
 
 
