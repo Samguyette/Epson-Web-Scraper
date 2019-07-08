@@ -12,4 +12,5 @@ class Product:
             self.id = id
             self.price = price
             self.added = False
+            self.sku_change = False
             self.shipping = shipping

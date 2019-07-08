@@ -2,7 +2,7 @@
 # Name: Samuel Guyette
 # Desc: Pulls data from numerous websites to compare pricing of T-series competitors.
 #		Will output a .csv file to location of program.
-# Other files required: product_class.py
+# Other files required: helper_functions.py, product_class.py, lists.py
 
 import string
 import datetime
@@ -37,6 +37,37 @@ def append_category(category, substrings, red_words):
 					product.added = True;
 
 
+def build_condensed_table():
+	header = ",Website,"
+	for i in sku_targets:
+		header = header + i + ","
+	f.write(header+"\n")
+
+	for website in website_targets:
+		#write country
+		line = ""
+		if "(CA)" in website:
+			line += "CA,"
+			website = website.replace('(CA)','')
+		else:
+			line += "US,"
+		line += website+","
+		for sku in sku_targets:
+			product_found = False
+			for product in product_set:
+				if product.id == sku and product.website == website and not product_found:
+					line += product.price
+					if "Free" in product.shipping:
+						line += "*,"
+					else:
+						line += ","
+
+					product_found = True
+
+			if not product_found:
+				line += ","
+
+		f.write(line+"\n")
 
 # ****MAIN**** #
 if __name__ == '__main__':
@@ -55,17 +86,29 @@ if __name__ == '__main__':
 	now = datetime.datetime.now()
 	f.write("Date and time of script execution: "+now.strftime("%Y-%m-%d %H:%M:%S")+"\n\n")
 
-	#write header
+	#builds condensed table
+	print("Building condensed table...\n")
+	title = "Condensed Table\n*Free Shipping\n"
+	f.write(title)
+	build_condensed_table()
+	space = "\n\n\n\n\n"
+	f.write(space)
+	print("Finished building and writing condensed table.\n")
+
+	#write headers for super table
+	title = "Super Table\n"
+	f.write(title)
 	headers = "Channel, Country, Website, Company, Category, Name, SKU, Price, Shipping\n"
 	f.write(headers)
 
 	#creates sub categories
-	print("Writing data to file.\n")
+	print("Writing all data to super table...\n")
+	#builds super table
 	append_category("Printer", printer_include_list, printer_exclude_list);
 	append_category("Ink", ink_include_list, ink_exclude_list);
 	append_category("Accessory", accessories_include_list, accessories_exlude_list)
-	print("Intern work is now complete.\n")
 
+	print("Intern work is now complete.\n")
 
 	f.close()
 

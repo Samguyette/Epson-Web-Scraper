@@ -245,8 +245,44 @@ lexjet_urllist = [
             'https://www.lexjet.com/search?q=Designjet+T530'
 ]
 buffalo_urllist = [
-    'https://www.buffalous.us/product/epson-surecolor-t3170-wireless-printer/',
-    'https://www.buffalous.us/product/epson-surecolor-t5170-wireless-printer/'
+            'https://www.buffalous.us/product/epson-surecolor-t3170-wireless-printer/',
+            'https://www.buffalous.us/product/epson-surecolor-t5170-wireless-printer/'
+]
+allamerican_urllist = [
+            'https://aaprintsupplyco.com/products/epson-surecolor-t3170-printer',
+            'https://aaprintsupplyco.com/products/epson-surecolor-t5170-printer',
+            'https://aaprintsupplyco.com/products/epson-surecolor-t3470-printer-with-wifi',
+            'https://aaprintsupplyco.com/products/epson-surecolor-t5470-printer-with-wifi',
+            'https://aaprintsupplyco.com/products/epson-surecolor-t3270-screenprint-edition-printer',
+            'https://aaprintsupplyco.com/products/epson-surecolor-t3270-printer-single-roll-24',
+            'https://aaprintsupplyco.com/products/epson-surecolor-t5270-printer-dual-roll-36',
+            'https://aaprintsupplyco.com/products/epson-surecolor-t5270-printer-single-roll-36',
+            'https://aaprintsupplyco.com/products/epson-surecolor-t7270-printer-dual-roll-44',
+            'https://aaprintsupplyco.com/products/epson-surecolor-t7270-printer-single-roll-44'
+]
+proimagingsupplies_urllist = [
+            'https://proimagingsupplies.com/printers-epson-t-series-c1126/'
+]
+shadesofpaper_urllist = [
+            'https://shadesofpaper.com/index.php?main_page=product_info&cPath=3957_3977_3416_3566&products_id=7190',
+            'https://shadesofpaper.com/index.php?main_page=product_info&cPath=3957_3977_3416_3566&products_id=7191',
+            'https://shadesofpaper.com/index.php?main_page=product_info&cPath=3957_3977_3416_3566&products_id=7206',
+            'https://shadesofpaper.com/index.php?main_page=product_info&cPath=3957_3977_3416_3566&products_id=7207',
+            'https://shadesofpaper.com/index.php?main_page=product_info&cPath=3957_3977_3416_3566&products_id=5849',
+            'https://shadesofpaper.com/index.php?main_page=product_info&cPath=3957_3977_3416_3566&products_id=5853',
+            'https://shadesofpaper.com/index.php?main_page=product_info&cPath=3957_3977_3416_3566&products_id=5852',
+            'https://shadesofpaper.com/index.php?main_page=product_info&cPath=3957_3977_3416_3566&products_id=5855'
+]
+spectraflow_urllist = [
+            'http://www.spectraflow.com/s.nl/sc.1/category./.f?search=surecolor+T3170',
+            'http://www.spectraflow.com/s.nl/sc.1/category./.f?search=Surecolor+T5170',
+            'http://www.spectraflow.com/s.nl/sc.1/category./.f?search=T3470',
+            'http://www.spectraflow.com/s.nl/sc.1/category./.f?search=T5470',
+            'http://www.spectraflow.com/s.nl/sc.1/category./.f?search=T3270',
+            'http://www.spectraflow.com/s.nl/sc.1/category./.f?search=T5270',
+            'http://www.spectraflow.com/s.nl/sc.1/category./.f?search=T7270',
+            'http://www.spectraflow.com/s.nl/sc.1/category./.f?search=T120',
+            'http://www.spectraflow.com/s.nl/sc.1/category./.f?search=T520'
 ]
 company_list = [
 	["Epson", "Epson"],
@@ -277,11 +313,11 @@ remove_list = {
     "Paper",
     "£"
 }
-printer_include_list = {
+printer_include_list = [
     "Printer",
     "printer"
-}
-printer_exclude_list = {
+]
+printer_exclude_list = [
     "Spindle",
     "Cyan",
     "Magenta",
@@ -300,17 +336,17 @@ printer_exclude_list = {
     "Maintenance",
     "EMultifunction",
     "Feed"
-}
-ink_include_list = {
+]
+ink_include_list = [
     "Ink",
     "Ultrachrome"
-}
-ink_exclude_list = {
+]
+ink_exclude_list = [
     "Bottles",
     "Tank",
     "Receipt"
-}
-accessories_include_list = {
+]
+accessories_include_list = [
     "Spindle",
     "Tank",
     "Bottles",
@@ -323,10 +359,72 @@ accessories_include_list = {
     "Service",
     "Blade",
     "Stand"
-}
-accessories_exlude_list = {
+]
+accessories_exlude_list = [
     "Receipt"
-}
+]
+
+sku_targets = [
+    "SSCT3270SR",
+    "SSCT3270SP",
+    "SSCT5270SR",
+    "SSCT5270DR",
+    "SSCT7270SR",
+    "SSCT3170SR",
+    "SSCT3170DR",
+    "SSCT5170SR",
+    "SSCT5170DR",
+    "SSCT3470SR",
+    "SSCT5470SR",
+    "DDJT120",
+    "DDJT520",
+    "DDJT52024",
+    "DDJT52036",
+    "DDT125",
+    "DDJT130",
+    "DDJT525",
+    "DDJT52524",
+    "DDJT52536",
+    "DDJT530",
+    "IIPF670",
+    "IIPF670E"
+]
+
+website_targets = [
+    "Spectraflow",
+    "Shades of Paper",
+    "ProImaging Supplies",
+    "All American",
+    "Buffalo",
+    "LexJet",
+    "Laube",
+    "Imaging Spectrum",
+    "ITSupplies",
+    "CDW",
+    "Zones",
+    "Grand&Toy (CA)",
+    "shi",
+    "MacMall",
+    "Amazon",
+    "PC Connection",
+    "Plotter Pro",
+    "GoVets",
+    "Adorama",
+    "Tiger Direct",
+    "HP",
+    "PCNation",
+    "Overland Blueprint",
+    "Tartar Supply",
+    "Vistek (CA)",
+    "Dell",
+    "BuyVPC",
+    "Epson.ca (CA)",
+    "Epson",
+    "Walmart",
+    "B&H",
+    "NewEgg",
+    "Staples"
+]
 
 #must have substrings, must exclude substrings, key sku
 sku_key = [
@@ -336,33 +434,36 @@ sku_key = [
     # (["Ink","Canon","Pfi", "007"], ink_exclude_list, "007CINK"),
 
     (["rinter","Refurbished"], printer_exclude_list, "REGURBISHED"),
-    (["rinter","urecolor","T3270"], printer_exclude_list, "SCT3270SR"),
-    (["rinter","urecolor","T3270","Screen"], printer_exclude_list, "SCT3270SP"),
-    (["rinter","urecolor","T5270"], printer_exclude_list, "SCT5270SR"),
-    (["rinter","urecolor","T5270","Dual"], printer_exclude_list, "SCT5270DR"),
-    (["rinter","urecolor","T7270"], printer_exclude_list, "SCT7270SR"),
-    (["rinter","urecolor","T7270"], printer_exclude_list, "SCT7270SR"),
-    (["rinter","urecolor","T3170"], printer_exclude_list, "SCT3170SR"),
-    (["rinter","urecolor","T3170","Dual"], printer_exclude_list, "SCT3170DR"),
-    (["rinter","urecolor","T5170"], printer_exclude_list, "SCT5170SR"),
-    (["rinter","urecolor","T5170","Dual"], printer_exclude_list, "SCT5170DR"),
-    (["rinter","urecolor","T3470"], printer_exclude_list, "SCT3470SR"),
-    (["rinter","urecolor","T5470"], printer_exclude_list, "SCT5470SR"),
-    (["rinter","esignjet","T120"], printer_exclude_list, "DJT120"),
-    (["rinter","esignjet","T120", "Kit"], printer_exclude_list, "DJT120SET"),
-    (["rinter","esignjet","T120", "Prof"], printer_exclude_list, "DJT120PRO"),
-    (["rinter","esignjet","T120","Bundle"], printer_exclude_list, "DJT120BUNDLE"),
-    (["rinter","esignjet","T520"], printer_exclude_list, "DJT520"),
-    (["rinter","esignjet","T520","24"], printer_exclude_list, "DJT52024"),
-    (["rinter","esignjet","T520","36"], printer_exclude_list, "DJT52036"),
-    (["rinter","esignjet","T520","Bundle"], printer_exclude_list, "DJT520BUNDLE"),
-    (["rinter","esignjet","T125"], printer_exclude_list, "DJT125"),
-    (["rinter","esignjet","T130"], printer_exclude_list, "DJT130"),
-    (["rinter","esignjet","T525"], printer_exclude_list, "DJT525"),
-    (["rinter","esignjet","T525","24"], printer_exclude_list, "DJT52524"),
-    (["rinter","esignjet","T525","36"], printer_exclude_list, "DJT52536"),
-    (["rinter","esignjet","T530"], printer_exclude_list, "DJT530"),
-    (["rinter","anon","IPF670"], printer_exclude_list, "IPF670"),
-    (["rinter","anon","IPF670e"], printer_exclude_list, "IPF670E"),
-    (["rinter","anon","IPF670 E"], printer_exclude_list, "IPF670E")
+    (["rinter","urecolor","T3270"], printer_exclude_list, "SSCT3270SR"),
+    (["rinter","urecolor","T3270","Screen"], printer_exclude_list, "SSCT3270SP"),
+    (["rinter","urecolor","T5270"], printer_exclude_list, "SSCT5270SR"),
+    (["rinter","urecolor","T5270","Dual"], printer_exclude_list, "SSCT5270DR"),
+    (["rinter","urecolor","T5270","Double"], printer_exclude_list, "SSCT5270DR"),
+    (["rinter","urecolor","T7270"], printer_exclude_list, "SSCT7270SR"),
+    (["rinter","urecolor","T7270"], printer_exclude_list, "SSCT7270SR"),
+    (["rinter","urecolor","T3170"], printer_exclude_list, "SSCT3170SR"),
+    (["rinter","urecolor","T3170","Dual"], printer_exclude_list, "SSCT3170DR"),
+    (["rinter","urecolor","T3170","Double"], printer_exclude_list, "SSCT3170DR"),
+    (["rinter","urecolor","T5170"], printer_exclude_list, "SSCT5170SR"),
+    (["rinter","urecolor","T5170","Dual"], printer_exclude_list, "SSCT5170DR"),
+    (["rinter","urecolor","T5170","Double"], printer_exclude_list, "SSCT5170DR"),
+    (["rinter","urecolor","T3470"], printer_exclude_list, "SSCT3470SR"),
+    (["rinter","urecolor","T5470"], printer_exclude_list, "SSCT5470SR"),
+    (["rinter","esignjet","T120"], printer_exclude_list, "DDJT120"),
+    (["rinter","esignjet","T120", "Kit"], printer_exclude_list, "DDJT120SET"),
+    (["rinter","esignjet","T120", "Prof"], printer_exclude_list, "DDJT120PRO"),
+    (["rinter","esignjet","T120","Bundle"], printer_exclude_list, "DDJT120BUNDLE"),
+    (["rinter","esignjet","T520"], printer_exclude_list, "DDJT520"),
+    (["rinter","esignjet","T520","24"], printer_exclude_list, "DDJT52024"),
+    (["rinter","esignjet","T520","36"], printer_exclude_list, "DDJT52036"),
+    (["rinter","esignjet","T520","Bundle"], printer_exclude_list, "DDJT520BUNDLE"),
+    (["rinter","esignjet","T125"], printer_exclude_list, "DDJT125"),
+    (["rinter","esignjet","T130"], printer_exclude_list, "DDJT130"),
+    (["rinter","esignjet","T525"], printer_exclude_list, "DDJT525"),
+    (["rinter","esignjet","T525","24"], printer_exclude_list, "DDJT52524"),
+    (["rinter","esignjet","T525","36"], printer_exclude_list, "DDJT52536"),
+    (["rinter","esignjet","T530"], printer_exclude_list, "DDJT530"),
+    (["rinter","anon","IPF670"], printer_exclude_list, "IIPF670"),
+    (["rinter","anon","IPF670e"], printer_exclude_list, "IIPF670E"),
+    (["rinter","anon","IPF670 E"], printer_exclude_list, "IIPF670E")
 ]
