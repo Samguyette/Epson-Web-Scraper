@@ -8,10 +8,12 @@
 import string
 import datetime
 
-#csv to xlsx
-from pyexcel.cookbook import merge_all_to_a_book
-# import pyexcel.ext.xlsx # no longer required if you use pyexcel >= 0.2.2
+#xlsx
+import os
 import glob
+import csv
+import openpyxl
+import pandas as pd
 
 #import object class
 from product_class import Product
@@ -23,7 +25,7 @@ from helper_functions import build_data_set
 from lists import *
 
 
-def append_category(f, product_set, category, substrings, red_words):
+def append_category(f, product_set, category, green_words, red_words):
 	#picks correct category
 	for product in product_set:
 		write = True
@@ -33,14 +35,14 @@ def append_category(f, product_set, category, substrings, red_words):
 
 		for word in red_words:
 			if word in product.name:
-				write = False;
+				write = False
 
 		if write:
-			for substring in substrings:
+			for substring in green_words:
 				if substring in product.name and not product.added:
 					f.write(product.channel + "," + product.country + "," + product.website + "," + product.company + "," + category + ",")
 					f.write(product.name + "," + product.id + ", " + product.price + "," + product.shipping + "\n")
-					product.added = True;
+					product.added = True
 
 
 def build_condensed_table(f, product_set):
@@ -54,7 +56,7 @@ def build_condensed_table(f, product_set):
 		line = ""
 		if "(CA)" in website:
 			line += "CA,"
-			website = website.replace('(CA)','')
+			website = website.replace(' (CA)','')
 		else:
 			line += "US,"
 		line += website+","
@@ -63,6 +65,23 @@ def build_condensed_table(f, product_set):
 			for product in product_set:
 				if product.id == sku and product.website == website and not product_found:
 					line += product.price
+					#check if lowest sales price is correct
+					try:
+						lsp = price_target_hash[sku]
+						price = product.price
+						try:
+							price = price.split('.', 1)[0]
+						except:
+							pass
+						price = price.replace('$','')
+						price = int(price)
+						if price < lsp:
+							line = line+" L "
+						if price > lsp:
+							line = line+" H "
+					except:
+						pass
+
 					if "Free" in product.shipping:
 						line += "*,"
 					else:
@@ -85,7 +104,7 @@ def main():
 
 	#hash set for all product objects
 	product_set = set()
-	build_data_set(product_set);
+	build_data_set(product_set)
 	print(str(len(product_set))+" potential products gathered.\n")
 	#Writes name
 	f.write("Created by Sam Guyette\n")
@@ -112,12 +131,30 @@ def main():
 	#creates sub categories
 	print("Writing all data to super table...\n")
 	#builds super table
-	append_category(f, product_set, "Printer", printer_include_list, printer_exclude_list);
-	append_category(f, product_set, "Ink", ink_include_list, ink_exclude_list);
+	append_category(f, product_set, "Printer", printer_include_list, printer_exclude_list)
+	append_category(f, product_set, "Ink", ink_include_list, ink_exclude_list)
 	append_category(f, product_set, "Accessory", accessories_include_list, accessories_exlude_list)
 
-	print("Converting .csv file to .xlsx")
-	merge_all_to_a_book(glob.glob("Comparison_T-Series_ouput.csv"), "Comparison_T-Series_ouput.xlsx")
+	#convert .csv file to .xlsv
+	wb = openpyxl.Workbook()
+	ws = wb.active
+	with open(filename, 'rt') as f:
+		reader = csv.reader(f)
+		for r, row in enumerate(reader, start=1):
+			for c, val in enumerate(row, start=1):
+				ws.cell(row=r, column=c).value = val
+	wb.save("Comparison_T-Series_ouput.xlsx")
+
+	#Change letters to highlights
+
+	# new = pd.read_excel(filename + '.xlsx')
+	#
+	# writer = pd.ExcelWriter(new, engine='xlsxwriter')
+	#
+	# new.conditional_format('A1:ZZ1000', {'type': 'text',
+	# 										'criteria': 'containing',
+	# 										'value':' H ',
+	# 										'format': highlight_fmt})
 
 	print("Intern work is now complete.\n")
 
@@ -125,7 +162,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+	main()
 
 
 

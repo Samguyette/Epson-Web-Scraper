@@ -91,10 +91,17 @@ overland_urllist = [
             'https://www.overlandblueprint.com/plotters/'
 ]
 pcnation_urllist = [
-            'https://www.pcnation.com/web/search.aspx?keywords=Epson+Surecolor'
+            'https://www.pcnation.com/web/search.aspx?keywords=Epson+Surecolor',
+            'https://www.pcnation.com/web/search.aspx?keywords=Epson+T3270',
+            'https://www.pcnation.com/web/search.aspx?keywords=Epson+T5270',
+            'https://www.pcnation.com/web/search.aspx?keywords=Epson+T7270',
+            'https://www.pcnation.com/web/search.aspx?keywords=Epson+T3170',
+            'https://www.pcnation.com/web/search.aspx?keywords=T5170'
 ]
 hp_urllist = [
-            'https://www8.hp.com/us/en/large-format-printers/designjet-printers/t120.html'
+            'https://www8.hp.com/us/en/large-format-printers/designjet-printers/t120.html',
+            'http://www8.hp.com/us/en/designjet-printers/product-details/18585085',
+            'http://www8.hp.com/us/en/designjet-printers/product-details/18585084'
 ]
 tiger_urllist = [
             'http://www.tigerdirect.com/applications/category/category_slc.asp?Sort=3&Nav=|c:2710|m:316|&Recs=30',
@@ -176,7 +183,7 @@ zones_urllist = [
 ]
 cdw_urllist = [
             'https://www.cdw.com/search/?key=Surecolor%20T3270&searchscope=all&sr=1',
-            'https://www.cdw.com/search/?key=Surecolor%20T5270%20&searchscope=all&sr=1',
+            'https://www.cdw.com/search/?key=Surecolor%20T5270%20&searchscope=all&sr=1'
             'https://www.cdw.com/search/?key=Surecolor%20T7270&searchscope=all&sr=1',
             'https://www.cdw.com/search/?key=Surecolor%20T3470&searchscope=all&sr=1',
             'https://www.cdw.com/search/?key=Surecolor%20T5470&searchscope=all&sr=1',
@@ -335,7 +342,8 @@ printer_exclude_list = [
     "Stand",
     "Maintenance",
     "EMultifunction",
-    "Feed"
+    "Feed",
+    "Module"
 ]
 ink_include_list = [
     "Ink",
@@ -371,20 +379,16 @@ sku_targets = [
     "SSCT5270DR",
     "SSCT7270SR",
     "SSCT3170SR",
-    "SSCT3170DR",
     "SSCT5170SR",
-    "SSCT5170DR",
     "SSCT3470SR",
     "SSCT5470SR",
     "DDJT120",
-    "DDJT520",
-    "DDJT52024",
-    "DDJT52036",
-    "DDT125",
+    "DDJT520_E",
+    "DDJT520_24",
+    "DDJT520_36",
     "DDJT130",
-    "DDJT525",
-    "DDJT52524",
-    "DDJT52536",
+    "DDJT525_24",
+    "DDJT525_36",
     "DDJT530",
     "IIPF670",
     "IIPF670E"
@@ -426,6 +430,18 @@ website_targets = [
     "Staples"
 ]
 
+price_target_hash = {
+    'SSCT3270SR': 2545,
+    'SSCT3270SP': 3045,
+    'SSCT5270SR': 3195,
+    'SSCT5270DR': 4595,
+    'SSCT7270SR': 3595,
+    'SSCT3170SR': 895,
+    'SSCT5170SR': 1895,
+    'SSCT3470SR': 1895,
+    'SSCT5470SR': 2395,
+}
+
 #must have substrings, must exclude substrings, key sku
 sku_key = [
     # (["Ink","HP","711"], ink_exclude_list, "HP711INK"),
@@ -442,26 +458,20 @@ sku_key = [
     (["rinter","urecolor","T7270"], printer_exclude_list, "SSCT7270SR"),
     (["rinter","urecolor","T7270"], printer_exclude_list, "SSCT7270SR"),
     (["rinter","urecolor","T3170"], printer_exclude_list, "SSCT3170SR"),
-    (["rinter","urecolor","T3170","Dual"], printer_exclude_list, "SSCT3170DR"),
-    (["rinter","urecolor","T3170","Double"], printer_exclude_list, "SSCT3170DR"),
     (["rinter","urecolor","T5170"], printer_exclude_list, "SSCT5170SR"),
-    (["rinter","urecolor","T5170","Dual"], printer_exclude_list, "SSCT5170DR"),
-    (["rinter","urecolor","T5170","Double"], printer_exclude_list, "SSCT5170DR"),
     (["rinter","urecolor","T3470"], printer_exclude_list, "SSCT3470SR"),
     (["rinter","urecolor","T5470"], printer_exclude_list, "SSCT5470SR"),
     (["rinter","esignjet","T120"], printer_exclude_list, "DDJT120"),
     (["rinter","esignjet","T120", "Kit"], printer_exclude_list, "DDJT120SET"),
     (["rinter","esignjet","T120", "Prof"], printer_exclude_list, "DDJT120PRO"),
     (["rinter","esignjet","T120","Bundle"], printer_exclude_list, "DDJT120BUNDLE"),
-    (["rinter","esignjet","T520"], printer_exclude_list, "DDJT520"),
-    (["rinter","esignjet","T520","24"], printer_exclude_list, "DDJT52024"),
-    (["rinter","esignjet","T520","36"], printer_exclude_list, "DDJT52036"),
+    (["rinter","esignjet","T520"], printer_exclude_list, "DDJT520_E"),
+    (["rinter","esignjet","T520","24"], printer_exclude_list, "DDJT520_24"),
+    (["rinter","esignjet","T520","36"], printer_exclude_list, "DDJT520_36"),
     (["rinter","esignjet","T520","Bundle"], printer_exclude_list, "DDJT520BUNDLE"),
-    (["rinter","esignjet","T125"], printer_exclude_list, "DDJT125"),
     (["rinter","esignjet","T130"], printer_exclude_list, "DDJT130"),
-    (["rinter","esignjet","T525"], printer_exclude_list, "DDJT525"),
-    (["rinter","esignjet","T525","24"], printer_exclude_list, "DDJT52524"),
-    (["rinter","esignjet","T525","36"], printer_exclude_list, "DDJT52536"),
+    (["rinter","esignjet","T525","24"], printer_exclude_list, "DDJT525_24"),
+    (["rinter","esignjet","T525","36"], printer_exclude_list, "DDJT525_36"),
     (["rinter","esignjet","T530"], printer_exclude_list, "DDJT530"),
     (["rinter","anon","IPF670"], printer_exclude_list, "IIPF670"),
     (["rinter","anon","IPF670e"], printer_exclude_list, "IIPF670E"),

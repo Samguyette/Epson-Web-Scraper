@@ -43,66 +43,66 @@ def build_data_set(product_set):
 	progress(1,23, status='  of data gathered...\n')
 	loop_site(newegg_urllist, pull_newegg, product_set)
 	progress(2,32, status='  of data gathered...\n')
-	loop_site(bh_urllist, pull_bh, product_set)
-	progress(3,32, status='  of data gathered...\n')
-	loop_site(walmart_urllist, pull_walmart, product_set)
-	progress(4,32, status=' of data gathered...\n')
-	loop_site(epson_urllist, pull_epson, product_set)
-	progress(5,32, status=' of data gathered...\n')
-	loop_site(buyvpc_urllist, pull_buyvpc, product_set)
-	progress(6,32, status=' of data gathered...\n')
-	loop_site(dell_urllist, pull_dell, product_set)
-	progress(7,32, status=' of data gathered...\n')
-	loop_site(vistek_urllist, pull_vistek, product_set)
-	progress(8,32, status=' of data gathered...\n')
-	loop_site(tastar_urllist, pull_tastar, product_set)
-	progress(9,32, status=' of data gathered...\n')
-	loop_site(overland_urllist, pull_overland, product_set)
-	progress(10,32, status=' of data gathered...\n')
-	loop_site(pcnation_urllist, pull_pcnation, product_set)
-	progress(11,32, status=' of data gathered...\n')
-	loop_site(hp_urllist, pull_hp, product_set)
-	progress(12,32, status=' of data gathered...\n')
-	loop_site(tiger_urllist, pull_tiger, product_set)
-	progress(13,32, status=' of data gathered...\n')
-	loop_site(adorama_urllist, pull_adorama, product_set)
-	progress(14,32, status=' of data gathered...\n')
-	loop_site(govets_urllist, pull_govets, product_set)
-	progress(15,32, status=' of data gathered...\n')
-	loop_site(plotter_urllist, pull_plotter, product_set)
-	progress(16,32, status=' of data gathered...\n')
-	loop_site(pcconnection_urllist, pull_pcconnection, product_set)
-	progress(17,32, status=' of data gathered...\n')
-	loop_site(amazon_urllist, pull_amazon, product_set)
-	progress(18,32, status=' of data gathered...\n')
-	loop_site(macmall_urllist, pull_macmall, product_set)
-	progress(19,32, status=' of data gathered...\n')
-	loop_site(shi_urllist, pull_shi, product_set)
-	progress(20,32, status=' of data gathered...\n')
-	loop_site(grandtoy_urllist, pull_grandtoy, product_set)
-	progress(21,32, status=' of data gathered...\n')
-	loop_site(zones_urllist, pull_zones, product_set)
-	progress(22,32, status=' of data gathered...\n')
-	loop_site(cdw_urllist, pull_cdw, product_set)
-	progress(23,32, status=' of data gathered...\n')
-	loop_site(itsupplies_urllist, pull_itsupplies, product_set)
-	progress(24,32, status=' of data gathered...\n')
-	loop_site(imagespectrum_urllist, pull_spectrum, product_set)
-	progress(25,32, status=' of data gathered...\n')
-	loop_site(laube_urllist, pull_laube, product_set)
-	progress(26,32, status=' of data gathered...\n')
-	loop_site(lexjet_urllist, pull_lexjet, product_set)
-	progress(27,32, status=' of data gathered...\n')
-	loop_site(buffalo_urllist, pull_buffalo, product_set)
-	progress(28,32, status=' of data gathered...\n')
-	loop_site(allamerican_urllist, pull_allamerican, product_set)
-	progress(29,32, status=' of data gathered...\n')
-	loop_site(proimagingsupplies_urllist, pull_proimagingsupplies, product_set)
-	progress(30,32, status=' of data gathered...\n')
-	loop_site(shadesofpaper_urllist, pull_shadesofpaper, product_set)
-	progress(31,32, status=' of data gathered...\n')
-	loop_site(spectraflow_urllist, pull_spectraflow, product_set)
-	progress(32,32, status='of data gathered...\n')
+	# loop_site(bh_urllist, pull_bh, product_set)
+	# progress(3,32, status='  of data gathered...\n')
+	# loop_site(walmart_urllist, pull_walmart, product_set)
+	# progress(4,32, status=' of data gathered...\n')
+	# loop_site(epson_urllist, pull_epson, product_set)
+	# progress(5,32, status=' of data gathered...\n')
+	# loop_site(buyvpc_urllist, pull_buyvpc, product_set)
+	# progress(6,32, status=' of data gathered...\n')
+	# loop_site(dell_urllist, pull_dell, product_set)
+	# progress(7,32, status=' of data gathered...\n')
+	# loop_site(vistek_urllist, pull_vistek, product_set)
+	# progress(8,32, status=' of data gathered...\n')
+	# loop_site(tastar_urllist, pull_tastar, product_set)
+	# progress(9,32, status=' of data gathered...\n')
+	# loop_site(overland_urllist, pull_overland, product_set)
+	# progress(10,32, status=' of data gathered...\n')
+	# loop_site(pcnation_urllist, pull_pcnation, product_set)
+	# progress(11,32, status=' of data gathered...\n')
+	# loop_site(hp_urllist, pull_hp, product_set)
+	# progress(12,32, status=' of data gathered...\n')
+	# loop_site(tiger_urllist, pull_tiger, product_set)
+	# progress(13,32, status=' of data gathered...\n')
+	# loop_site(adorama_urllist, pull_adorama, product_set)
+	# progress(14,32, status=' of data gathered...\n')
+	# loop_site(govets_urllist, pull_govets, product_set)
+	# progress(15,32, status=' of data gathered...\n')
+	# loop_site(plotter_urllist, pull_plotter, product_set)
+	# progress(16,32, status=' of data gathered...\n')
+	# loop_site(pcconnection_urllist, pull_pcconnection, product_set)
+	# progress(17,32, status=' of data gathered...\n')
+	# loop_site(amazon_urllist, pull_amazon, product_set)
+	# progress(18,32, status=' of data gathered...\n')
+	# loop_site(macmall_urllist, pull_macmall, product_set)
+	# progress(19,32, status=' of data gathered...\n')
+	# loop_site(shi_urllist, pull_shi, product_set)
+	# progress(20,32, status=' of data gathered...\n')
+	# loop_site(grandtoy_urllist, pull_grandtoy, product_set)
+	# progress(21,32, status=' of data gathered...\n')
+	# loop_site(zones_urllist, pull_zones, product_set)
+	# progress(22,32, status=' of data gathered...\n')
+	# loop_site(cdw_urllist, pull_cdw, product_set)
+	# progress(23,32, status=' of data gathered...\n')
+	# loop_site(itsupplies_urllist, pull_itsupplies, product_set)
+	# progress(24,32, status=' of data gathered...\n')
+	# loop_site(imagespectrum_urllist, pull_spectrum, product_set)
+	# progress(25,32, status=' of data gathered...\n')
+	# loop_site(laube_urllist, pull_laube, product_set)
+	# progress(26,32, status=' of data gathered...\n')
+	# loop_site(lexjet_urllist, pull_lexjet, product_set)
+	# progress(27,32, status=' of data gathered...\n')
+	# loop_site(buffalo_urllist, pull_buffalo, product_set)
+	# progress(28,32, status=' of data gathered...\n')
+	# loop_site(allamerican_urllist, pull_allamerican, product_set)
+	# progress(29,32, status=' of data gathered...\n')
+	# loop_site(proimagingsupplies_urllist, pull_proimagingsupplies, product_set)
+	# progress(30,32, status=' of data gathered...\n')
+	# loop_site(shadesofpaper_urllist, pull_shadesofpaper, product_set)
+	# progress(31,32, status=' of data gathered...\n')
+	# loop_site(spectraflow_urllist, pull_spectraflow, product_set)
+	# progress(32,32, status='of data gathered...\n')
 
 	#create uniform skus
 	print("Modifying SKU numbers...\n")
@@ -292,6 +292,9 @@ def pull_cdw(url, product_set):
 
 		for container in containers:
 			name = container.find("a",{"class":"search-result-product-url"}).text
+			if "SureColor" in name:
+				name = name + " Printer"
+
 			id = container.find("span",{"class":"mfg-code"}).text
 			id = id.split(': ', 1)[1]
 			price = container.find("div",{"class":"price-type-price"}).text
@@ -641,7 +644,7 @@ def pull_tiger(url, product_set):
 			except:
 				price = price
 			if "Details" in price:
-				price = ""
+				price = "Add to Cart"
 
 			add_element("NSP", "US", "Tiger Direct", "", name, id, price, "", product_set)
 
@@ -653,17 +656,11 @@ def pull_tiger(url, product_set):
 def pull_hp(url, product_set):
 	#check if broken
 	try:
-		#opening connection
-		uClient = uReq(url)
-		page_html = uClient.read()
-		uClient.close()
-		#html parsing
-		page_soup = soup(page_html,"html.parser")
-		#finds all products on current page
+		page_soup = pull_html(url)
+
 		name_list = page_soup.findAll("h3",{"class":"font-lh3"})
 		name = name_list[1].text
 		name = name.split('Printer', 1)[0] + "Printer"
-
 
 		id = name_list[1].text.split('Printer', 1)[1]
 		id = id.replace('(','')
@@ -671,10 +668,19 @@ def pull_hp(url, product_set):
 		id = butcher(id).upper()
 		price = page_soup.find("span",{"itemprop":"price"}).text
 
-		add_element("E-Commerce", "US", "HP", "", name, "CQ891C", price, "", product_set)
+		add_element("E-Commerce", "US", "HP", "", name, "", price, "", product_set)
 
 	except:
-		print("www.hp.com pipe is now broken.")
+		try:
+			page_soup = pull_html(url)
+
+			name = page_soup.find("h1",{"class":"hp-main-heading-lowercase prodName"}).text
+			price = page_soup.find("span",{"class":"hp-large-price-label"}).text
+			price = price.replace('*', '')
+			add_element("E-Commerce", "US", "HP", "", name, "", price, "", product_set)
+
+		except:
+			print("www.hp.com pipe is now broken.")
 
 def pull_pcnation(url, product_set):
 	#check if broken
@@ -828,6 +834,8 @@ def pull_dell(url, product_set):
 		page_soup = pull_html(url)
 
 		name = page_soup.find("h1",{"itemprop":"name"}).text
+		if "Epson" in name:
+			name = name + " Surecolor"
 		price_list = page_soup.findAll("span",{"class":"pull-right"})
 		id = page_soup.find("li",{"class":"text-capitalize text-gray-sepia-light small-font"}).text
 		id = ' '.join([w for w in id.split() if len(w)==9])
@@ -853,6 +861,9 @@ def pull_buyvpc(url, product_set):
 		name = page_soup.find("h2",{"itemprop":"name"}).text
 		price = page_soup.find("div",{"class":"price"}).text
 		id = page_soup.find("span",{"id":"mfg_id"}).text
+
+		if "SC" in name:
+			name = name.replace('SC', '')
 
 		price = butcher(price)
 		price = ''.join([i for i in price if i.isdigit() or "."])
@@ -891,7 +902,7 @@ def pull_epson(url, product_set):
 			if "epson.ca" in url:
 				add_element("E-Commerce", "CA", "Epson.ca", "Epson", name, "", price, "", product_set)
 			else:
-				add_element("E-Commerce", "US", "Epson (US)", "Epson", name, "", price, "", product_set)
+				add_element("E-Commerce", "US", "Epson", "Epson", name, "", price, "", product_set)
 
 	except:
 		print("www.epson.com pipe is now broken.")
@@ -1061,7 +1072,6 @@ def add_element(channel, country, store, company, name, id, price, shipping, pro
 	price = butcher(price)
 	price = price.strip()
 	shipping = butcher(shipping)
-
 	#add space between all upper and lower case
 	name = re.sub(r"(\w)([A-Z])", r"\1 \2", name)
 
