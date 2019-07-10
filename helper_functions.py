@@ -17,7 +17,6 @@ from product_class import Product
 #import data lists
 from lists import *
 
-
 #function to create loading bar
 def progress(count, total, status=''):
 	bar_len = 60
@@ -113,16 +112,16 @@ def build_data_set(product_set):
 # *** Website specific scrapers *** #
 def pull_spectraflow(url, product_set):
 	#check if broken
-	#try:
-	page_soup = pull_html(url)
-	#finds all products on current page
-	name = page_soup.findAll("div",{"class":"itemlist_description"})
-	price = page_soup.findAll("div",{"class":"itemlist_price"})
+	try:
+		page_soup = pull_html(url)
+		#finds all products on current page
+		name = page_soup.findAll("div",{"class":"itemlist_description"})
+		price = page_soup.findAll("div",{"class":"itemlist_price"})
 
-	for name_, price_ in zip(name, price):
-		add_element("ProFocus", "US", "Spectraflow", "", name_.text, "", price_.text, "", product_set)
-	#except:
-	#	print("www.spectraflow.com pipe is now broken.")
+		for name_, price_ in zip(name, price):
+			add_element("ProFocus", "US", "Spectraflow", "", name_.text, "", price_.text, "", product_set)
+	except:
+		print("www.spectraflow.com pipe is now broken.")
 
 
 
@@ -299,7 +298,7 @@ def pull_cdw(url, product_set):
 
 			add_element("NSP", "US", "CDW", "", name, id, price, "", product_set)
 	except:
-		print("www.cdw.com pipe is now broken.")
+		print("1/11 www.cdw.com links is broken.")
 
 
 

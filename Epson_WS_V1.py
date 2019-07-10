@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # File: Epson_WS_V1.py
 # Name: Samuel Guyette
 # Desc: Pulls data from numerous websites to compare pricing of T-series competitors.
@@ -6,6 +7,11 @@
 
 import string
 import datetime
+
+#csv to xlsx
+from pyexcel.cookbook import merge_all_to_a_book
+# import pyexcel.ext.xlsx # no longer required if you use pyexcel >= 0.2.2
+import glob
 
 #import object class
 from product_class import Product
@@ -17,7 +23,7 @@ from helper_functions import build_data_set
 from lists import *
 
 
-def append_category(category, substrings, red_words):
+def append_category(f, product_set, category, substrings, red_words):
 	#picks correct category
 	for product in product_set:
 		write = True
@@ -37,7 +43,7 @@ def append_category(category, substrings, red_words):
 					product.added = True;
 
 
-def build_condensed_table():
+def build_condensed_table(f, product_set):
 	header = ",Website,"
 	for i in sku_targets:
 		header = header + i + ","
@@ -69,10 +75,12 @@ def build_condensed_table():
 
 		f.write(line+"\n")
 
+
+
 # ****MAIN**** #
-if __name__ == '__main__':
+def main():
 	#opens connection
-	filename = "Comparison_T-Series.csv"
+	filename = "Comparison_T-Series_ouput.csv"
 	f = open(filename, "w")
 
 	#hash set for all product objects
@@ -90,7 +98,7 @@ if __name__ == '__main__':
 	print("Building condensed table...\n")
 	title = "Condensed Table\n*Free Shipping\n"
 	f.write(title)
-	build_condensed_table()
+	build_condensed_table(f, product_set)
 	space = "\n\n\n\n\n"
 	f.write(space)
 	print("Finished building and writing condensed table.\n")
@@ -104,18 +112,20 @@ if __name__ == '__main__':
 	#creates sub categories
 	print("Writing all data to super table...\n")
 	#builds super table
-	append_category("Printer", printer_include_list, printer_exclude_list);
-	append_category("Ink", ink_include_list, ink_exclude_list);
-	append_category("Accessory", accessories_include_list, accessories_exlude_list)
+	append_category(f, product_set, "Printer", printer_include_list, printer_exclude_list);
+	append_category(f, product_set, "Ink", ink_include_list, ink_exclude_list);
+	append_category(f, product_set, "Accessory", accessories_include_list, accessories_exlude_list)
+
+	print("Converting .csv file to .xlsx")
+	merge_all_to_a_book(glob.glob("Comparison_T-Series_ouput.csv"), "Comparison_T-Series_ouput.xlsx")
 
 	print("Intern work is now complete.\n")
 
 	f.close()
 
 
-
-
-
+if __name__ == '__main__':
+    main()
 
 
 
