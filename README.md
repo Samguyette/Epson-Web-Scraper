@@ -25,12 +25,12 @@ domino like fashion.
 
 ## Installation
 
-Use the package manager [pip](https://pypi.org/project/beautifulsoup4/) to install beautifulsoup4.
-Use the package manager [pip](https://pypi.org/project/lxml/) to install lxml.
-Use the package manager [pip](https://pypi.org/project/numpy/) to install numpy.
-Use the package manager [pip](https://pypi.org/project/openpyxl/) to install openpyxl.
-Use the package manager [pip](https://pypi.org/project/pandas/) to install pandas.
-Use the package manager [pip](https://pypi.org/project/urllib3/) to install urllib3.
+Use the package manager [pip](https://pypi.org/project/beautifulsoup4/) to install beautifulsoup4.\n
+Use the package manager [pip](https://pypi.org/project/lxml/) to install lxml.\n
+Use the package manager [pip](https://pypi.org/project/numpy/) to install numpy.\n
+Use the package manager [pip](https://pypi.org/project/openpyxl/) to install openpyxl.\n
+Use the package manager [pip](https://pypi.org/project/pandas/) to install pandas.\n
+Use the package manager [pip](https://pypi.org/project/urllib3/) to install urllib3.\n
 Use the package manager [pip](https://pypi.org/project/requests/) to install requests.
 
 ```bash
