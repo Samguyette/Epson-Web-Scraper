@@ -3,10 +3,11 @@
 # Name: Samuel Guyette
 # Desc: Pulls data from numerous websites to compare pricing of T-series competitors.
 #		Will output a .csv file to location of program.
-# Other files required: helper_functions.py, product_class.py, lists.py
+# Other files required: ws_functions.py, product_class.py, lists.py
 
 import string
 import datetime
+import statistics
 
 #xlsx
 import os
@@ -19,7 +20,7 @@ import pandas as pd
 from product_class import Product
 
 #import helper function
-from helper_functions import build_data_set
+from ws_functions import build_data_set
 
 #import lists
 from lists import *
@@ -57,7 +58,10 @@ def build_condensed_table(f, product_set):
 			line += "CA,"
 			website = website.replace(' (CA)','')
 		else:
-			line += "US,"
+			if "\n" in website:
+				pass
+			else:
+				line += "US,"
 		line += website+","
 		for sku in sku_targets:
 			product_found = False
@@ -65,17 +69,34 @@ def build_condensed_table(f, product_set):
 				if product.id == sku and product.website == website and not product_found:
 					line += product.price
 
-					#check if lowest sales price is correct
+					#add product to avg_price_hash
+					num = True
 					try:
-						lsp = price_target_hash[sku]
-						up = price_up_hash[sku]
 						price = product.price
 						try:
 							price = price.split('.', 1)[0]
 						except:
 							pass
+						try:
+							price = price.replace('*','')
+						except:
+							pass
+
 						price = price.replace('$','')
 						price = int(price)
+					except:
+						num = False
+
+					try:
+						if num:
+							avg_price_hash[sku].append(price)
+					except:
+						pass
+
+					#check if lowest sales price is correct
+					try:
+						lsp = price_target_hash[sku]
+						up = price_up_hash[sku]
 						if product.country == "US" and product.website != "Epson":
 							if price < lsp:
 								line = line+" ↓"
@@ -96,6 +117,21 @@ def build_condensed_table(f, product_set):
 
 		f.write(line+"\n")
 
+
+def find_averages(f, product_set):
+	median_list = "\n,Median:,"
+	mean_list = "\n,Mean:,"
+	for sku in avg_price_hash:
+		price_array = avg_price_hash[sku]
+		median = statistics.median(price_array)
+		mean = statistics.mean(price_array)
+		median = round(median, 2)
+		mean = round(mean, 2)
+		median_list += str(median)+","
+		mean_list += str(mean)+","
+
+	f.write(median_list)
+	f.write(mean_list+"\n")
 
 
 def highlight_prices():
@@ -164,10 +200,20 @@ def main():
 	#builds condensed table
 	print("Building condensed table...\n")
 	title1 = "Condensed Table\n*Free Shipping\n                            =  Price bellow lowest sales price"
-	title2 = " permitted (lower than Epson website): ↓\n                            =  Price above unilateral price: ↑\n\n"
+	title2 = " permitted (LSPP): ↓\n                            =  Price above unilateral price: ↑\n\n"
+	up_prices = ",UP:,"
+	lsp = ",LSPP:,"
+	for key in price_up_hash:
+		up_prices = up_prices + str(price_up_hash[key]) + ","
+	for key in price_target_hash:
+		lsp = lsp + str(price_target_hash[key]) + ","
+
 	f.write(title1)
 	f.write(title2)
+	f.write(up_prices+"\n")
+	f.write(lsp+"\n\n")
 	build_condensed_table(f, product_set)
+	find_averages(f, product_set)
 	space = "\n\n\n\n\n"
 	f.write(space)
 
@@ -187,6 +233,10 @@ def main():
 	#highlights prices that are over or under recommended selling point
 	print("Highlighting prices...\n")
 	highlight_prices()
+
+	#remove csv file
+	print("Deleting csv file...\n")
+	os.remove("rough_output.csv")
 
 	print("Intern work is now complete.\n")
 

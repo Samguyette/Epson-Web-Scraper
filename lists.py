@@ -428,11 +428,33 @@ website_targets = [
     "B&H",
     "NewEgg",
     "Staples",
-    "\n",
     "Epson.ca (CA)",
     "Grand&Toy (CA)",
     "Vistek (CA)"
 ]
+
+avg_price_hash ={
+    'SSCT3270SR': [],
+    'SSCT3270SP': [],
+    'SSCT5270SR': [],
+    'SSCT5270DR': [],
+    'SSCT7270SR': [],
+    'SSCT7270DR': [],
+    'SSCT3170SR': [],
+    'SSCT5170SR': [],
+    'SSCT3470SR': [],
+    'SSCT5470SR': [],
+    'DDJT120': [],
+    'DDJT520_E': [],
+    'DDJT520_24': [],
+    'DDJT520_36': [],
+    'DDJT130': [],
+    'DDJT525_24': [],
+    'DDJT525_36': [],
+    'DDJT530': [],
+    'IIPF670': [],
+    'IIPF670E': []
+}
 
 price_target_hash = {
     'SSCT3270SR': 2545,
@@ -457,7 +479,7 @@ price_up_hash = {
     'SSCT3170SR': 995,
     'SSCT5170SR': 1995,
     'SSCT3470SR': 1995,
-    'SSCT5470SR': 22495
+    'SSCT5470SR': 2345
 }
 
 #must have substrings, must exclude substrings, key sku
