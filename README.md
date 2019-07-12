@@ -8,6 +8,21 @@ Excel Comparison Tool is a Python script that takes two command line arguments o
 script finds differences in prices between both files. Differences will be highlighted in red showing past and current price, all else
 will be grey scaled back.
 
+
+# Motivation
+
+Epson T-Series product prices change daily across multiple e-commerce channels, this creates a challenge of confirming that hundreds of products
+are in compliance with Epson's UP policy. The Epson-Web-Scraper highlights which products and companies are out of compliance in real time.
+The pivot like table also provides visibility of mean and median across all web sellers, ensuring that pricing goals are met. Data is also pulled
+from T-Series competitors on the same e-commerce websites revealing if Epson T-Series products are being sold at competitive prices for the
+current market place.
+
+The Excel Comparison Tool indicates which companies and products have changed prices in a given timeframe. This can display if a back end rebate
+or different promotions constructed motivation for price changes. This data can also predict if price matching will ensue across resellers in a
+domino like fashion.  
+
+
+
 ## Installation
 
 Use the package manager [pip](https://pypi.org/project/beautifulsoup4/) to install beautifulsoup4.
