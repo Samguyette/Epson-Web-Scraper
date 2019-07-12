@@ -4,7 +4,7 @@ Epson-Web-Scraper (main.py) is a Python script that pulls from over 1600 data po
 transferred into a pivot type table displaying pricing of Epson T-Series printers and their competitors compared to all web resellers.
 Green cells are prices above UP. Red cells are prices bellow lowest sales price permitted.
 
-Excel Comparison Tool is a Python script that takes two command line arguments of two .xlsx files outputted by Epson-Web-Scraper. The
+Excel Comparison Tool is a Python script that takes two command line arguments both being .xlsx files outputted by Epson-Web-Scraper. The
 script finds differences in prices between both files. Differences will be highlighted in red showing past and current price, all else
 will be grey scaled back.
 
