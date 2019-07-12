@@ -9,7 +9,7 @@ at different times. The script finds differences in prices between both files. D
 price, all else will be grey scaled back.
 
 
-# Motivation
+## Motivation
 
 Epson T-Series product prices change daily across multiple e-commerce channels, this creates a challenge of confirming that hundreds of products
 are in compliance with Epson's UP policy. The Epson-Web-Scraper highlights which products and companies are out of compliance in real time.
@@ -20,7 +20,6 @@ in relation to the current market place.
 The Excel Comparison Tool indicates which companies and products have changed prices in a given timeframe. This can display if a back end rebate
 or different promotions constructed motivation for price changes. This data can also predict if price matching will ensue across resellers in a
 domino like fashion.  
-
 
 
 ## Installation
@@ -42,6 +41,7 @@ pip install pandas
 pip install urllib3
 pip install requests
 ```
+
 
 ## Usage
 
