@@ -1,4 +1,4 @@
-# EpsonWebScraper_Series
+# Epson-Web-Scraper
 
 Epson-Web-Scraper (main.py) is a Python script that pulls from over 1600 data points, 210 webpages, and 31 different resellers. Data is then
 transferred into a pivot type table displaying pricing of Epson T-Series printers and their competitors compared to all web resellers.
