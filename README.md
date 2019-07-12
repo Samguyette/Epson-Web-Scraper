@@ -52,4 +52,4 @@ python Excel_Comparison_Tool.py name1.xlsx name2.xlsx #Compares name1 and name2 
 
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[Epson End User Software License Agreement](https://epson.com/SoftwareLicenseAgreement)
