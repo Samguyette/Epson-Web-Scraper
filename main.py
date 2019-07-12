@@ -50,7 +50,6 @@ def build_condensed_table(f, product_set):
 	for i in sku_targets:
 		header = header + i + ","
 	f.write(header+"\n")
-
 	for website in website_targets:
 		#write country
 		line = ""
@@ -65,9 +64,11 @@ def build_condensed_table(f, product_set):
 			for product in product_set:
 				if product.id == sku and product.website == website and not product_found:
 					line += product.price
+
 					#check if lowest sales price is correct
 					try:
 						lsp = price_target_hash[sku]
+						up = price_up_hash[sku]
 						price = product.price
 						try:
 							price = price.split('.', 1)[0]
@@ -75,10 +76,11 @@ def build_condensed_table(f, product_set):
 							pass
 						price = price.replace('$','')
 						price = int(price)
-						if price < lsp:
-							line = line+" L "
-						if price > lsp:
-							line = line+" H "
+						if product.country == "US" and product.website != "Epson":
+							if price < lsp:
+								line = line+" ↓"
+							if price > up:
+								line = line+" ↑"
 					except:
 						pass
 
@@ -104,15 +106,19 @@ def highlight_prices():
 		reader = csv.reader(f)
 		for r, row in enumerate(reader, start=1):
 			for c, val in enumerate(row, start=1):
-				ws.cell(row=r, column=c).value = val
+				try:
+					val = val.replace('$','')
+					ws.cell(row=r, column=c).value = float(val)
+				except:
+					ws.cell(row=r, column=c).value = val
+
 	wb.save("final_output.xlsx")
 
 	#change letters to highlights
 	df = pd.read_excel("final_output.xlsx")
 	#chagne header location
-	df.columns = df.iloc[1]
-	df.reindex(df.index.drop(1))
-	df = df.drop(df.index[-1])
+	df.columns = df.iloc[2]
+	df.reindex(df.index.drop(2))
 	#writes over converted file
 	fname = 'final_output.xlsx'
 	writer = pd.ExcelWriter(fname, engine='xlsxwriter')
@@ -120,17 +126,19 @@ def highlight_prices():
 	# get xlsxwriter objects
 	workbook  = writer.book
 	worksheet = writer.sheets['MAIN']
+
 	#highlights incorrect prices
 	formatH = workbook.add_format({'bg_color':'#FFC7CE', 'font_color':'#000000'})
 	formatL = workbook.add_format({'bg_color':'#C6EFCE','font_color': '#000000'})
 	worksheet.conditional_format('A1:ZZ1000', {'type': 'text',
 											'criteria': 'containing',
-											'value':' H ',
+											'value':'↓',
 											'format': formatH})
 	worksheet.conditional_format('A1:ZZ1000', {'type': 'text',
 											'criteria': 'containing',
-											'value':' L ',
+											'value':'↑',
 											'format': formatL})
+
 	writer.save()
 
 
@@ -147,7 +155,7 @@ def main():
 	build_data_set(product_set)
 	print(str(len(product_set))+" potential products gathered.\n")
 	#Writes name
-	f.write("Created by Sam Guyette\n")
+	f.write("\nCreated by Sam Guyette\n")
 
 	#Writes date and time of when ran
 	now = datetime.datetime.now()
@@ -155,12 +163,13 @@ def main():
 
 	#builds condensed table
 	print("Building condensed table...\n")
-	title = "Condensed Table\n*Free Shipping\n"
-	f.write(title)
+	title1 = "Condensed Table\n*Free Shipping\n                            =  Price bellow lowest sales price"
+	title2 = " permitted (lower than Epson website): ↓\n                            =  Price above unilateral price: ↑\n\n"
+	f.write(title1)
+	f.write(title2)
 	build_condensed_table(f, product_set)
 	space = "\n\n\n\n\n"
 	f.write(space)
-	print("Finished building and writing condensed table.\n")
 
 	#write headers for super table
 	title = "Super Table\n"
@@ -176,6 +185,7 @@ def main():
 	append_category(f, product_set, "Accessory", accessories_include_list, accessories_exlude_list)
 
 	#highlights prices that are over or under recommended selling point
+	print("Highlighting prices...\n")
 	highlight_prices()
 
 	print("Intern work is now complete.\n")

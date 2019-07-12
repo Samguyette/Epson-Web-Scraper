@@ -40,7 +40,8 @@ walmart_urllist = [
 epson_urllist = [
 			'https://epson.com/search/?q=SureColor%3Arelevance%3AproductType%3APRINTER%3APrinters+Facets%2CType%3AProfessional+Imaging%3APro+Imaging+Facets%2CProfessional+Printer+Series%3ASureColor+T%7E102Series&text=SureColor#products-tab',
             'https://epson.com/search/?text=SureColor+3170#products-tab',
-			'https://epson.ca/For-Work/Printers/c/w1?q=%3Aprice-asc%3AdiscontinuedFlag%3Afalse%3APro+Imaging+Facets%2CProfessional+Printer+Series%3ASureColor+T%7E102Series&text=#scrollTgt_onRefresh'
+			'https://epson.ca/For-Work/Printers/c/w1?q=%3Aprice-asc%3AdiscontinuedFlag%3Afalse%3APro+Imaging+Facets%2CProfessional+Printer+Series%3ASureColor+T%7E102Series&text=#scrollTgt_onRefresh',
+            'https://epson.com/search/?text=T5470'
 ]
 
 #single product page
@@ -343,7 +344,8 @@ printer_exclude_list = [
     "Maintenance",
     "EMultifunction",
     "Feed",
-    "Module"
+    "Module",
+    "Refurbished"
 ]
 ink_include_list = [
     "Ink",
@@ -378,6 +380,7 @@ sku_targets = [
     "SSCT5270SR",
     "SSCT5270DR",
     "SSCT7270SR",
+    "SSCT7270DR",
     "SSCT3170SR",
     "SSCT5170SR",
     "SSCT3470SR",
@@ -406,7 +409,6 @@ website_targets = [
     "ITSupplies",
     "CDW",
     "Zones",
-    "Grand&Toy (CA)",
     "shi",
     "MacMall",
     "Amazon",
@@ -419,15 +421,17 @@ website_targets = [
     "PCNation",
     "Overland Blueprint",
     "Tartar Supply",
-    "Vistek (CA)",
     "Dell",
     "BuyVPC",
-    "Epson.ca (CA)",
     "Epson",
     "Walmart",
     "B&H",
     "NewEgg",
-    "Staples"
+    "Staples",
+    "\n",
+    "Epson.ca (CA)",
+    "Grand&Toy (CA)",
+    "Vistek (CA)"
 ]
 
 price_target_hash = {
@@ -436,10 +440,24 @@ price_target_hash = {
     'SSCT5270SR': 3195,
     'SSCT5270DR': 4595,
     'SSCT7270SR': 3595,
+    'SSCT7270DR': 5295,
     'SSCT3170SR': 895,
     'SSCT5170SR': 1895,
     'SSCT3470SR': 1895,
-    'SSCT5470SR': 2395,
+    'SSCT5470SR': 2345
+}
+
+price_up_hash = {
+    'SSCT3270SR': 2995,
+    'SSCT3270SP': 3295,
+    'SSCT5270SR': 3695,
+    'SSCT5270DR': 5595,
+    'SSCT7270SR': 4595,
+    'SSCT7270DR': 6495,
+    'SSCT3170SR': 995,
+    'SSCT5170SR': 1995,
+    'SSCT3470SR': 1995,
+    'SSCT5470SR': 22495
 }
 
 #must have substrings, must exclude substrings, key sku
@@ -455,8 +473,10 @@ sku_key = [
     (["rinter","urecolor","T5270"], printer_exclude_list, "SSCT5270SR"),
     (["rinter","urecolor","T5270","Dual"], printer_exclude_list, "SSCT5270DR"),
     (["rinter","urecolor","T5270","Double"], printer_exclude_list, "SSCT5270DR"),
+    (["urecolor","T5270D"], printer_exclude_list, "SSCT5270DR"),
     (["rinter","urecolor","T7270"], printer_exclude_list, "SSCT7270SR"),
-    (["rinter","urecolor","T7270"], printer_exclude_list, "SSCT7270SR"),
+    (["rinter","urecolor","T7270","Dual"], printer_exclude_list, "SSCT7270DR"),
+    (["rinter","urecolor","T7270","Double"], printer_exclude_list, "SSCT7270DR"),
     (["rinter","urecolor","T3170"], printer_exclude_list, "SSCT3170SR"),
     (["rinter","urecolor","T5170"], printer_exclude_list, "SSCT5170SR"),
     (["rinter","urecolor","T3470"], printer_exclude_list, "SSCT3470SR"),
