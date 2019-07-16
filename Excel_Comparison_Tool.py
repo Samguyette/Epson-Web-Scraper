@@ -9,8 +9,8 @@ def main():
         sys.exit()
 
 
-    new = pd.read_excel(sys.argv[1])
-    old = pd.read_excel(sys.argv[2])
+    new = pd.read_excel(sys.argv[1]).fillna(0)
+    old = pd.read_excel(sys.argv[2]).fillna(0)
     # Perform Diff
     diff = old.copy()
     for row in range(diff.shape[0]):
@@ -26,12 +26,12 @@ def main():
                 diff.iloc[row,col] = ('{}-->{}').format(value_OLD, 'NaN')
 
     # Save output and format
-    fname = '{} vs {}.xlsx'.format(old.stem,new.stem)
+    fname = 'old_vs_new.xlsx'
     writer = pd.ExcelWriter(fname, engine='xlsxwriter')
 
     diff.to_excel(writer, sheet_name='DIFF', index=False)
-    new.to_excel(writer, sheet_name=old.stem, index=False)
-    old.to_excel(writer, sheet_name=new.stem, index=False)
+    new.to_excel(writer, sheet_name='old.stem', index=False)
+    old.to_excel(writer, sheet_name='new.stem', index=False)
 
     # get xlsxwriter objects
     workbook  = writer.book

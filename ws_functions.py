@@ -14,8 +14,28 @@ import sys
 #import object class
 from product_class import Product
 
-#import data lists
-from lists import *
+
+#checks for arg list
+if(len(sys.argv) < 2):
+	print("Usage: Specify which list you would like to use on the command line.")
+	print("T = T-Series")
+	print("PI = Paper and Ink")
+	sys.exit()
+
+data_dump = False
+if "T" in sys.argv[1]:
+	from lists_t_series import *
+elif "PI" in sys.argv[1]:
+	data_dump = True
+	from lists_paper_ink import *
+elif "P" in sys.argv[1]:
+	from lists_p_series import *
+else:
+	print("Usage: Specify which list you would like to use on the command line.")
+	print("T = T-Series Printers")
+	print("P = P-Series Printers")
+	print("PI = Paper and Ink")
+	sys.exit()
 
 #function to create loading bar
 def progress(count, total, status=''):
@@ -38,75 +58,76 @@ def loop_site(urllist, func, product_set):
 #loops urls lists through specific scraper
 def build_data_set(product_set):
 	#loop raw searches
-	progress(0,32, status='  Intern work beginning...\n')
-	loop_site(staples_urllist, pull_staples, product_set)
-	progress(1,23, status='  of data gathered...\n')
-	loop_site(newegg_urllist, pull_newegg, product_set)
-	progress(2,32, status='  of data gathered...\n')
-	loop_site(bh_urllist, pull_bh, product_set)
-	progress(3,32, status='  of data gathered...\n')
-	loop_site(walmart_urllist, pull_walmart, product_set)
-	progress(4,32, status=' of data gathered...\n')
-	loop_site(epson_urllist, pull_epson, product_set)
-	progress(5,32, status=' of data gathered...\n')
-	loop_site(buyvpc_urllist, pull_buyvpc, product_set)
-	progress(6,32, status=' of data gathered...\n')
-	loop_site(dell_urllist, pull_dell, product_set)
-	progress(7,32, status=' of data gathered...\n')
-	loop_site(vistek_urllist, pull_vistek, product_set)
-	progress(8,32, status=' of data gathered...\n')
-	loop_site(tastar_urllist, pull_tastar, product_set)
-	progress(9,32, status=' of data gathered...\n')
-	loop_site(overland_urllist, pull_overland, product_set)
-	progress(10,32, status=' of data gathered...\n')
-	loop_site(pcnation_urllist, pull_pcnation, product_set)
-	progress(11,32, status=' of data gathered...\n')
-	loop_site(hp_urllist, pull_hp, product_set)
-	progress(12,32, status=' of data gathered...\n')
-	loop_site(tiger_urllist, pull_tiger, product_set)
-	progress(13,32, status=' of data gathered...\n')
-	loop_site(adorama_urllist, pull_adorama, product_set)
-	progress(14,32, status=' of data gathered...\n')
-	loop_site(govets_urllist, pull_govets, product_set)
-	progress(15,32, status=' of data gathered...\n')
-	loop_site(plotter_urllist, pull_plotter, product_set)
-	progress(16,32, status=' of data gathered...\n')
-	loop_site(pcconnection_urllist, pull_pcconnection, product_set)
-	progress(17,32, status=' of data gathered...\n')
-	loop_site(amazon_urllist, pull_amazon, product_set)
-	progress(18,32, status=' of data gathered...\n')
-	loop_site(macmall_urllist, pull_macmall, product_set)
-	progress(19,32, status=' of data gathered...\n')
-	loop_site(shi_urllist, pull_shi, product_set)
-	progress(20,32, status=' of data gathered...\n')
+	# progress(0,32, status='  Intern work beginning...\n')
+	# loop_site(staples_urllist, pull_staples, product_set)
+	# progress(1,23, status='  of data gathered...\n')
+	# loop_site(newegg_urllist, pull_newegg, product_set)
+	# progress(2,32, status='  of data gathered...\n')
+	# loop_site(bh_urllist, pull_bh, product_set)
+	# progress(3,32, status='  of data gathered...\n')
+	# loop_site(walmart_urllist, pull_walmart, product_set)
+	# progress(4,32, status=' of data gathered...\n')
+	# loop_site(epson_urllist, pull_epson, product_set)
+	# progress(5,32, status=' of data gathered...\n')
+	# loop_site(buyvpc_urllist, pull_buyvpc, product_set)
+	# progress(6,32, status=' of data gathered...\n')
+	# loop_site(dell_urllist, pull_dell, product_set)
+	# progress(7,32, status=' of data gathered...\n')
+	# loop_site(vistek_urllist, pull_vistek, product_set)
+	# progress(8,32, status=' of data gathered...\n')
+	# loop_site(tastar_urllist, pull_tastar, product_set)
+	# progress(9,32, status=' of data gathered...\n')
+	# loop_site(overland_urllist, pull_overland, product_set)
+	# progress(10,32, status=' of data gathered...\n')
+	# loop_site(pcnation_urllist, pull_pcnation, product_set)
+	# progress(11,32, status=' of data gathered...\n')
+	# loop_site(hp_urllist, pull_hp, product_set)
+	# progress(12,32, status=' of data gathered...\n')
+	# loop_site(tiger_urllist, pull_tiger, product_set)
+	# progress(13,32, status=' of data gathered...\n')
+	# loop_site(adorama_urllist, pull_adorama, product_set)
+	# progress(14,32, status=' of data gathered...\n')
+	# loop_site(govets_urllist, pull_govets, product_set)
+	# progress(15,32, status=' of data gathered...\n')
+	# loop_site(plotter_urllist, pull_plotter, product_set)
+	# progress(16,32, status=' of data gathered...\n')
+	# loop_site(pcconnection_urllist, pull_pcconnection, product_set)
+	# progress(17,32, status=' of data gathered...\n')
+	# loop_site(amazon_urllist, pull_amazon, product_set)
+	# progress(18,32, status=' of data gathered...\n')
+	# loop_site(macmall_urllist, pull_macmall, product_set)
+	# progress(19,32, status=' of data gathered...\n')
+	# loop_site(shi_urllist, pull_shi, product_set)
+	# progress(20,32, status=' of data gathered...\n')
 	loop_site(grandtoy_urllist, pull_grandtoy, product_set)
-	progress(21,32, status=' of data gathered...\n')
-	loop_site(zones_urllist, pull_zones, product_set)
-	progress(22,32, status=' of data gathered...\n')
-	loop_site(cdw_urllist, pull_cdw, product_set)
-	progress(23,32, status=' of data gathered...\n')
-	loop_site(itsupplies_urllist, pull_itsupplies, product_set)
-	progress(24,32, status=' of data gathered...\n')
-	loop_site(imagespectrum_urllist, pull_spectrum, product_set)
-	progress(25,32, status=' of data gathered...\n')
-	loop_site(laube_urllist, pull_laube, product_set)
-	progress(26,32, status=' of data gathered...\n')
-	loop_site(lexjet_urllist, pull_lexjet, product_set)
-	progress(27,32, status=' of data gathered...\n')
-	loop_site(buffalo_urllist, pull_buffalo, product_set)
-	progress(28,32, status=' of data gathered...\n')
-	loop_site(allamerican_urllist, pull_allamerican, product_set)
-	progress(29,32, status=' of data gathered...\n')
-	loop_site(proimagingsupplies_urllist, pull_proimagingsupplies, product_set)
-	progress(30,32, status=' of data gathered...\n')
-	loop_site(shadesofpaper_urllist, pull_shadesofpaper, product_set)
-	progress(31,32, status=' of data gathered...\n')
-	loop_site(spectraflow_urllist, pull_spectraflow, product_set)
-	progress(32,32, status='of data gathered...\n')
+	# progress(21,32, status=' of data gathered...\n')
+	# loop_site(zones_urllist, pull_zones, product_set)
+	# progress(22,32, status=' of data gathered...\n')
+	# loop_site(cdw_urllist, pull_cdw, product_set)
+	# progress(23,32, status=' of data gathered...\n')
+	# loop_site(itsupplies_urllist, pull_itsupplies, product_set)
+	# progress(24,32, status=' of data gathered...\n')
+	# loop_site(imagespectrum_urllist, pull_spectrum, product_set)
+	# progress(25,32, status=' of data gathered...\n')
+	# loop_site(laube_urllist, pull_laube, product_set)
+	# progress(26,32, status=' of data gathered...\n')
+	# loop_site(lexjet_urllist, pull_lexjet, product_set)
+	# progress(27,32, status=' of data gathered...\n')
+	# loop_site(buffalo_urllist, pull_buffalo, product_set)
+	# progress(28,32, status=' of data gathered...\n')
+	# loop_site(allamerican_urllist, pull_allamerican, product_set)
+	# progress(29,32, status=' of data gathered...\n')
+	# loop_site(proimagingsupplies_urllist, pull_proimagingsupplies, product_set)
+	# progress(30,32, status=' of data gathered...\n')
+	# loop_site(shadesofpaper_urllist, pull_shadesofpaper, product_set)
+	# progress(31,32, status=' of data gathered...\n')
+	# loop_site(spectraflow_urllist, pull_spectraflow, product_set)
+	# progress(32,32, status='of data gathered...\n')
 
-	#create uniform skus
-	print("Modifying SKU numbers...\n")
-	standardize_skus(product_set)
+	if not data_dump:
+		#create uniform skus
+		print("Modifying SKU numbers...\n")
+		standardize_skus(product_set)
 
 
 # *** Website specific scrapers *** #
@@ -353,7 +374,7 @@ def pull_grandtoy(url, product_set):
 			add_element("NSP", "CA", "Grand&Toy", "", name, id, price, "", product_set)
 
 	except:
-		print("www.grandandtoy.com pipe is now broken.")
+		print("1 www.grandandtoy.com link is now broken.")
 
 
 
@@ -453,8 +474,11 @@ def pull_amazon(url, product_set):
 		try:
 			name_list = page_soup.find_all('title')
 			name = name_list[0].text
-			name = name.split('Amazon.com: ', 1)[1]
-			name = name.split(': Gateway', 1)[0]
+			try:
+				name = name.split('Amazon.com: ', 1)[1]
+				name = name.split(': Gateway', 1)[0]
+			except:
+				pass
 		except:
 			name = ""
 
@@ -549,39 +573,44 @@ def pull_plotter(url, product_set):
 
 def pull_govets(url, product_set):
 	#check if broken
-	try:
-		page_soup = pull_html(url)
-		#finds all products on current page
-		containers = page_soup.findAll("div",{"class":"ty-column3"})
+	#try:
+	page_soup = pull_html(url)
+	#finds all products on current page
+	containers = page_soup.findAll("div",{"class":"ty-column3"})
 
-		if len(containers) == 0:
-			print("GoVets containers produced zero products.")
+	if len(containers) == 0:
+		print("GoVets containers produced zero products.")
 
-		for container in containers:
+	for container in containers:
+		try:
 			name = container.find("a",{"class":"product-title"}).text
+		except:
+			name = ""
+		try:
+			price = container.find("input",{"type":"hidden"})
+			price = butcher(price.text)
+			price = price.split('$', 2)[2]
+			price = "$"+price.split('Q', 1)[0]
+		except:
 			try:
-				price = container.find("input",{"type":"hidden"})
-				price = butcher(price.text)
-				price = price.split('$', 2)[2]
-				price = "$"+price.split('Q', 1)[0]
-			except:
 				price = container.find("span",{"class":"ty-price"}).text
+			except:
+				price = ""
+		if "SureColor" in name:
+			id = name.split('Color ', 1)[1]
+			id = id.split('Ink', 1)[0]
+		else:
+			id = ""
 
-			if "SureColor" in name:
-				id = name.split('Color ', 1)[1]
-				id = id.split('Ink', 1)[0]
-			else:
-				id = ""
+		if "Series" in id:
+			id = name.split('Series ', 1)[1]
+		if "Ink" in id:
+			id = id.split('Ink', 1)[0]
 
-			if "Series" in id:
-				id = name.split('Series ', 1)[1]
-			if "Ink" in id:
-				id = id.split('Ink', 1)[0]
+		add_element("E-Commerce", "US", "GoVets", "", name, id, price, "", product_set)
 
-			add_element("E-Commerce", "US", "GoVets", "", name, id, price, "", product_set)
-
-	except:
-		print("www.govets.com pipe is now broken.")
+	#except:
+	#	print("www.govets.com pipe is now broken.")
 
 
 
@@ -649,7 +678,7 @@ def pull_tiger(url, product_set):
 			add_element("NSP", "US", "Tiger Direct", "", name, id, price, "", product_set)
 
 	except:
-		print("www.tigerdirect.com pipe is now broken.")
+		print("one www.tigerdirect.com link is now broken.")
 
 
 
@@ -678,9 +707,17 @@ def pull_hp(url, product_set):
 			price = page_soup.find("span",{"class":"hp-large-price-label"}).text
 			price = price.replace('*', '')
 			add_element("E-Commerce", "US", "HP", "", name, "", price, "", product_set)
-
 		except:
-			print("www.hp.com pipe is now broken.")
+			try:
+				page_soup = pull_html(url)
+				name = page_soup.find("span",{"itemprop":"name"}).text
+				price = page_soup.find("span",{"id":"price_value"}).text
+				price = price.replace('*', '')
+				add_element("E-Commerce", "US", "HP", "", name, "", price, "", product_set)
+			except:
+				print("www.hp.com pipe is now broken.")
+
+
 
 def pull_pcnation(url, product_set):
 	#check if broken
@@ -798,33 +835,36 @@ def pull_tastar(url, product_set):
 
 def pull_vistek(url, product_set):
 	#check if broken
-	try:
-		page_soup = pull_html(url)
+	#try:
+	page_soup = pull_html(url)
 
-		name = page_soup.find("h1",{"class":"title"}).text
+	name = page_soup.find("h1",{"class":"title"}).text
+	try:
 		price = page_soup.find("div",{"class":"card-body"}).text
 		price = butcher(price)
 		price = price.split('Qty', 1)[0]
 		price = price.split('Your Price', 1)[1]
-
-		try:
-			shipping = page_soup.find("strong",{"class":"text-primary"}).text
-		except:
-			shipping = ""
-
-		try:
-			id = page_soup.find("ul",{"class":"list-unstyled"}).text
-			id = id.split('Mfr: ', 1)[1]
-			id = butcher(id)
-			id = id.split('Free', 1)[0]
-			id = id.upper()
-		except:
-			id = ""
-
-		add_element("E-Commerce", "CA", "Vistek", "", name, id, price, shipping, product_set)
-
 	except:
-		print("1/20 www.vistek.com links is now broken.")
+		price = "No_Data"
+
+	try:
+		shipping = page_soup.find("strong",{"class":"text-primary"}).text
+	except:
+		shipping = ""
+
+	try:
+		id = page_soup.find("ul",{"class":"list-unstyled"}).text
+		id = id.split('Mfr: ', 1)[1]
+		id = butcher(id)
+		id = id.split('Free', 1)[0]
+		id = id.upper()
+	except:
+		id = ""
+
+	add_element("E-Commerce", "CA", "Vistek", "", name, id, price, shipping, product_set)
+
+	#except:
+	#	print("1/20 www.vistek.com links is now broken.")
 
 
 
@@ -889,7 +929,10 @@ def pull_epson(url, product_set):
 			print("Epson containers produced zero products.")
 
 		for container in containers:
-			name = (container.find("a",{"class":"name"}).text) + " Printer"
+			name = (container.find("a",{"class":"name"}).text)
+			if "Ink" not in name and "Paper" not in name:
+				name = name + " Printer"
+
 			price = container.findAll("div",{"class":"amount"})
 			if len(price) > 0:
 				try:
@@ -1127,6 +1170,8 @@ def butcher(word):
 	word = word.title()
 	word = re.sub(r'\W+ ', '', word)
 	word = word.replace('*','')
+	word = word.replace('Hewlett Packard', 'HP')
+	word = word.replace('P-600','P600')
 	word = word.replace(',','')
 	word = word.replace(':','')
 	word = word.replace('\n', '')

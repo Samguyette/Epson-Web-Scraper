@@ -8,6 +8,7 @@
 import string
 import datetime
 import statistics
+import sys
 
 #xlsx
 import os
@@ -22,8 +23,28 @@ from product_class import Product
 #import helper function
 from ws_functions import build_data_set
 
-#import lists
-from lists import *
+#checks for arg list
+if(len(sys.argv) < 2):
+	print("Usage: Specify which list you would like to use on the command line.")
+	print("T = T-Series Printers")
+	print("PI = Paper and Ink")
+	sys.exit()
+
+data_dump = False
+if "T" in sys.argv[1]:
+	from lists_t_series import *
+elif "PI" in sys.argv[1]:
+	data_dump = True
+	from lists_paper_ink import *
+elif "P" in sys.argv[1]:
+	data_dump = True
+	from lists_p_series import *
+else:
+	print("Usage: Specify which list you would like to use on the command line.")
+	print("T = T-Series Printers")
+	print("P = P-Series Printers")
+	print("PI = Paper and Ink")
+	sys.exit()
 
 
 def append_category(f, product_set, category, green_words, red_words):
@@ -122,11 +143,16 @@ def find_averages(f, product_set):
 	median_list = "\n,Median:,"
 	mean_list = "\n,Mean:,"
 	for sku in avg_price_hash:
-		price_array = avg_price_hash[sku]
-		median = statistics.median(price_array)
-		mean = statistics.mean(price_array)
-		median = round(median, 2)
-		mean = round(mean, 2)
+		try:
+			price_array = avg_price_hash[sku]
+			median = statistics.median(price_array)
+			mean = statistics.mean(price_array)
+			median = round(median, 2)
+			mean = round(mean, 2)
+		except:
+			mean = ""
+			median = ""
+
 		median_list += str(median)+","
 		mean_list += str(mean)+","
 
@@ -197,25 +223,26 @@ def main():
 	now = datetime.datetime.now()
 	f.write("Date and time of script execution: "+now.strftime("%Y-%m-%d %H:%M:%S")+"\n\n")
 
-	#builds condensed table
-	print("Building condensed table...\n")
-	title1 = "Condensed Table\n*Free Shipping\n                            =  Price bellow lowest sales price"
-	title2 = " permitted (LSPP): ↓\n                            =  Price above unilateral price: ↑\n\n"
-	up_prices = ",UP:,"
-	lsp = ",LSPP:,"
-	for key in price_up_hash:
-		up_prices = up_prices + str(price_up_hash[key]) + ","
-	for key in price_target_hash:
-		lsp = lsp + str(price_target_hash[key]) + ","
+	if not data_dump:
+		#builds condensed table
+		print("Building condensed table...\n")
+		title1 = "Condensed Table\n*Free Shipping\n                            =  Price bellow lowest sales price"
+		title2 = " permitted (LSPP): ↓\n                            =  Price above unilateral price: ↑\n\n"
+		up_prices = ",UP:,"
+		lsp = ",LSPP:,"
+		for key in price_up_hash:
+			up_prices = up_prices + str(price_up_hash[key]) + ","
+		for key in price_target_hash:
+			lsp = lsp + str(price_target_hash[key]) + ","
 
-	f.write(title1)
-	f.write(title2)
-	f.write(up_prices+"\n")
-	f.write(lsp+"\n\n")
-	build_condensed_table(f, product_set)
-	find_averages(f, product_set)
-	space = "\n\n\n\n\n"
-	f.write(space)
+		f.write(title1)
+		f.write(title2)
+		f.write(up_prices+"\n")
+		f.write(lsp+"\n\n")
+		build_condensed_table(f, product_set)
+		find_averages(f, product_set)
+		space = "\n\n\n\n\n"
+		f.write(space)
 
 	#write headers for super table
 	title = "Super Table\n"
@@ -226,17 +253,23 @@ def main():
 	#creates sub categories
 	print("Writing all data to super table...\n")
 	#builds super table
-	append_category(f, product_set, "Printer", printer_include_list, printer_exclude_list)
-	append_category(f, product_set, "Ink", ink_include_list, ink_exclude_list)
-	append_category(f, product_set, "Accessory", accessories_include_list, accessories_exlude_list)
+	try:
+		append_category(f, product_set, "Printer", printer_include_list, printer_exclude_list)
+		append_category(f, product_set, "Ink", ink_include_list, ink_exclude_list)
+		append_category(f, product_set, "Accessory", accessories_include_list, accessories_exlude_list)
+	except:
+		print("Ink and paper only.")
+		append_category(f, product_set, "Ink", ink_include_list, ink_exclude_list)
+		append_category(f, product_set, "Paper", paper_include_list, paper_exlude_list)
 
-	#highlights prices that are over or under recommended selling point
-	print("Highlighting prices...\n")
-	highlight_prices()
+	if not data_dump:
+		#highlights prices that are over or under recommended selling point
+		print("Highlighting prices...\n")
+		highlight_prices()
 
-	#remove csv file
-	print("Deleting csv file...\n")
-	os.remove("rough_output.csv")
+		#remove csv file
+		print("Deleting csv file...\n")
+		os.remove("rough_output.csv")
 
 	print("Intern work is now complete.\n")
 
