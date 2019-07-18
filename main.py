@@ -37,7 +37,6 @@ elif "PI" in sys.argv[1]:
 	data_dump = True
 	from lists_paper_ink import *
 elif "P" in sys.argv[1]:
-	data_dump = True
 	from lists_p_series import *
 else:
 	print("Usage: Specify which list you would like to use on the command line.")
@@ -174,20 +173,28 @@ def highlight_prices():
 				except:
 					ws.cell(row=r, column=c).value = val
 
-	wb.save("final_output.xlsx")
+	now = str(datetime.date.today())
+	if "T" in sys.argv[1]:
+		now = now + "_T-Series"
+	elif "PI" in sys.argv[1]:
+		now = now + "_Paper_and_Ink"
+	elif "P" in sys.argv[1]:
+		now = now + "_P-Series"
+	wb.save(now+".xlsx")
 
 	#change letters to highlights
-	df = pd.read_excel("final_output.xlsx")
+	df = pd.read_excel(now+".xlsx")
 	#chagne header location
 	df.columns = df.iloc[2]
 	df.reindex(df.index.drop(2))
 	#writes over converted file
-	fname = 'final_output.xlsx'
+	fname = now+".xlsx"
 	writer = pd.ExcelWriter(fname, engine='xlsxwriter')
-	df.to_excel(writer, sheet_name='MAIN', index=False)
+	df.to_excel(writer, sheet_name=now[11:], index=False, header=False)
+
 	# get xlsxwriter objects
 	workbook  = writer.book
-	worksheet = writer.sheets['MAIN']
+	worksheet = writer.sheets[now[11:]]
 
 	#highlights incorrect prices
 	formatH = workbook.add_format({'bg_color':'#FFC7CE', 'font_color':'#000000'})
