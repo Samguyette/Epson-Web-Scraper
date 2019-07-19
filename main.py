@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # File: Epson_WS_V1.py
 # Name: Samuel Guyette
 # Desc: Pulls data from numerous websites to compare pricing of T-series competitors.
@@ -27,6 +27,7 @@ from ws_functions import build_data_set
 if(len(sys.argv) < 2):
 	print("Usage: Specify which list you would like to use on the command line.")
 	print("T = T-Series Printers")
+	print("P = P-Series Printers")
 	print("PI = Paper and Ink")
 	sys.exit()
 
@@ -61,8 +62,8 @@ def append_category(f, product_set, category, green_words, red_words):
 		if write:
 			for substring in green_words:
 				if substring in product.name and not product.added:
-					f.write(product.channel + "," + product.country + "," + product.website + "," + product.company + "," + category + ",")
-					f.write(product.name + "," + product.id + ", " + product.price + "," + product.shipping + "\n")
+					f.write(product.channel+","+product.country+","+product.website+","+product.company+","+category+",")
+					f.write(product.name+","+product.id+","+product.price+","+product.shipping+"\n")
 					product.added = True
 
 
@@ -119,9 +120,9 @@ def build_condensed_table(f, product_set):
 						up = price_up_hash[sku]
 						if product.country == "US" and product.website != "Epson":
 							if price < lsp:
-								line = line+" ↓"
+								line = line+" <"
 							if price > up:
-								line = line+" ↑"
+								line = line+" >"
 					except:
 						pass
 
@@ -163,7 +164,8 @@ def highlight_prices():
 	#convert .csv file to .xlsv
 	wb = openpyxl.Workbook()
 	ws = wb.active
-	with open("rough_output.csv", 'rt') as f:
+
+	with open("/var/services/web/Epson_WS/data_sheets/rough_output.csv", 'rt') as f:
 		reader = csv.reader(f)
 		for r, row in enumerate(reader, start=1):
 			for c, val in enumerate(row, start=1):
@@ -180,15 +182,16 @@ def highlight_prices():
 		now = now + "_Paper_and_Ink"
 	elif "P" in sys.argv[1]:
 		now = now + "_P-Series"
-	wb.save(now+".xlsx")
+
+	wb.save("/var/services/web/Epson_WS/data_sheets/"+now+".xlsx")
 
 	#change letters to highlights
-	df = pd.read_excel(now+".xlsx")
+	df = pd.read_excel("/var/services/web/Epson_WS/data_sheets/"+now+".xlsx")
 	#chagne header location
 	df.columns = df.iloc[2]
 	df.reindex(df.index.drop(2))
 	#writes over converted file
-	fname = now+".xlsx"
+	fname = "/var/services/web/Epson_WS/data_sheets/"+now+".xlsx"
 	writer = pd.ExcelWriter(fname, engine='xlsxwriter')
 	df.to_excel(writer, sheet_name=now[11:], index=False, header=False)
 
@@ -201,11 +204,11 @@ def highlight_prices():
 	formatL = workbook.add_format({'bg_color':'#C6EFCE','font_color': '#000000'})
 	worksheet.conditional_format('A1:ZZ1000', {'type': 'text',
 											'criteria': 'containing',
-											'value':'↓',
+											'value':'<',
 											'format': formatH})
 	worksheet.conditional_format('A1:ZZ1000', {'type': 'text',
 											'criteria': 'containing',
-											'value':'↑',
+											'value':'>',
 											'format': formatL})
 
 	writer.save()
@@ -216,8 +219,7 @@ def highlight_prices():
 # ****MAIN**** #
 def main():
 	#opens connection
-	filename = "rough_output.csv"
-	f = open(filename, "w")
+	f = open(r"/var/services/web/Epson_WS/data_sheets/rough_output.csv", "w+")
 
 	#hash set for all product objects
 	product_set = set()
@@ -234,7 +236,7 @@ def main():
 		#builds condensed table
 		print("Building condensed table...\n")
 		title1 = "Condensed Table\n*Free Shipping\n                            =  Price bellow lowest sales price"
-		title2 = " permitted (LSPP): ↓\n                            =  Price above unilateral price: ↑\n\n"
+		title2 = " permitted (LSPP): <\n                            =  Price above unilateral price: >\n\n"
 		up_prices = ",UP:,"
 		lsp = ",LSPP:,"
 		for key in price_up_hash:
@@ -276,7 +278,7 @@ def main():
 
 		#remove csv file
 		print("Deleting csv file...\n")
-		os.remove("rough_output.csv")
+		os.remove("/var/services/web/Epson_WS/data_sheets/rough_output.csv")
 
 	print("Intern work is now complete.\n")
 

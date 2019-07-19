@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # File: product_class.py
 # Name: Samuel Guyette
 # Desc: Object class for Epson_WS_V1.py

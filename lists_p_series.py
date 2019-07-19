@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # File: lists_t_series.py
 # Name: Samuel Guyette
 # Desc:  Data lists for Epson_WS_V1
@@ -615,7 +616,6 @@ price_target_hash = {
     'P800 DES': 1095,
     'P800 SP': 1345,
     'P5000': 1395,
-    'P5000 CE': 1395,
     'P5000 DES': 1845,
     'P6000': 2095,
     'P6000 DES': 2495,
@@ -638,7 +638,6 @@ price_up_hash = {
     'P800 DES': 1395,
     'P800 SP': 1695,
     'P5000': 1795,
-    'P5000 CE': 1795,
     'P5000 DES': 2295,
     'P6000': 2495,
     'P6000 DES': 2995,
