@@ -44,16 +44,13 @@ pip install requests
 
 
 ## Usage
-#### Command Line
+####    Command Line
 ```python
 python main.py P #Outputs P-Series Data with name timedate-P-Series.xlsx
 python main.py S #Outputs S-Series Data with name timedate-S-Series.xlsx
 python main.py PI #Outputs printer and ink Data with name timedate-Printer_and_Ink.xlsx
 python Excel_Comparison_Tool.py name1.xlsx name2.xlsx #Compares name1 and name2 for differences, outputs name1_vs_name2.xlsx sheet
 ```
-#### User Interface
+####    User Interface
 Created a php user interface that lives on an internal server. This provides easy usability where project managers can download their products
 data with a click of a button.
-
-## License
-[Epson End User Software License Agreement](https://epson.com/SoftwareLicenseAgreement)
