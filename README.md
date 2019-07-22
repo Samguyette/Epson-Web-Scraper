@@ -46,7 +46,9 @@ pip install requests
 ## Usage
 #### Command Line
 ```python
-python main.py #Main webscraper to excel script, outputs .xlsx sheet named "final_output"
+python main.py P #Outputs P-Series Data with name timedate-P-Series.xlsx
+python main.py S #Outputs S-Series Data with name timedate-S-Series.xlsx
+python main.py PI #Outputs printer and ink Data with name timedate-Printer_and_Ink.xlsx
 python Excel_Comparison_Tool.py name1.xlsx name2.xlsx #Compares name1 and name2 for differences, outputs name1_vs_name2.xlsx sheet
 ```
 #### User Interface
