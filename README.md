@@ -24,13 +24,10 @@ domino like fashion.
 
 ## Installation
 
-Use the package manager [pip](https://pypi.org/project/beautifulsoup4/) to install beautifulsoup4.\n
-Use the package manager [pip](https://pypi.org/project/lxml/) to install lxml.\n
-Use the package manager [pip](https://pypi.org/project/numpy/) to install numpy.\n
-Use the package manager [pip](https://pypi.org/project/openpyxl/) to install openpyxl.\n
-Use the package manager [pip](https://pypi.org/project/pandas/) to install pandas.\n
-Use the package manager [pip](https://pypi.org/project/urllib3/) to install urllib3.\n
-Use the package manager [pip](https://pypi.org/project/requests/) to install requests.
+Use the package manager to install [beautifulsoup4](https://pypi.org/project/beautifulsoup4/), [lxml](https://pypi.org/project/lxml/),
+[numpy](https://pypi.org/project/numpy/), [openpyxl](https://pypi.org/project/openpyxl/), [pandas](https://pypi.org/project/pandas/),
+[urllib3](https://pypi.org/project/urllib3/), [requests](https://pypi.org/project/requests/).
+
 
 ```bash
 pip install beautifulsoup4
@@ -44,13 +41,13 @@ pip install requests
 
 
 ## Usage
-####    Command Line
+#### Command Line
 ```python
 python main.py P #Outputs P-Series Data with name timedate-P-Series.xlsx
 python main.py S #Outputs S-Series Data with name timedate-S-Series.xlsx
 python main.py PI #Outputs printer and ink Data with name timedate-Printer_and_Ink.xlsx
 python Excel_Comparison_Tool.py name1.xlsx name2.xlsx #Compares name1 and name2 for differences, outputs name1_vs_name2.xlsx sheet
 ```
-####    User Interface
+#### User Interface
 Created a php user interface that lives on an internal server. This provides easy usability where project managers can download their products
 data with a click of a button.
