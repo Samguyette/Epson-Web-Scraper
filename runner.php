@@ -1,3 +1,4 @@
+<h4>Created by: Intern Sam<h4>
 <style>
 .btn {
   background: #3498db;
@@ -51,22 +52,59 @@
 </style>
 
 <html>
-	<body background="a.svg">
-	<img src="logo.png" 
-       width="150" 
-       height="78"> 
+	<body background="back.png">
+	<img src="logo.png"
+       width="150"
+       height="100">
 </html>
 
 
 <form method="post">
-    <input class="btn" type="submit" name="P" id="P" value="Pull P-Series Data" style="height:125px; width:250px; margin-left:450px;" />
-    <input class="btn" type="submit" name="T" id="T" value="Pull T-Series Data" style="height:125px; width:250px; margin-left:100px;" />
-    <input class="btn" type="submit" name="PI" id="PI" value="Pull Printer and Ink Data" style="height:125px; width:250px; margin-left:100px;" />
+    <input class="btn" type="submit" name="P" id="P" value="Pull P-Series Data" onclick="move()" style="height:125px; width:250px; margin-left:450px;" />
+    <input class="btn" type="submit" name="T" id="T" value="Pull T-Series Data" onclick="move()"style="height:125px; width:250px; margin-left:100px;" />
+    <input class="btn" type="submit" name="PI" id="PI" value="Pull Printer and Ink Data" onclick="move()" style="height:125px; width:250px; margin-left:100px;" />
 </form>
+<br><br> ALLOW 10 MINUTE RUN TIME AFTER START. <br><br>
+
+<html>
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #4CAF50;
+}
+</style>
+<body>
+
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+
+<script>
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width = width + Math.random()/290;
+      elem.style.width = width + '%';
+    }
+  }
+}
+</script>
 
 
 <?php
 function pseries(){
+	echo "Fake loading bar, real data.";
 	ob_start();
 	passthru('python /var/services/web/Epson_WS/main.py P');
 	$output = ob_get_clean();
@@ -79,11 +117,13 @@ function pseries(){
 	echo "\">";
 	echo $outputfile;
 	echo "</a>";
+	passthru('python /var/services/web/Epson_WS/email_sender.py P');
 	ob_end_flush();
 }
 function tseries(){
+	echo "Fake loading bar, real data.";
 	ob_start();
-	passthru('python /var/services/web/Epson_WS/main.py P');
+	passthru('python /var/services/web/Epson_WS/main.py T');
 	$output = ob_get_clean();
 	echo "<pre>";
 	echo $output;
@@ -94,11 +134,13 @@ function tseries(){
 	echo "\">";
 	echo $outputfile;
 	echo "</a>";
+	passthru('python /var/services/web/Epson_WS/email_sender.py T');
 	ob_end_flush();
 }
 function printer_ink(){
+	echo "Fake loading bar, real data.";
 	ob_start();
-	passthru('python /var/services/web/Epson_WS/main.py P');
+	passthru('python /var/services/web/Epson_WS/main.py PI');
 	$output = ob_get_clean();
 	echo "<pre>";
 	echo $output;
@@ -109,6 +151,7 @@ function printer_ink(){
 	echo "\">";
 	echo $outputfile;
 	echo "</a>";
+	passthru('python /var/services/web/Epson_WS/email_sender.py PI');
 	ob_end_flush();
 }
 if(array_key_exists('T',$_POST)){
@@ -121,3 +164,6 @@ if(array_key_exists('PI',$_POST)){
   printer_ink();
 }
 ?>
+
+</body>
+</html>
