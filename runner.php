@@ -50,9 +50,16 @@
 }
 </style>
 
+<html>
+	<body background="a.svg">
+	<img src="logo.png" 
+       width="150" 
+       height="78"> 
+</html>
+
 
 <form method="post">
-    <input class="btn" type="submit" name="P" id="P" value="Pull P-Series Data" style="height:125px; width:250px; margin-left:100px;" />
+    <input class="btn" type="submit" name="P" id="P" value="Pull P-Series Data" style="height:125px; width:250px; margin-left:450px;" />
     <input class="btn" type="submit" name="T" id="T" value="Pull T-Series Data" style="height:125px; width:250px; margin-left:100px;" />
     <input class="btn" type="submit" name="PI" id="PI" value="Pull Printer and Ink Data" style="height:125px; width:250px; margin-left:100px;" />
 </form>
@@ -113,5 +120,4 @@ if(array_key_exists('P',$_POST)){
 if(array_key_exists('PI',$_POST)){
   printer_ink();
 }
-
 ?>
