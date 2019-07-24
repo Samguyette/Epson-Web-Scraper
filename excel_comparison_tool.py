@@ -8,7 +8,6 @@ def main():
         print("Usage: Input a new and old xlsx sheet for comparison on the command line.")
         sys.exit()
 
-
     new = pd.read_excel(sys.argv[1]).fillna(0)
     old = pd.read_excel(sys.argv[2]).fillna(0)
     # Perform Diff
@@ -26,7 +25,7 @@ def main():
                 diff.iloc[row,col] = ('{}-->{}').format(value_OLD, 'NaN')
 
     # Save output and format
-    fname = 'old_vs_new.xlsx'
+    fname = '/volume1/web/Epson_WS_Web/compare_output.xlsx'
     writer = pd.ExcelWriter(fname, engine='xlsxwriter')
 
     diff.to_excel(writer, sheet_name='DIFF', index=False)
@@ -59,12 +58,14 @@ def main():
     ## highlight unchanged cells
     worksheet.conditional_format('A1:ZZ1000', {'type': 'text',
                                             'criteria': 'not containing',
-                                            'value':'→',
+                                            'value':'-->',
                                             'format': grey_fmt})
 
     # save
-    writer.save()
+    try:
+        writer.save()
 
+    except Exception,e: print str(e)
 
 if __name__ == '__main__':
     main()

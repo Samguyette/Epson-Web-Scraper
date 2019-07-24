@@ -103,6 +103,20 @@ function move() {
 
 
 <?php
+$dirpath = "/volume1/web/Epson_WS_Web/data_sheets/";
+$filenames="";
+if(is_dir($dirpath)){
+	$files=opendir($dirpath);
+	if($files){
+		while(($filename=readdir($files))!=false){
+			if($filename != "." && $filename != ".."){
+				$filenames = $filenames."<option value = \"$filename\">$filename</option>";
+			}
+		}
+	}
+}
+
+
 function pseries(){
 	$date = date("Y-m-d");
 	$outputfile= $date . "_P-Series.xlsx";
@@ -168,6 +182,14 @@ function printer_ink(){
 	passthru('python /volume1/web/Epson_WS_Web/email_sender.py PI');
 	ob_end_flush();
 }
+function compare(){
+	$one = $_POST['one'];
+    $two = $_POST['two'];
+    passthru("python /volume1/web/Epson_WS_Web/Excel_Comparison_Tool.py /volume1/web/Epson_WS_Web/data_sheets/".$one." /volume1/web/Epson_WS_Web/data_sheets/".$two);
+
+	echo '<a href="/volume1/web/Epson_WS_Web/compare_output.xlsx"></a>';
+}
+
 if(array_key_exists('T',$_POST)){
   tseries();
 }
@@ -177,7 +199,16 @@ if(array_key_exists('P',$_POST)){
 if(array_key_exists('PI',$_POST)){
   printer_ink();
 }
+if(array_key_exists('C',$_POST)){
+  compare();
+}
 ?>
-
+<br><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<form method="post">
+    <select name="one"><?php echo $filenames; ?></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name="two"><?php echo $filenames; ?></select>
+    <input class="btn" type="submit" name="C" id="C" value="Compare" onclick="move()" style="height:75px; width:125px; margin-left:50px; margin-top:-120;" />
+    <br>
+</form>
 </body>
 </html>
