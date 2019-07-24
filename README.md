@@ -35,7 +35,8 @@ pip install statistics
 pip install numpy
 pip install openpyxl
 pip install pandas
-pip install urllib3
+pip install xlrd
+pip install xlswriter
 pip install requests
 ```
 

@@ -148,9 +148,7 @@ function tseries(){
 	ob_end_flush();
 }
 function printer_ink(){
-	$date = date("Y-m-d");
-	$outputfile= $date . "_Printer_and_Ink.xlsx";
-	$myFile = "/volume1/web/Epson_WS_Web/data_sheets/" . $outputfile;
+	$myFile = "/volume1/web/Epson_WS_Web/data_sheets/rough_output.csv";
 	if(file_exists($myFile)){
 		unlink($myFile);
 	}
