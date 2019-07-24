@@ -24,14 +24,14 @@ domino like fashion.
 
 ## Installation
 
-Use the package manager to install [beautifulsoup4](https://pypi.org/project/beautifulsoup4/), [lxml](https://pypi.org/project/lxml/),
+Use the package manager to install [beautifulsoup4](https://pypi.org/project/beautifulsoup4/), [statistics](https://pypi.org/project/statistics/),
 [numpy](https://pypi.org/project/numpy/), [openpyxl](https://pypi.org/project/openpyxl/), [pandas](https://pypi.org/project/pandas/),
-[urllib3](https://pypi.org/project/urllib3/), [requests](https://pypi.org/project/requests/).
+[xlrd](https://pypi.org/project/xlrd/), [xlsxwriter](https://pypi.org/project/XlsxWriter/), [requests](https://pypi.org/project/requests/).
 
 
 ```bash
 pip install beautifulsoup4
-pip install lxml
+pip install statistics
 pip install numpy
 pip install openpyxl
 pip install pandas

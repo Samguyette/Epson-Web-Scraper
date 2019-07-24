@@ -64,7 +64,7 @@
     <input class="btn" type="submit" name="T" id="T" value="Pull T-Series Data" onclick="move()"style="height:125px; width:250px; margin-left:100px;" />
     <input class="btn" type="submit" name="PI" id="PI" value="Pull Printer and Ink Data" onclick="move()" style="height:125px; width:250px; margin-left:100px;" />
 </form>
-<br><br> ALLOW 10 MINUTE RUN TIME AFTER START. <br><br>
+<br><br> ALLOW APPROXIMATELY 10 MINUTE RUN TIME AFTER START. <br><br>
 
 <html>
 <style>
@@ -104,54 +104,70 @@ function move() {
 
 <?php
 function pseries(){
+	$date = date("Y-m-d");
+	$outputfile= $date . "_P-Series.xlsx";
+	$myFile = "/volume1/web/Epson_WS_Web/data_sheets/" . $outputfile;
+	if(file_exists($myFile)){
+		unlink($myFile);
+	}
 	echo "Fake loading bar, real data.";
 	ob_start();
-	passthru('python /var/services/web/Epson_WS/main.py P');
+	passthru('python /volume1/web/Epson_WS_Web/main.py P');
 	$output = ob_get_clean();
 	echo "<pre>";
 	echo $output;
-	$date = date("Y-m-d");
-	$outputfile= $date . "_P-Series.xlsx";
-	echo "<BR><a href=\"Epson_WS/data_sheets/";
+
+	echo "<BR><a href=\"Epson_WS_Web/data_sheets/";
 	echo $outputfile;
 	echo "\">";
 	echo $outputfile;
 	echo "</a>";
-	passthru('python /var/services/web/Epson_WS/email_sender.py P');
+	passthru('python /volume1/web/Epson_WS_Web/email_sender.py P');
 	ob_end_flush();
 }
 function tseries(){
+	$date = date("Y-m-d");
+	$outputfile= $date . "_T-Series.xlsx";
+	$myFile = "/volume1/web/Epson_WS_Web/data_sheets/" . $outputfile;
+	if(file_exists($myFile)){
+		unlink($myFile);
+	}
 	echo "Fake loading bar, real data.";
 	ob_start();
-	passthru('python /var/services/web/Epson_WS/main.py T');
+	passthru('python /volume1/web/Epson_WS_Web/main.py T');
 	$output = ob_get_clean();
 	echo "<pre>";
 	echo $output;
-	$date = date("Y-m-d");
-	$outputfile= $date . "_T-Series.xlsx";
-	echo "<BR><a href=\"Epson_WS/data_sheets/";
+
+	echo "<BR><a href=\"Epson_WS_Web/data_sheets/";
 	echo $outputfile;
 	echo "\">";
 	echo $outputfile;
 	echo "</a>";
-	passthru('python /var/services/web/Epson_WS/email_sender.py T');
+	passthru('python /volume1/web/Epson_WS_Web/email_sender.py T');
 	ob_end_flush();
 }
 function printer_ink(){
+	$date = date("Y-m-d");
+	$outputfile= $date . "_Printer_and_Ink.xlsx";
+	$myFile = "/volume1/web/Epson_WS_Web/data_sheets/" . $outputfile;
+	if(file_exists($myFile)){
+		unlink($myFile);
+	}
+
 	echo "Fake loading bar, real data.";
 	ob_start();
-	passthru('python /var/services/web/Epson_WS/main.py PI');
+	passthru('python /volume1/web/Epson_WS_Web/main.py PI');
 	$output = ob_get_clean();
 	echo "<pre>";
 	echo $output;
-	$date = date("Y-m-d");
-	$outputfile= $date . "_Printer_and_Ink.xlsx";
-	echo "<BR><a href=\"Epson_WS/data_sheets/";
+
+	echo "<BR><a href=\"Epson_WS_Web/data_sheets/";
 	echo $outputfile;
 	echo "\">";
 	echo $outputfile;
 	echo "</a>";
-	passthru('python /var/services/web/Epson_WS/email_sender.py PI');
+	passthru('python /volume1/web/Epson_WS_Web/email_sender.py PI');
 	ob_end_flush();
 }
 if(array_key_exists('T',$_POST)){
