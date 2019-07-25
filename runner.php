@@ -53,13 +53,18 @@
 
 <html>
 	<body background="back.png">
-	<img src="logo.png"
-       width="150"
+    <marquee scrollamount="10"
+    direction="left"
+    behavior="scroll">
+	<img src="logos.png"
+       width="300"
        height="100">
+   </marquee>
 </html>
 
 
 <form method="post">
+    <br><br><br><br>
     <input class="btn" type="submit" name="P" id="P" value="Pull P-Series Data" onclick="move()" style="height:125px; width:250px; margin-left:450px;" />
     <input class="btn" type="submit" name="T" id="T" value="Pull T-Series Data" onclick="move()"style="height:125px; width:250px; margin-left:100px;" />
     <input class="btn" type="submit" name="PI" id="PI" value="Pull Printer and Ink Data" onclick="move()" style="height:125px; width:250px; margin-left:100px;" />
@@ -162,7 +167,9 @@ function tseries(){
 	ob_end_flush();
 }
 function printer_ink(){
-	$myFile = "/volume1/web/Epson_WS_Web/data_sheets/rough_output.csv";
+    $date = date("Y-m-d");
+	$outputfile= $date . "_Printer_and_Ink_Data.csv";
+	$myFile = "/volume1/web/Epson_WS_Web/data_sheets/" . $outputfile;
 	if(file_exists($myFile)){
 		unlink($myFile);
 	}
@@ -187,7 +194,12 @@ function compare(){
     $two = $_POST['two'];
     passthru("python /volume1/web/Epson_WS_Web/Excel_Comparison_Tool.py /volume1/web/Epson_WS_Web/data_sheets/".$one." /volume1/web/Epson_WS_Web/data_sheets/".$two);
 
-	echo '<a href="/volume1/web/Epson_WS_Web/compare_output.xlsx"></a>';
+    $outputfile = "compare_output.xlsx";
+    echo "<BR><a href=\"Epson_WS_Web/data_sheets/";
+	echo $outputfile;
+	echo "\">";
+	echo $outputfile;
+	echo "</a>";
 }
 
 if(array_key_exists('T',$_POST)){
@@ -207,7 +219,7 @@ if(array_key_exists('C',$_POST)){
 <form method="post">
     <select name="one"><?php echo $filenames; ?></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <select name="two"><?php echo $filenames; ?></select>
-    <input class="btn" type="submit" name="C" id="C" value="Compare" onclick="move()" style="height:75px; width:125px; margin-left:50px; margin-top:-120;" />
+    <input class="btn" type="submit" name="C" id="C" value="Compare" onclick="move()" style="height:75px; width:125px; margin-left:500px; margin-top:-120;" />
     <br>
 </form>
 </body>

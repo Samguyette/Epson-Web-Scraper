@@ -32,9 +32,11 @@ if(len(sys.argv) < 2):
 	sys.exit()
 
 data_dump = False
+pi = False
 if "T" in sys.argv[1]:
 	from lists_t_series import *
 elif "PI" in sys.argv[1]:
+	pi = True
 	data_dump = True
 	from lists_paper_ink import *
 elif "P" in sys.argv[1]:
@@ -62,9 +64,12 @@ def append_category(f, product_set, category, green_words, red_words):
 		if write:
 			for substring in green_words:
 				if substring in product.name and not product.added:
-					f.write(product.channel+","+product.country+","+product.website+","+product.company+","+category+",")
-					f.write(product.name+","+product.id+","+product.price+","+product.shipping+"\n")
-					product.added = True
+					try:
+						f.write(product.channel+","+product.country+","+product.website+","+product.company+","+category+",")
+						f.write(product.name+","+product.id+","+product.price+","+product.shipping+"\n")
+						product.added = True
+					except:
+						pass
 
 
 def build_condensed_table(f, product_set):
@@ -136,7 +141,7 @@ def build_condensed_table(f, product_set):
 			if not product_found:
 				line += ","
 
-		f.write(line+"\n")
+		f.write(line.encode("utf-8")+"\n")
 
 
 def find_averages(f, product_set):
@@ -165,7 +170,7 @@ def highlight_prices():
 	wb = openpyxl.Workbook()
 	ws = wb.active
 
-	with open("/var/services/web/Epson_WS/data_sheets/rough_output.csv", 'rt') as f:
+	with open("/volume1/web/Epson_WS_Web/data_sheets/rough_output.csv", 'rt') as f:
 		reader = csv.reader(f)
 		for r, row in enumerate(reader, start=1):
 			for c, val in enumerate(row, start=1):
@@ -176,6 +181,7 @@ def highlight_prices():
 					ws.cell(row=r, column=c).value = val
 
 	now = str(datetime.date.today())
+
 	if "T" in sys.argv[1]:
 		now = now + "_T-Series"
 	elif "PI" in sys.argv[1]:
@@ -183,15 +189,19 @@ def highlight_prices():
 	elif "P" in sys.argv[1]:
 		now = now + "_P-Series"
 
-	wb.save("/var/services/web/Epson_WS/data_sheets/"+now+".xlsx")
+	#remove file if exists
+	if os.path.isfile("/volume1/web/Epson_WS_Web/data_sheets/"+now+".xlsx"):
+		os.remove("/volume1/web/Epson_WS_Web/data_sheets/"+now+".xlsx")
+
+	wb.save("/volume1/web/Epson_WS_Web/data_sheets/"+now+".xlsx")
 
 	#change letters to highlights
-	df = pd.read_excel("/var/services/web/Epson_WS/data_sheets/"+now+".xlsx")
+	df = pd.read_excel("/volume1/web/Epson_WS_Web/data_sheets/"+now+".xlsx")
 	#chagne header location
 	df.columns = df.iloc[2]
 	df.reindex(df.index.drop(2))
 	#writes over converted file
-	fname = "/var/services/web/Epson_WS/data_sheets/"+now+".xlsx"
+	fname = "/volume1/web/Epson_WS_Web/data_sheets/"+now+".xlsx"
 	writer = pd.ExcelWriter(fname, engine='xlsxwriter')
 	df.to_excel(writer, sheet_name=now[11:], index=False, header=False)
 
@@ -218,8 +228,11 @@ def highlight_prices():
 
 # ****MAIN**** #
 def main():
+	#remove file if exists
+	if os.path.isfile("/volume1/web/Epson_WS_Web/data_sheets/rough_output.csv"):
+		os.remove("/volume1/web/Epson_WS_Web/data_sheets/rough_output.csv")
 	#opens connection
-	f = open(r"/var/services/web/Epson_WS/data_sheets/rough_output.csv", "w+")
+	f = open(r"/volume1/web/Epson_WS_Web/data_sheets/rough_output.csv", "w+")
 
 	#hash set for all product objects
 	product_set = set()
@@ -278,10 +291,12 @@ def main():
 
 		#remove csv file
 		print("Deleting csv file...\n")
-		os.remove("/var/services/web/Epson_WS/data_sheets/rough_output.csv")
+		os.remove("/volume1/web/Epson_WS_Web/data_sheets/rough_output.csv")
 
-	print("Intern work is now complete.\n")
+	if pi:
+		os.rename("/volume1/web/Epson_WS_Web/data_sheets/rough_output.csv", "/volume1/web/Epson_WS_Web/data_sheets/"+str(datetime.date.today())+"_Printer_and_Ink_Data.csv")
 
+	print("Intern work is now complete.")
 	f.close()
 
 
