@@ -4,6 +4,7 @@
 
 staples_urllist = [
 			'https://www.staples.com/surecolor+printer/directory_surecolor%2520printer',
+            'https://www.staples.com/t5270/directory_t5270',
 			'https://www.staples.com/hp+designjet+t520/directory_hp%2520designjet%2520t520',
 			'https://www.staples.com/cannon+ipf670e/directory_cannon%2520ipf670e'
 			]
@@ -318,8 +319,7 @@ remove_list = {
     "T830",
     "T730",
     "F2000",
-    "Paper",
-    "£"
+    "Paper"
 }
 printer_include_list = [
     "Printer",
@@ -455,6 +455,32 @@ avg_price_hash ={
     'IIPF670': [],
     'IIPF670E': []
 }
+
+price_target_list = [
+    '2545',
+    '3045',
+    '3195',
+    '4595',
+    '3595',
+    '5295',
+    '895',
+    '1895',
+    '1895',
+    '2345'
+]
+
+price_up_list = [
+    '2995',
+    '3295',
+    '3695',
+    '5595',
+    '4595',
+    '6495',
+    '995',
+    '1995',
+    '1995',
+    '2345'
+]
 
 price_target_hash = {
     'SSCT3270SR': 2545,

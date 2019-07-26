@@ -77,6 +77,7 @@ def build_condensed_table(f, product_set):
 	for i in sku_targets:
 		header = header + i + ","
 	f.write(header+"\n")
+
 	for website in website_targets:
 		#write country
 		line = ""
@@ -147,7 +148,7 @@ def build_condensed_table(f, product_set):
 def find_averages(f, product_set):
 	median_list = "\n,Median:,"
 	mean_list = "\n,Mean:,"
-	for sku in avg_price_hash:
+	for sku in sku_targets:
 		try:
 			price_array = avg_price_hash[sku]
 			median = statistics.median(price_array)
@@ -252,10 +253,10 @@ def main():
 		title2 = " permitted (LSPP): <\n                            =  Price above unilateral price: >\n\n"
 		up_prices = ",UP:,"
 		lsp = ",LSPP:,"
-		for key in price_up_hash:
-			up_prices = up_prices + str(price_up_hash[key]) + ","
-		for key in price_target_hash:
-			lsp = lsp + str(price_target_hash[key]) + ","
+		for price in price_up_list:
+			up_prices = up_prices + price + ","
+		for price in price_target_list:
+			lsp = lsp + price + ","
 
 		f.write(title1)
 		f.write(title2)
